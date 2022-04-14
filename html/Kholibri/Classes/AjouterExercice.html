@@ -1,0 +1,1375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>Kholibri.Classes.AjouterExercice API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Kholibri.Classes.AjouterExercice</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import _tkinter
+import codecs
+import os
+from tkinter import *
+from tkinter import messagebox
+from tkinter.filedialog import askopenfilename
+from tkinter.ttk import *
+
+from Classes import MyThread
+from Classes.Utils import Utils
+
+
+class AjouterExercice(Frame):
+    &#34;&#34;&#34;
+    Classe de la fenêtre permettant l&#39;ajout d&#39;un exercice dans la base de données
+    &#34;&#34;&#34;
+
+    def __init__(self, parent, controller):
+        &#34;&#34;&#34;
+        Constructeur de la classe
+
+        Parameters
+        ----------
+        parent : parent de la fenêtre
+        controller : contrôleur de la fenêtre
+        &#34;&#34;&#34;
+        import SGBD
+
+        Frame.__init__(self, parent)
+        self.controller = controller
+        self.titre = Label(self, text=&#34;Ajouter un Exercice&#34;, font=controller.title_font)
+        self.titre.pack(side=&#34;top&#34;, fill=&#34;x&#34;, pady=10)
+
+        self.emplaceAjout = {}
+
+        self.enonce = []
+        self.corrige = []
+        self.SGBD = SGBD.SGBD
+        self.isFirstLoop = True
+
+        self.EXO_FINSHED = False
+
+        s = Style()
+        s.configure(&#39;My.TFrame&#39;, background=&#39;red&#39;)
+
+        # Chaque suite de ~ correspond à la séparation de cadre s&#39;affichant sur la page principale
+
+        # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        # correspond à la page d&#39;edition d&#39;exercice,
+        # c&#39;est la page affichée par défaut
+        self.Page_EditExo = Frame(self)
+        # séparée en deux cadres
+
+        # cadre supérieur de la page, contient le choix d&#39;auteur
+        self.cadreAuteur = Frame(self.Page_EditExo)
+        labelAuteur = Label(self.cadreAuteur, text=&#34;Choisissez un auteur : &#34;,
+                            font=(&#34;Helvetica&#34;, 10))
+        labelAuteur.pack(side=LEFT)
+        self.cbAuteur = Combobox(self.cadreAuteur, values=self.SGBD.giveAuteur(),
+                                 state=&#39;readonly&#39;)  # changer values par le select auteur
+        self.cbAuteur.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;)
+        if (Utils.DefaultUser != &#34;&#34;):
+            print(&#34;coucou l&#39;auteur défaut&#34;)
+            self.cbAuteur.set(Utils.DefaultUser)
+        else:
+            self.cbAuteur.set(&#39;Choisir un auteur&#39;)
+        self.cbAuteur.pack(pady=5, side=LEFT)
+        self.cadreAuteur.pack(side=TOP)
+
+        # Cadre inférieur contenant les deux blocs de texte &#39;exo&#39; et &#39;solution&#39; et les boutons de validation
+        self.cadreEdition = Frame(self.Page_EditExo)
+        label = Label(self.cadreEdition, text=&#34;Ecrire ci-dessous l&#39;énoncé de l&#39;exercice : &#34;, font=(&#34;Helvetica&#34;, 10))
+        label.pack(side=TOP, fill=&#34;x&#34;)
+
+        self.champEnonce = Text(self.cadreEdition, width=200, height=15, bg=&#34;#E5E5E5&#34;, fg=&#34;black&#34;,
+                                insertbackground=&#34;black&#34;,
+                                font=&#34;Helvetica 10&#34;, undo=True)
+        Utils.configureColor(self.champEnonce)
+        self.champEnonce.bind(&#34;&lt;Key&gt;&#34;, lambda event: Utils.updateCode(self.champEnonce))
+
+        self.BouttonAjoutExo = Button(self.cadreEdition, text=&#34;Ajouter énoncé&#34;,
+                                      command=lambda: Utils.open_file(self.champEnonce))
+        self.BouttonAjoutExo.pack(side=TOP)
+
+        self.champEnonce.pack(pady=5)
+
+        label = Label(self.cadreEdition, text=&#34;Ecrire la correction de l&#39;exercice : &#34;, font=(&#34;Helvetica&#34;, 10))
+        label.pack(side=TOP, fill=&#34;x&#34;)
+
+        self.champCorrection = Text(self.cadreEdition, width=200, height=15, bg=&#34;#E5E5E5&#34;, fg=&#34;black&#34;,
+                                    insertbackground=&#34;black&#34;,
+                                    font=&#34;Helvetica 10&#34;, undo=True)
+        Utils.configureColor(self.champCorrection)
+
+        self.champCorrection.bind(&#34;&lt;Key&gt;&#34;, lambda event: Utils.updateCode(self.champCorrection))
+
+        self.BouttonAjoutSol = Button(self.cadreEdition, text=&#34;Ajouter correction&#34;,
+                                      command=lambda: Utils.open_file(self.champCorrection))
+        self.BouttonAjoutSol.pack(side=TOP)
+
+        self.champCorrection.pack(pady=5)
+
+        self.cadreEdition.pack()
+
+        # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        # Page appelée par le click du bouton suivant sur la page d&#39;edition d&#39;exercice
+
+        self.Page_ParamExo = Frame(self.Page_EditExo)
+        self.cadre_ComboBox = Frame(self.Page_ParamExo)
+
+        label = Label(self.cadre_ComboBox, text=&#34;Paramètrage : &#34;,
+                      font=(&#34;Helvetica&#34;, 10))
+        label.pack(side=LEFT, fill=&#34;x&#34;, pady=5)
+
+        self.cbClass = Combobox(self.cadre_ComboBox, values=self.SGBD.giveClasse(), state=&#39;readonly&#39;)
+        self.cbClass.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.ActualisationChap())
+        self.cbClass.set(&#34;Choisir une classe&#34;)
+        self.cbClass.pack(pady=5, side=LEFT)
+
+        self.cbChap = Combobox(self.cadre_ComboBox, state=&#39;readonly&#39;)
+        self.cbChap.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.ActualisationDiff())
+        self.cbChap.set(&#34;Choisir le chapitre&#34;)
+        self.cbChap[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbChap.pack(pady=5, side=LEFT)
+
+        self.cbDifficulte = Combobox(self.cadre_ComboBox, state=&#39;readonly&#39;)
+        self.cbDifficulte.set(&#34;Choisir la difficulté&#34;)
+        self.cbDifficulte[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbDifficulte.pack(pady=5, side=LEFT)
+
+        self.valider = Button(self.cadre_ComboBox, text=&#34;Valider le choix&#34;, command=self.validerChoix)
+        self.valider.pack(pady=5, side=LEFT)
+
+        self.refaireChoix = Button(self.cadre_ComboBox, text=&#34;Réinitialiser&#34;,
+                                   command=lambda: self.refaireChoixChap())
+        self.refaireChoix.pack(pady=5, side=LEFT)
+
+        self.supprimerButton = Button(self.cadre_ComboBox, text=&#34;Supprimer&#34;, command=self.supprimer)
+        self.supprimerButton.pack(pady=5, side=LEFT)
+
+        self.cadre_ComboBox.pack(pady=5)
+
+        self.cadre_ListeChoix = Frame(self.Page_ParamExo)
+        label = Label(self.cadre_ListeChoix, text=&#34;Liste des choix &#34;, font=(&#34;Helvetica&#34;, 10))
+        label.pack(side=TOP, fill=&#34;x&#34;, pady=5)
+        self.champChoix = Listbox(self.cadre_ListeChoix, selectmode=&#34;multiple&#34;, width=200, height=6)
+        self.champChoix.pack(pady=8)
+
+        self.cadre_ListeChoix.pack(pady=5)
+
+        self.saveButton = Button(self.cadre_ListeChoix, text=&#34;Sauvegarder l&#39;exercice&#34;, command=self.save)
+        self.saveButton.pack(pady=5, padx=15, side=RIGHT)
+        self.saveButton[&#34;state&#34;] = &#34;disabled&#34;
+
+        self.compiler = Button(self.cadre_ListeChoix, text=&#34;Compiler l&#39;exercice&#34;, command=self.compiler)
+        self.compiler.pack(pady=5, side=RIGHT)
+
+        self.Page_ParamExo.pack()
+        self.Page_EditExo.pack()
+
+    def ActualisationChap(self):
+        &#34;&#34;&#34;
+        Actualise la liste des chapitres en fonction de la classe choisie
+        &#34;&#34;&#34;
+
+        if not self.cbClass.get() or self.cbClass.get() == &#34;Choisir une classe&#34;:
+            self.cbChap[&#34;state&#34;] = &#34;disabled&#34;
+            self.cbChap.set(&#34;Choisir le chapitre&#34;)
+
+            return
+
+        toAdd = []
+        valChapChoisi = []
+
+        for k, i in self.emplaceAjout.items():
+            for e in i:
+                valChapChoisi.append(e[0])
+
+        for i in self.SGBD.giveChap(self.cbClass.get()):
+            if i not in valChapChoisi:
+                toAdd.append(i)
+
+        self.cbChap[&#39;values&#39;] = toAdd
+        if toAdd == []:
+            self.cbChap[&#39;state&#39;] = &#34;disabled&#34;
+        else:
+            self.cbChap[&#39;state&#39;] = &#34;readonly&#34;
+
+        self.cbChap.set(&#34;Choisir le chapitre&#34;)
+
+    def ActualisationDiff(self):
+        &#34;&#34;&#34;
+        Actualise la liste des difficultés en fonction du/des chapitre/s choisi/s
+        &#34;&#34;&#34;
+
+        if not self.cbChap.get() or self.cbChap.get() == &#34;Choisir le chapitre&#34;:
+            self.cbDifficulte[&#34;state&#34;] = &#34;disabled&#34;
+            self.cbDifficulte.set(&#34;Choisir la difficulté&#34;)
+            return
+
+        diff = 10
+        for k, i in self.emplaceAjout.items():
+            for e in i:
+                if k == self.cbClass.get():
+                    diff = [e[1]]
+
+        if diff != 10:
+            self.cbDifficulte[&#34;values&#34;] = diff
+            self.cbDifficulte[&#34;state&#34;] = &#34;readonly&#34;
+            self.cbDifficulte.current(0)
+        else:
+            self.cbDifficulte[&#34;values&#34;] = list(range(1, 6))
+            self.cbDifficulte[&#34;state&#34;] = &#34;readonly&#34;
+
+    def supprimer(self):
+        &#34;&#34;&#34;
+        Supprime le chapitre sélectionné des choix de chapitre
+        &#34;&#34;&#34;
+        StringRecup = []
+
+        for i in self.champChoix.curselection():
+            StringRecup.append(self.champChoix.get(i))
+
+        for i in StringRecup:
+
+            StringSplitted = i.split(&#34;, &#34;)
+
+            StringClasse = StringSplitted[0][9:]
+            StringChap = StringSplitted[1][11:]
+            StringDifficulte = StringSplitted[2][13:]
+
+            ArrayChap = self.emplaceAjout.get(StringClasse)
+            if ArrayChap:
+                if [StringChap, StringDifficulte] in ArrayChap:
+                    self.emplaceAjout[StringClasse].remove([StringChap, StringDifficulte])
+
+        self.champChoix.delete(0, &#34;end&#34;)
+
+        for key, item in self.emplaceAjout.items():
+            for e in item:
+                self.champChoix.insert(END, &#34;Classe : &#34; + key + &#34;, Chapitre : &#34; + e[0] + &#34;, Difficulté : &#34; + e[1])
+
+        self.ActualisationChap()
+        self.ActualisationDiff()
+
+    def validerChoix(self):
+        &#34;&#34;&#34;
+        Ajoute le triolet classe/chapitre/difficulté parmis les choix
+        &#34;&#34;&#34;
+
+        if self.cbClass.get() == &#34;Choisir une classe&#34; or self.cbChap.get() == &#34;Choisir le chapitre&#34; or self.cbDifficulte.get() == &#34;Choisir la difficulté&#34;:
+            messagebox.showinfo(title=&#34;Choix&#34;,
+                                message=&#34;Merci de choisir la classe, le chapitre et la difficulté.&#34;)
+            return
+
+        chapExistant = self.emplaceAjout.get(self.cbClass.get())
+
+        toAdd = [self.cbChap.get(), self.cbDifficulte.get()]
+
+        if chapExistant:
+            self.emplaceAjout[self.cbClass.get()].append(toAdd)
+        else:
+            self.emplaceAjout[self.cbClass.get()] = [toAdd]
+
+        self.champChoix.delete(0, &#34;end&#34;)
+        for key, item in self.emplaceAjout.items():
+            for e in item:
+                self.champChoix.insert(END, &#34;Classe : &#34; + key + &#34;, Chapitre : &#34; + e[0] + &#34;, Difficulté : &#34; + e[1])
+
+        self.cbChap.set(&#34;Choisir le chapitre&#34;)
+        self.cbDifficulte[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbDifficulte.set(&#34;Choisir la difficulté&#34;)
+        self.ActualisationChap()
+
+    def listeDifficulte(self):
+        &#34;&#34;&#34;
+        Liste les difficultés disponibles dans la combobox
+        &#34;&#34;&#34;
+
+        self.cbDifficulte[&#39;values&#39;] = list(range(1, 6))
+        self.cbDifficulte.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;)
+        self.cbDifficulte.current(0)
+
+    def compiler(self):
+        &#34;&#34;&#34;
+        Lance la compilation de l&#39;exercice =&gt; enchaine sur la prévisualisation de l&#39;exercice
+        &#34;&#34;&#34;
+        self.auteur = self.cbAuteur.get()
+        self.enonce, self.corrige = self.SGBD.ModifyShortcutToCommand(self.champEnonce.get(&#34;1.0&#34;, &#34;end-1c&#34;),
+                                                                      self.auteur,
+                                                                      self.champCorrection.get(&#34;1.0&#34;, &#34;end-1c&#34;))
+
+        if not self.enonce or not self.corrige:
+            messagebox.showinfo(title=&#34;Ajout d&#39;exercice&#34;,
+                                message=&#34;Merci d&#39;écrire un exercice et un corrigé.&#34;)
+            return
+
+        if not self.auteur or self.auteur == &#34;Choisir un auteur&#34;:
+            messagebox.showinfo(title=&#34;Ajout d&#39;exercice&#34;,
+                                message=&#34;Merci de choisir un auteur.&#34;)
+            return
+
+        self.saveButton[&#34;state&#34;] = &#34;normal&#34;
+
+        threadCompil = MyThread.myThread(&#34;ThreadPrevisualisationExo&#34;, enonceTemp=self.champEnonce.get(&#34;1.0&#34;, &#34;end-1c&#34;),
+                                         corrigeTemp=self.champCorrection.get(&#34;1.0&#34;, &#34;end-1c&#34;), auteur=self.auteur)
+        threadCompil.start()
+
+    def save(self):
+        &#34;&#34;&#34;
+        Sauvegarde l&#39;exercice dans la base de données
+        &#34;&#34;&#34;
+
+        if (os.path.exists(&#34;temp/exoTemp.pdf&#34;)):
+            os.remove(&#34;temp/exoTemp.pdf&#34;)
+
+        self.auteur = self.cbAuteur.get()
+        self.enonce = self.champEnonce.get(&#34;1.0&#34;, &#34;end-1c&#34;)
+        self.corrige = self.champCorrection.get(&#34;1.0&#34;, &#34;end-1c&#34;)
+
+        if not self.enonce or not self.corrige:
+            messagebox.showinfo(title=&#34;Ajout d&#39;exercice&#34;,
+                                message=&#34;Merci d&#39;écrire un exercice et un corrigé.&#34;)
+            return
+
+        if not self.auteur or self.auteur == &#34;Choisir un auteur&#34;:
+            messagebox.showinfo(title=&#34;Ajout d&#39;exercice&#34;,
+                                message=&#34;Merci de choisir un auteur.&#34;)
+            return
+
+        if self.champChoix.size() == 0:
+            messagebox.showinfo(title=&#34;Choix&#34;,
+                                message=&#34;Merci de choisir un ou plusieurs chapitres.&#34;)
+            return
+
+        self.saveButton[&#34;state&#34;] = &#34;disabled&#34;
+
+        self.enonce, self.corrige = self.SGBD.ModifyShortcutToCommand(self.champEnonce.get(&#34;1.0&#34;, &#34;end-1c&#34;),
+                                                                      self.auteur,
+                                                                      self.champCorrection.get(&#34;1.0&#34;, &#34;end-1c&#34;))
+
+        self.SGBD.InsertExo(self.enonce, self.corrige, self.auteur)
+        for key, item in self.emplaceAjout.items():
+            for e in item:
+                self.SGBD.InsertExoUtilChap(e[0], key, 0)
+
+            self.SGBD.InsertExoPossNiveau(key, item[0][1])
+
+    def finalMessage(self):
+        &#34;&#34;&#34;
+        Affiche le message de fin de l&#39;ajout d&#39;exercice
+        &#34;&#34;&#34;
+
+        if self.isFirstLoop:
+            accord = &#34;&#34;
+        else:
+            accord = &#34;s&#34;
+
+        MsgBox = messagebox.askquestion(f&#34;Exercice{accord} ajouté{accord} avec succès&#34;,
+                                        &#34;Voulez vous ajouter d&#39;autres exercices ?&#34;, icon=&#39;info&#39;)
+
+        if MsgBox == &#39;yes&#39;:
+            self.destroy()
+            self.controller.chargerFrames()
+            self.controller.show_frame(&#34;AjouterExercice&#34;)
+        else:
+            self.destroy()
+            self.controller.chargerFrames()
+
+    def suivant(self):
+        &#34;&#34;&#34;
+        Permet de passer de la première partie des choix à la deuxième partie
+        &#34;&#34;&#34;
+
+        self.Page_EditExo.pack_forget()
+
+        self.Page_ParamExo.pack()
+
+    def refaireChoixChap(self):
+        &#34;&#34;&#34;
+        Permet de refaire les choix des chapitres et des classes
+        &#34;&#34;&#34;
+
+        self.emplaceAjout = {}
+        self.champChoix.delete(0, &#34;end&#34;)
+
+        self.cbClass.set(&#34;Choisir une classe&#34;)
+        self.ActualisationChap()
+
+
+
+    @staticmethod
+    def launchWithData(parent, controler, exo, sol, numEx):
+        &#34;&#34;&#34;
+
+        Lance l&#39;ajout d&#39;un exercice
+        cette fonction est utiliser par la classe AjouterNExercices afin d&#39;éviter de dupliquer le code
+
+
+        Parameters
+        ----------
+        parent : le parent de la fenêtre
+        controler : le controler de la fenêtre
+        exo : l&#39;exercice a ajouter
+        sol : la solution de l&#39;exercice
+        numEx : le numéro de l&#39;exercice a ajouter (ne correspond pas a son identifiant dans la base de donnée
+        &#34;&#34;&#34;
+
+        for child in parent.winfo_children():
+            child.pack_forget()
+        page = AjouterExercice(parent, controler)
+
+        page.titre.configure(text=f&#34;Ajouter plusieurs Exercices\nNombre d&#39;exercice restants : {numEx + 1}&#34;)
+
+        page.BouttonAjoutExo.pack_forget()
+        page.BouttonAjoutSol.pack_forget()
+
+        page.champEnonce.insert(END, exo)
+        page.champCorrection.insert(END, sol)
+
+        page.saveButton.configure(command=page.end_exo)
+        page.grid(row=0, column=0, sticky=N + S + E + W)
+
+    def end_exo(self):
+        &#34;&#34;&#34;
+        Permet de terminer l&#39;ajout d&#39;un exercice lorsque l&#39;on ajoute plusieurs exercices
+        (nécessiter de détruire la page en plus de sauvegarder l&#39;exercice)
+        &#34;&#34;&#34;
+        self.save()
+        self.destroy()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="Kholibri.Classes.AjouterExercice.AjouterExercice"><code class="flex name class">
+<span>class <span class="ident">AjouterExercice</span></span>
+<span>(</span><span>parent, controller)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Classe de la fenêtre permettant l'ajout d'un exercice dans la base de données</p>
+<p>Constructeur de la classe</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>parent</code></strong> :&ensp;<code>parent de la fenêtre</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>controller</code></strong> :&ensp;<code>contrôleur de la fenêtre</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AjouterExercice(Frame):
+    &#34;&#34;&#34;
+    Classe de la fenêtre permettant l&#39;ajout d&#39;un exercice dans la base de données
+    &#34;&#34;&#34;
+
+    def __init__(self, parent, controller):
+        &#34;&#34;&#34;
+        Constructeur de la classe
+
+        Parameters
+        ----------
+        parent : parent de la fenêtre
+        controller : contrôleur de la fenêtre
+        &#34;&#34;&#34;
+        import SGBD
+
+        Frame.__init__(self, parent)
+        self.controller = controller
+        self.titre = Label(self, text=&#34;Ajouter un Exercice&#34;, font=controller.title_font)
+        self.titre.pack(side=&#34;top&#34;, fill=&#34;x&#34;, pady=10)
+
+        self.emplaceAjout = {}
+
+        self.enonce = []
+        self.corrige = []
+        self.SGBD = SGBD.SGBD
+        self.isFirstLoop = True
+
+        self.EXO_FINSHED = False
+
+        s = Style()
+        s.configure(&#39;My.TFrame&#39;, background=&#39;red&#39;)
+
+        # Chaque suite de ~ correspond à la séparation de cadre s&#39;affichant sur la page principale
+
+        # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        # correspond à la page d&#39;edition d&#39;exercice,
+        # c&#39;est la page affichée par défaut
+        self.Page_EditExo = Frame(self)
+        # séparée en deux cadres
+
+        # cadre supérieur de la page, contient le choix d&#39;auteur
+        self.cadreAuteur = Frame(self.Page_EditExo)
+        labelAuteur = Label(self.cadreAuteur, text=&#34;Choisissez un auteur : &#34;,
+                            font=(&#34;Helvetica&#34;, 10))
+        labelAuteur.pack(side=LEFT)
+        self.cbAuteur = Combobox(self.cadreAuteur, values=self.SGBD.giveAuteur(),
+                                 state=&#39;readonly&#39;)  # changer values par le select auteur
+        self.cbAuteur.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;)
+        if (Utils.DefaultUser != &#34;&#34;):
+            print(&#34;coucou l&#39;auteur défaut&#34;)
+            self.cbAuteur.set(Utils.DefaultUser)
+        else:
+            self.cbAuteur.set(&#39;Choisir un auteur&#39;)
+        self.cbAuteur.pack(pady=5, side=LEFT)
+        self.cadreAuteur.pack(side=TOP)
+
+        # Cadre inférieur contenant les deux blocs de texte &#39;exo&#39; et &#39;solution&#39; et les boutons de validation
+        self.cadreEdition = Frame(self.Page_EditExo)
+        label = Label(self.cadreEdition, text=&#34;Ecrire ci-dessous l&#39;énoncé de l&#39;exercice : &#34;, font=(&#34;Helvetica&#34;, 10))
+        label.pack(side=TOP, fill=&#34;x&#34;)
+
+        self.champEnonce = Text(self.cadreEdition, width=200, height=15, bg=&#34;#E5E5E5&#34;, fg=&#34;black&#34;,
+                                insertbackground=&#34;black&#34;,
+                                font=&#34;Helvetica 10&#34;, undo=True)
+        Utils.configureColor(self.champEnonce)
+        self.champEnonce.bind(&#34;&lt;Key&gt;&#34;, lambda event: Utils.updateCode(self.champEnonce))
+
+        self.BouttonAjoutExo = Button(self.cadreEdition, text=&#34;Ajouter énoncé&#34;,
+                                      command=lambda: Utils.open_file(self.champEnonce))
+        self.BouttonAjoutExo.pack(side=TOP)
+
+        self.champEnonce.pack(pady=5)
+
+        label = Label(self.cadreEdition, text=&#34;Ecrire la correction de l&#39;exercice : &#34;, font=(&#34;Helvetica&#34;, 10))
+        label.pack(side=TOP, fill=&#34;x&#34;)
+
+        self.champCorrection = Text(self.cadreEdition, width=200, height=15, bg=&#34;#E5E5E5&#34;, fg=&#34;black&#34;,
+                                    insertbackground=&#34;black&#34;,
+                                    font=&#34;Helvetica 10&#34;, undo=True)
+        Utils.configureColor(self.champCorrection)
+
+        self.champCorrection.bind(&#34;&lt;Key&gt;&#34;, lambda event: Utils.updateCode(self.champCorrection))
+
+        self.BouttonAjoutSol = Button(self.cadreEdition, text=&#34;Ajouter correction&#34;,
+                                      command=lambda: Utils.open_file(self.champCorrection))
+        self.BouttonAjoutSol.pack(side=TOP)
+
+        self.champCorrection.pack(pady=5)
+
+        self.cadreEdition.pack()
+
+        # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        # Page appelée par le click du bouton suivant sur la page d&#39;edition d&#39;exercice
+
+        self.Page_ParamExo = Frame(self.Page_EditExo)
+        self.cadre_ComboBox = Frame(self.Page_ParamExo)
+
+        label = Label(self.cadre_ComboBox, text=&#34;Paramètrage : &#34;,
+                      font=(&#34;Helvetica&#34;, 10))
+        label.pack(side=LEFT, fill=&#34;x&#34;, pady=5)
+
+        self.cbClass = Combobox(self.cadre_ComboBox, values=self.SGBD.giveClasse(), state=&#39;readonly&#39;)
+        self.cbClass.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.ActualisationChap())
+        self.cbClass.set(&#34;Choisir une classe&#34;)
+        self.cbClass.pack(pady=5, side=LEFT)
+
+        self.cbChap = Combobox(self.cadre_ComboBox, state=&#39;readonly&#39;)
+        self.cbChap.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.ActualisationDiff())
+        self.cbChap.set(&#34;Choisir le chapitre&#34;)
+        self.cbChap[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbChap.pack(pady=5, side=LEFT)
+
+        self.cbDifficulte = Combobox(self.cadre_ComboBox, state=&#39;readonly&#39;)
+        self.cbDifficulte.set(&#34;Choisir la difficulté&#34;)
+        self.cbDifficulte[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbDifficulte.pack(pady=5, side=LEFT)
+
+        self.valider = Button(self.cadre_ComboBox, text=&#34;Valider le choix&#34;, command=self.validerChoix)
+        self.valider.pack(pady=5, side=LEFT)
+
+        self.refaireChoix = Button(self.cadre_ComboBox, text=&#34;Réinitialiser&#34;,
+                                   command=lambda: self.refaireChoixChap())
+        self.refaireChoix.pack(pady=5, side=LEFT)
+
+        self.supprimerButton = Button(self.cadre_ComboBox, text=&#34;Supprimer&#34;, command=self.supprimer)
+        self.supprimerButton.pack(pady=5, side=LEFT)
+
+        self.cadre_ComboBox.pack(pady=5)
+
+        self.cadre_ListeChoix = Frame(self.Page_ParamExo)
+        label = Label(self.cadre_ListeChoix, text=&#34;Liste des choix &#34;, font=(&#34;Helvetica&#34;, 10))
+        label.pack(side=TOP, fill=&#34;x&#34;, pady=5)
+        self.champChoix = Listbox(self.cadre_ListeChoix, selectmode=&#34;multiple&#34;, width=200, height=6)
+        self.champChoix.pack(pady=8)
+
+        self.cadre_ListeChoix.pack(pady=5)
+
+        self.saveButton = Button(self.cadre_ListeChoix, text=&#34;Sauvegarder l&#39;exercice&#34;, command=self.save)
+        self.saveButton.pack(pady=5, padx=15, side=RIGHT)
+        self.saveButton[&#34;state&#34;] = &#34;disabled&#34;
+
+        self.compiler = Button(self.cadre_ListeChoix, text=&#34;Compiler l&#39;exercice&#34;, command=self.compiler)
+        self.compiler.pack(pady=5, side=RIGHT)
+
+        self.Page_ParamExo.pack()
+        self.Page_EditExo.pack()
+
+    def ActualisationChap(self):
+        &#34;&#34;&#34;
+        Actualise la liste des chapitres en fonction de la classe choisie
+        &#34;&#34;&#34;
+
+        if not self.cbClass.get() or self.cbClass.get() == &#34;Choisir une classe&#34;:
+            self.cbChap[&#34;state&#34;] = &#34;disabled&#34;
+            self.cbChap.set(&#34;Choisir le chapitre&#34;)
+
+            return
+
+        toAdd = []
+        valChapChoisi = []
+
+        for k, i in self.emplaceAjout.items():
+            for e in i:
+                valChapChoisi.append(e[0])
+
+        for i in self.SGBD.giveChap(self.cbClass.get()):
+            if i not in valChapChoisi:
+                toAdd.append(i)
+
+        self.cbChap[&#39;values&#39;] = toAdd
+        if toAdd == []:
+            self.cbChap[&#39;state&#39;] = &#34;disabled&#34;
+        else:
+            self.cbChap[&#39;state&#39;] = &#34;readonly&#34;
+
+        self.cbChap.set(&#34;Choisir le chapitre&#34;)
+
+    def ActualisationDiff(self):
+        &#34;&#34;&#34;
+        Actualise la liste des difficultés en fonction du/des chapitre/s choisi/s
+        &#34;&#34;&#34;
+
+        if not self.cbChap.get() or self.cbChap.get() == &#34;Choisir le chapitre&#34;:
+            self.cbDifficulte[&#34;state&#34;] = &#34;disabled&#34;
+            self.cbDifficulte.set(&#34;Choisir la difficulté&#34;)
+            return
+
+        diff = 10
+        for k, i in self.emplaceAjout.items():
+            for e in i:
+                if k == self.cbClass.get():
+                    diff = [e[1]]
+
+        if diff != 10:
+            self.cbDifficulte[&#34;values&#34;] = diff
+            self.cbDifficulte[&#34;state&#34;] = &#34;readonly&#34;
+            self.cbDifficulte.current(0)
+        else:
+            self.cbDifficulte[&#34;values&#34;] = list(range(1, 6))
+            self.cbDifficulte[&#34;state&#34;] = &#34;readonly&#34;
+
+    def supprimer(self):
+        &#34;&#34;&#34;
+        Supprime le chapitre sélectionné des choix de chapitre
+        &#34;&#34;&#34;
+        StringRecup = []
+
+        for i in self.champChoix.curselection():
+            StringRecup.append(self.champChoix.get(i))
+
+        for i in StringRecup:
+
+            StringSplitted = i.split(&#34;, &#34;)
+
+            StringClasse = StringSplitted[0][9:]
+            StringChap = StringSplitted[1][11:]
+            StringDifficulte = StringSplitted[2][13:]
+
+            ArrayChap = self.emplaceAjout.get(StringClasse)
+            if ArrayChap:
+                if [StringChap, StringDifficulte] in ArrayChap:
+                    self.emplaceAjout[StringClasse].remove([StringChap, StringDifficulte])
+
+        self.champChoix.delete(0, &#34;end&#34;)
+
+        for key, item in self.emplaceAjout.items():
+            for e in item:
+                self.champChoix.insert(END, &#34;Classe : &#34; + key + &#34;, Chapitre : &#34; + e[0] + &#34;, Difficulté : &#34; + e[1])
+
+        self.ActualisationChap()
+        self.ActualisationDiff()
+
+    def validerChoix(self):
+        &#34;&#34;&#34;
+        Ajoute le triolet classe/chapitre/difficulté parmis les choix
+        &#34;&#34;&#34;
+
+        if self.cbClass.get() == &#34;Choisir une classe&#34; or self.cbChap.get() == &#34;Choisir le chapitre&#34; or self.cbDifficulte.get() == &#34;Choisir la difficulté&#34;:
+            messagebox.showinfo(title=&#34;Choix&#34;,
+                                message=&#34;Merci de choisir la classe, le chapitre et la difficulté.&#34;)
+            return
+
+        chapExistant = self.emplaceAjout.get(self.cbClass.get())
+
+        toAdd = [self.cbChap.get(), self.cbDifficulte.get()]
+
+        if chapExistant:
+            self.emplaceAjout[self.cbClass.get()].append(toAdd)
+        else:
+            self.emplaceAjout[self.cbClass.get()] = [toAdd]
+
+        self.champChoix.delete(0, &#34;end&#34;)
+        for key, item in self.emplaceAjout.items():
+            for e in item:
+                self.champChoix.insert(END, &#34;Classe : &#34; + key + &#34;, Chapitre : &#34; + e[0] + &#34;, Difficulté : &#34; + e[1])
+
+        self.cbChap.set(&#34;Choisir le chapitre&#34;)
+        self.cbDifficulte[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbDifficulte.set(&#34;Choisir la difficulté&#34;)
+        self.ActualisationChap()
+
+    def listeDifficulte(self):
+        &#34;&#34;&#34;
+        Liste les difficultés disponibles dans la combobox
+        &#34;&#34;&#34;
+
+        self.cbDifficulte[&#39;values&#39;] = list(range(1, 6))
+        self.cbDifficulte.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;)
+        self.cbDifficulte.current(0)
+
+    def compiler(self):
+        &#34;&#34;&#34;
+        Lance la compilation de l&#39;exercice =&gt; enchaine sur la prévisualisation de l&#39;exercice
+        &#34;&#34;&#34;
+        self.auteur = self.cbAuteur.get()
+        self.enonce, self.corrige = self.SGBD.ModifyShortcutToCommand(self.champEnonce.get(&#34;1.0&#34;, &#34;end-1c&#34;),
+                                                                      self.auteur,
+                                                                      self.champCorrection.get(&#34;1.0&#34;, &#34;end-1c&#34;))
+
+        if not self.enonce or not self.corrige:
+            messagebox.showinfo(title=&#34;Ajout d&#39;exercice&#34;,
+                                message=&#34;Merci d&#39;écrire un exercice et un corrigé.&#34;)
+            return
+
+        if not self.auteur or self.auteur == &#34;Choisir un auteur&#34;:
+            messagebox.showinfo(title=&#34;Ajout d&#39;exercice&#34;,
+                                message=&#34;Merci de choisir un auteur.&#34;)
+            return
+
+        self.saveButton[&#34;state&#34;] = &#34;normal&#34;
+
+        threadCompil = MyThread.myThread(&#34;ThreadPrevisualisationExo&#34;, enonceTemp=self.champEnonce.get(&#34;1.0&#34;, &#34;end-1c&#34;),
+                                         corrigeTemp=self.champCorrection.get(&#34;1.0&#34;, &#34;end-1c&#34;), auteur=self.auteur)
+        threadCompil.start()
+
+    def save(self):
+        &#34;&#34;&#34;
+        Sauvegarde l&#39;exercice dans la base de données
+        &#34;&#34;&#34;
+
+        if (os.path.exists(&#34;temp/exoTemp.pdf&#34;)):
+            os.remove(&#34;temp/exoTemp.pdf&#34;)
+
+        self.auteur = self.cbAuteur.get()
+        self.enonce = self.champEnonce.get(&#34;1.0&#34;, &#34;end-1c&#34;)
+        self.corrige = self.champCorrection.get(&#34;1.0&#34;, &#34;end-1c&#34;)
+
+        if not self.enonce or not self.corrige:
+            messagebox.showinfo(title=&#34;Ajout d&#39;exercice&#34;,
+                                message=&#34;Merci d&#39;écrire un exercice et un corrigé.&#34;)
+            return
+
+        if not self.auteur or self.auteur == &#34;Choisir un auteur&#34;:
+            messagebox.showinfo(title=&#34;Ajout d&#39;exercice&#34;,
+                                message=&#34;Merci de choisir un auteur.&#34;)
+            return
+
+        if self.champChoix.size() == 0:
+            messagebox.showinfo(title=&#34;Choix&#34;,
+                                message=&#34;Merci de choisir un ou plusieurs chapitres.&#34;)
+            return
+
+        self.saveButton[&#34;state&#34;] = &#34;disabled&#34;
+
+        self.enonce, self.corrige = self.SGBD.ModifyShortcutToCommand(self.champEnonce.get(&#34;1.0&#34;, &#34;end-1c&#34;),
+                                                                      self.auteur,
+                                                                      self.champCorrection.get(&#34;1.0&#34;, &#34;end-1c&#34;))
+
+        self.SGBD.InsertExo(self.enonce, self.corrige, self.auteur)
+        for key, item in self.emplaceAjout.items():
+            for e in item:
+                self.SGBD.InsertExoUtilChap(e[0], key, 0)
+
+            self.SGBD.InsertExoPossNiveau(key, item[0][1])
+
+    def finalMessage(self):
+        &#34;&#34;&#34;
+        Affiche le message de fin de l&#39;ajout d&#39;exercice
+        &#34;&#34;&#34;
+
+        if self.isFirstLoop:
+            accord = &#34;&#34;
+        else:
+            accord = &#34;s&#34;
+
+        MsgBox = messagebox.askquestion(f&#34;Exercice{accord} ajouté{accord} avec succès&#34;,
+                                        &#34;Voulez vous ajouter d&#39;autres exercices ?&#34;, icon=&#39;info&#39;)
+
+        if MsgBox == &#39;yes&#39;:
+            self.destroy()
+            self.controller.chargerFrames()
+            self.controller.show_frame(&#34;AjouterExercice&#34;)
+        else:
+            self.destroy()
+            self.controller.chargerFrames()
+
+    def suivant(self):
+        &#34;&#34;&#34;
+        Permet de passer de la première partie des choix à la deuxième partie
+        &#34;&#34;&#34;
+
+        self.Page_EditExo.pack_forget()
+
+        self.Page_ParamExo.pack()
+
+    def refaireChoixChap(self):
+        &#34;&#34;&#34;
+        Permet de refaire les choix des chapitres et des classes
+        &#34;&#34;&#34;
+
+        self.emplaceAjout = {}
+        self.champChoix.delete(0, &#34;end&#34;)
+
+        self.cbClass.set(&#34;Choisir une classe&#34;)
+        self.ActualisationChap()
+
+
+
+    @staticmethod
+    def launchWithData(parent, controler, exo, sol, numEx):
+        &#34;&#34;&#34;
+
+        Lance l&#39;ajout d&#39;un exercice
+        cette fonction est utiliser par la classe AjouterNExercices afin d&#39;éviter de dupliquer le code
+
+
+        Parameters
+        ----------
+        parent : le parent de la fenêtre
+        controler : le controler de la fenêtre
+        exo : l&#39;exercice a ajouter
+        sol : la solution de l&#39;exercice
+        numEx : le numéro de l&#39;exercice a ajouter (ne correspond pas a son identifiant dans la base de donnée
+        &#34;&#34;&#34;
+
+        for child in parent.winfo_children():
+            child.pack_forget()
+        page = AjouterExercice(parent, controler)
+
+        page.titre.configure(text=f&#34;Ajouter plusieurs Exercices\nNombre d&#39;exercice restants : {numEx + 1}&#34;)
+
+        page.BouttonAjoutExo.pack_forget()
+        page.BouttonAjoutSol.pack_forget()
+
+        page.champEnonce.insert(END, exo)
+        page.champCorrection.insert(END, sol)
+
+        page.saveButton.configure(command=page.end_exo)
+        page.grid(row=0, column=0, sticky=N + S + E + W)
+
+    def end_exo(self):
+        &#34;&#34;&#34;
+        Permet de terminer l&#39;ajout d&#39;un exercice lorsque l&#39;on ajoute plusieurs exercices
+        (nécessiter de détruire la page en plus de sauvegarder l&#39;exercice)
+        &#34;&#34;&#34;
+        self.save()
+        self.destroy()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>tkinter.ttk.Frame</li>
+<li>tkinter.ttk.Widget</li>
+<li>tkinter.Widget</li>
+<li>tkinter.BaseWidget</li>
+<li>tkinter.Misc</li>
+<li>tkinter.Pack</li>
+<li>tkinter.Place</li>
+<li>tkinter.Grid</li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="Kholibri.Classes.AjouterExercice.AjouterExercice.launchWithData"><code class="name flex">
+<span>def <span class="ident">launchWithData</span></span>(<span>parent, controler, exo, sol, numEx)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Lance l'ajout d'un exercice
+cette fonction est utiliser par la classe AjouterNExercices afin d'éviter de dupliquer le code</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>parent</code></strong> :&ensp;<code>le parent de la fenêtre</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>controler</code></strong> :&ensp;<code>le controler de la fenêtre</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>exo</code></strong> :&ensp;<code>l'exercice a ajouter</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>sol</code></strong> :&ensp;<code>la solution de l'exercice</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>numEx</code></strong> :&ensp;<code>le numéro de l'exercice a ajouter (ne correspond pas a son identifiant dans la base de donnée</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def launchWithData(parent, controler, exo, sol, numEx):
+    &#34;&#34;&#34;
+
+    Lance l&#39;ajout d&#39;un exercice
+    cette fonction est utiliser par la classe AjouterNExercices afin d&#39;éviter de dupliquer le code
+
+
+    Parameters
+    ----------
+    parent : le parent de la fenêtre
+    controler : le controler de la fenêtre
+    exo : l&#39;exercice a ajouter
+    sol : la solution de l&#39;exercice
+    numEx : le numéro de l&#39;exercice a ajouter (ne correspond pas a son identifiant dans la base de donnée
+    &#34;&#34;&#34;
+
+    for child in parent.winfo_children():
+        child.pack_forget()
+    page = AjouterExercice(parent, controler)
+
+    page.titre.configure(text=f&#34;Ajouter plusieurs Exercices\nNombre d&#39;exercice restants : {numEx + 1}&#34;)
+
+    page.BouttonAjoutExo.pack_forget()
+    page.BouttonAjoutSol.pack_forget()
+
+    page.champEnonce.insert(END, exo)
+    page.champCorrection.insert(END, sol)
+
+    page.saveButton.configure(command=page.end_exo)
+    page.grid(row=0, column=0, sticky=N + S + E + W)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="Kholibri.Classes.AjouterExercice.AjouterExercice.ActualisationChap"><code class="name flex">
+<span>def <span class="ident">ActualisationChap</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Actualise la liste des chapitres en fonction de la classe choisie</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ActualisationChap(self):
+    &#34;&#34;&#34;
+    Actualise la liste des chapitres en fonction de la classe choisie
+    &#34;&#34;&#34;
+
+    if not self.cbClass.get() or self.cbClass.get() == &#34;Choisir une classe&#34;:
+        self.cbChap[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbChap.set(&#34;Choisir le chapitre&#34;)
+
+        return
+
+    toAdd = []
+    valChapChoisi = []
+
+    for k, i in self.emplaceAjout.items():
+        for e in i:
+            valChapChoisi.append(e[0])
+
+    for i in self.SGBD.giveChap(self.cbClass.get()):
+        if i not in valChapChoisi:
+            toAdd.append(i)
+
+    self.cbChap[&#39;values&#39;] = toAdd
+    if toAdd == []:
+        self.cbChap[&#39;state&#39;] = &#34;disabled&#34;
+    else:
+        self.cbChap[&#39;state&#39;] = &#34;readonly&#34;
+
+    self.cbChap.set(&#34;Choisir le chapitre&#34;)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.AjouterExercice.AjouterExercice.ActualisationDiff"><code class="name flex">
+<span>def <span class="ident">ActualisationDiff</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Actualise la liste des difficultés en fonction du/des chapitre/s choisi/s</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ActualisationDiff(self):
+    &#34;&#34;&#34;
+    Actualise la liste des difficultés en fonction du/des chapitre/s choisi/s
+    &#34;&#34;&#34;
+
+    if not self.cbChap.get() or self.cbChap.get() == &#34;Choisir le chapitre&#34;:
+        self.cbDifficulte[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbDifficulte.set(&#34;Choisir la difficulté&#34;)
+        return
+
+    diff = 10
+    for k, i in self.emplaceAjout.items():
+        for e in i:
+            if k == self.cbClass.get():
+                diff = [e[1]]
+
+    if diff != 10:
+        self.cbDifficulte[&#34;values&#34;] = diff
+        self.cbDifficulte[&#34;state&#34;] = &#34;readonly&#34;
+        self.cbDifficulte.current(0)
+    else:
+        self.cbDifficulte[&#34;values&#34;] = list(range(1, 6))
+        self.cbDifficulte[&#34;state&#34;] = &#34;readonly&#34;</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.AjouterExercice.AjouterExercice.compiler"><code class="name flex">
+<span>def <span class="ident">compiler</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Lance la compilation de l'exercice =&gt; enchaine sur la prévisualisation de l'exercice</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compiler(self):
+    &#34;&#34;&#34;
+    Lance la compilation de l&#39;exercice =&gt; enchaine sur la prévisualisation de l&#39;exercice
+    &#34;&#34;&#34;
+    self.auteur = self.cbAuteur.get()
+    self.enonce, self.corrige = self.SGBD.ModifyShortcutToCommand(self.champEnonce.get(&#34;1.0&#34;, &#34;end-1c&#34;),
+                                                                  self.auteur,
+                                                                  self.champCorrection.get(&#34;1.0&#34;, &#34;end-1c&#34;))
+
+    if not self.enonce or not self.corrige:
+        messagebox.showinfo(title=&#34;Ajout d&#39;exercice&#34;,
+                            message=&#34;Merci d&#39;écrire un exercice et un corrigé.&#34;)
+        return
+
+    if not self.auteur or self.auteur == &#34;Choisir un auteur&#34;:
+        messagebox.showinfo(title=&#34;Ajout d&#39;exercice&#34;,
+                            message=&#34;Merci de choisir un auteur.&#34;)
+        return
+
+    self.saveButton[&#34;state&#34;] = &#34;normal&#34;
+
+    threadCompil = MyThread.myThread(&#34;ThreadPrevisualisationExo&#34;, enonceTemp=self.champEnonce.get(&#34;1.0&#34;, &#34;end-1c&#34;),
+                                     corrigeTemp=self.champCorrection.get(&#34;1.0&#34;, &#34;end-1c&#34;), auteur=self.auteur)
+    threadCompil.start()</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.AjouterExercice.AjouterExercice.end_exo"><code class="name flex">
+<span>def <span class="ident">end_exo</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Permet de terminer l'ajout d'un exercice lorsque l'on ajoute plusieurs exercices
+(nécessiter de détruire la page en plus de sauvegarder l'exercice)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def end_exo(self):
+    &#34;&#34;&#34;
+    Permet de terminer l&#39;ajout d&#39;un exercice lorsque l&#39;on ajoute plusieurs exercices
+    (nécessiter de détruire la page en plus de sauvegarder l&#39;exercice)
+    &#34;&#34;&#34;
+    self.save()
+    self.destroy()</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.AjouterExercice.AjouterExercice.finalMessage"><code class="name flex">
+<span>def <span class="ident">finalMessage</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Affiche le message de fin de l'ajout d'exercice</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def finalMessage(self):
+    &#34;&#34;&#34;
+    Affiche le message de fin de l&#39;ajout d&#39;exercice
+    &#34;&#34;&#34;
+
+    if self.isFirstLoop:
+        accord = &#34;&#34;
+    else:
+        accord = &#34;s&#34;
+
+    MsgBox = messagebox.askquestion(f&#34;Exercice{accord} ajouté{accord} avec succès&#34;,
+                                    &#34;Voulez vous ajouter d&#39;autres exercices ?&#34;, icon=&#39;info&#39;)
+
+    if MsgBox == &#39;yes&#39;:
+        self.destroy()
+        self.controller.chargerFrames()
+        self.controller.show_frame(&#34;AjouterExercice&#34;)
+    else:
+        self.destroy()
+        self.controller.chargerFrames()</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.AjouterExercice.AjouterExercice.listeDifficulte"><code class="name flex">
+<span>def <span class="ident">listeDifficulte</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Liste les difficultés disponibles dans la combobox</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def listeDifficulte(self):
+    &#34;&#34;&#34;
+    Liste les difficultés disponibles dans la combobox
+    &#34;&#34;&#34;
+
+    self.cbDifficulte[&#39;values&#39;] = list(range(1, 6))
+    self.cbDifficulte.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;)
+    self.cbDifficulte.current(0)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.AjouterExercice.AjouterExercice.refaireChoixChap"><code class="name flex">
+<span>def <span class="ident">refaireChoixChap</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Permet de refaire les choix des chapitres et des classes</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def refaireChoixChap(self):
+    &#34;&#34;&#34;
+    Permet de refaire les choix des chapitres et des classes
+    &#34;&#34;&#34;
+
+    self.emplaceAjout = {}
+    self.champChoix.delete(0, &#34;end&#34;)
+
+    self.cbClass.set(&#34;Choisir une classe&#34;)
+    self.ActualisationChap()</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.AjouterExercice.AjouterExercice.save"><code class="name flex">
+<span>def <span class="ident">save</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sauvegarde l'exercice dans la base de données</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save(self):
+    &#34;&#34;&#34;
+    Sauvegarde l&#39;exercice dans la base de données
+    &#34;&#34;&#34;
+
+    if (os.path.exists(&#34;temp/exoTemp.pdf&#34;)):
+        os.remove(&#34;temp/exoTemp.pdf&#34;)
+
+    self.auteur = self.cbAuteur.get()
+    self.enonce = self.champEnonce.get(&#34;1.0&#34;, &#34;end-1c&#34;)
+    self.corrige = self.champCorrection.get(&#34;1.0&#34;, &#34;end-1c&#34;)
+
+    if not self.enonce or not self.corrige:
+        messagebox.showinfo(title=&#34;Ajout d&#39;exercice&#34;,
+                            message=&#34;Merci d&#39;écrire un exercice et un corrigé.&#34;)
+        return
+
+    if not self.auteur or self.auteur == &#34;Choisir un auteur&#34;:
+        messagebox.showinfo(title=&#34;Ajout d&#39;exercice&#34;,
+                            message=&#34;Merci de choisir un auteur.&#34;)
+        return
+
+    if self.champChoix.size() == 0:
+        messagebox.showinfo(title=&#34;Choix&#34;,
+                            message=&#34;Merci de choisir un ou plusieurs chapitres.&#34;)
+        return
+
+    self.saveButton[&#34;state&#34;] = &#34;disabled&#34;
+
+    self.enonce, self.corrige = self.SGBD.ModifyShortcutToCommand(self.champEnonce.get(&#34;1.0&#34;, &#34;end-1c&#34;),
+                                                                  self.auteur,
+                                                                  self.champCorrection.get(&#34;1.0&#34;, &#34;end-1c&#34;))
+
+    self.SGBD.InsertExo(self.enonce, self.corrige, self.auteur)
+    for key, item in self.emplaceAjout.items():
+        for e in item:
+            self.SGBD.InsertExoUtilChap(e[0], key, 0)
+
+        self.SGBD.InsertExoPossNiveau(key, item[0][1])</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.AjouterExercice.AjouterExercice.suivant"><code class="name flex">
+<span>def <span class="ident">suivant</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Permet de passer de la première partie des choix à la deuxième partie</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def suivant(self):
+    &#34;&#34;&#34;
+    Permet de passer de la première partie des choix à la deuxième partie
+    &#34;&#34;&#34;
+
+    self.Page_EditExo.pack_forget()
+
+    self.Page_ParamExo.pack()</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.AjouterExercice.AjouterExercice.supprimer"><code class="name flex">
+<span>def <span class="ident">supprimer</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Supprime le chapitre sélectionné des choix de chapitre</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def supprimer(self):
+    &#34;&#34;&#34;
+    Supprime le chapitre sélectionné des choix de chapitre
+    &#34;&#34;&#34;
+    StringRecup = []
+
+    for i in self.champChoix.curselection():
+        StringRecup.append(self.champChoix.get(i))
+
+    for i in StringRecup:
+
+        StringSplitted = i.split(&#34;, &#34;)
+
+        StringClasse = StringSplitted[0][9:]
+        StringChap = StringSplitted[1][11:]
+        StringDifficulte = StringSplitted[2][13:]
+
+        ArrayChap = self.emplaceAjout.get(StringClasse)
+        if ArrayChap:
+            if [StringChap, StringDifficulte] in ArrayChap:
+                self.emplaceAjout[StringClasse].remove([StringChap, StringDifficulte])
+
+    self.champChoix.delete(0, &#34;end&#34;)
+
+    for key, item in self.emplaceAjout.items():
+        for e in item:
+            self.champChoix.insert(END, &#34;Classe : &#34; + key + &#34;, Chapitre : &#34; + e[0] + &#34;, Difficulté : &#34; + e[1])
+
+    self.ActualisationChap()
+    self.ActualisationDiff()</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.AjouterExercice.AjouterExercice.validerChoix"><code class="name flex">
+<span>def <span class="ident">validerChoix</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Ajoute le triolet classe/chapitre/difficulté parmis les choix</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def validerChoix(self):
+    &#34;&#34;&#34;
+    Ajoute le triolet classe/chapitre/difficulté parmis les choix
+    &#34;&#34;&#34;
+
+    if self.cbClass.get() == &#34;Choisir une classe&#34; or self.cbChap.get() == &#34;Choisir le chapitre&#34; or self.cbDifficulte.get() == &#34;Choisir la difficulté&#34;:
+        messagebox.showinfo(title=&#34;Choix&#34;,
+                            message=&#34;Merci de choisir la classe, le chapitre et la difficulté.&#34;)
+        return
+
+    chapExistant = self.emplaceAjout.get(self.cbClass.get())
+
+    toAdd = [self.cbChap.get(), self.cbDifficulte.get()]
+
+    if chapExistant:
+        self.emplaceAjout[self.cbClass.get()].append(toAdd)
+    else:
+        self.emplaceAjout[self.cbClass.get()] = [toAdd]
+
+    self.champChoix.delete(0, &#34;end&#34;)
+    for key, item in self.emplaceAjout.items():
+        for e in item:
+            self.champChoix.insert(END, &#34;Classe : &#34; + key + &#34;, Chapitre : &#34; + e[0] + &#34;, Difficulté : &#34; + e[1])
+
+    self.cbChap.set(&#34;Choisir le chapitre&#34;)
+    self.cbDifficulte[&#34;state&#34;] = &#34;disabled&#34;
+    self.cbDifficulte.set(&#34;Choisir la difficulté&#34;)
+    self.ActualisationChap()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Kholibri.Classes" href="index.html">Kholibri.Classes</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="Kholibri.Classes.AjouterExercice.AjouterExercice" href="#Kholibri.Classes.AjouterExercice.AjouterExercice">AjouterExercice</a></code></h4>
+<ul class="two-column">
+<li><code><a title="Kholibri.Classes.AjouterExercice.AjouterExercice.ActualisationChap" href="#Kholibri.Classes.AjouterExercice.AjouterExercice.ActualisationChap">ActualisationChap</a></code></li>
+<li><code><a title="Kholibri.Classes.AjouterExercice.AjouterExercice.ActualisationDiff" href="#Kholibri.Classes.AjouterExercice.AjouterExercice.ActualisationDiff">ActualisationDiff</a></code></li>
+<li><code><a title="Kholibri.Classes.AjouterExercice.AjouterExercice.compiler" href="#Kholibri.Classes.AjouterExercice.AjouterExercice.compiler">compiler</a></code></li>
+<li><code><a title="Kholibri.Classes.AjouterExercice.AjouterExercice.end_exo" href="#Kholibri.Classes.AjouterExercice.AjouterExercice.end_exo">end_exo</a></code></li>
+<li><code><a title="Kholibri.Classes.AjouterExercice.AjouterExercice.finalMessage" href="#Kholibri.Classes.AjouterExercice.AjouterExercice.finalMessage">finalMessage</a></code></li>
+<li><code><a title="Kholibri.Classes.AjouterExercice.AjouterExercice.launchWithData" href="#Kholibri.Classes.AjouterExercice.AjouterExercice.launchWithData">launchWithData</a></code></li>
+<li><code><a title="Kholibri.Classes.AjouterExercice.AjouterExercice.listeDifficulte" href="#Kholibri.Classes.AjouterExercice.AjouterExercice.listeDifficulte">listeDifficulte</a></code></li>
+<li><code><a title="Kholibri.Classes.AjouterExercice.AjouterExercice.refaireChoixChap" href="#Kholibri.Classes.AjouterExercice.AjouterExercice.refaireChoixChap">refaireChoixChap</a></code></li>
+<li><code><a title="Kholibri.Classes.AjouterExercice.AjouterExercice.save" href="#Kholibri.Classes.AjouterExercice.AjouterExercice.save">save</a></code></li>
+<li><code><a title="Kholibri.Classes.AjouterExercice.AjouterExercice.suivant" href="#Kholibri.Classes.AjouterExercice.AjouterExercice.suivant">suivant</a></code></li>
+<li><code><a title="Kholibri.Classes.AjouterExercice.AjouterExercice.supprimer" href="#Kholibri.Classes.AjouterExercice.AjouterExercice.supprimer">supprimer</a></code></li>
+<li><code><a title="Kholibri.Classes.AjouterExercice.AjouterExercice.validerChoix" href="#Kholibri.Classes.AjouterExercice.AjouterExercice.validerChoix">validerChoix</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

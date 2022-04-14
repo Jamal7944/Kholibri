@@ -1,0 +1,2637 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>Kholibri.SGBD.SGBD API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Kholibri.SGBD.SGBD</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python"># -*- coding: utf-8 -*-
+import sqlite3
+import datetime
+
+from SGBD.exceptions.SGBDException import SGBDException
+
+&#34;&#34;&#34;
+ Ce document constitue l&#39;ensemble des fonctions permettant de manipuler la base de données.
+ Certaines fonctions sont identiques et agissent juste sur une table différente 
+ (exemple : SelectExo et SelectClassAppChap ou InsertExo et InsertClassAppChap ou ClearExo et ClearClassAppChap )
+ Le cas échéant, seule une première version sera détaillée, en prenant compte, bien sûr, les différences pour certaines fonctions
+&#34;&#34;&#34;
+
+
+def SelectExo():  # Récupère toutes les données de la table Exercice et les affiche dans le terminal
+
+    try:  # nécessité de mettre la connexion à la base dans une clause try et de renvoyer l&#39;erreur
+        conn = sqlite3.connect(
+            &#39;SGBD/BDProjetTut.db&#39;)  # la connexion à la base BDProjetTut.db créée un objet de type SQLite connexion
+        sql = &#39;&#39;&#39;SELECT * FROM Exercice ;&#39;&#39;&#39;  # la requête est stockée dans une variable
+        cur = conn.cursor()  # cursor() permet à l&#39;objet SQLite d&#39;effectuer des requêtes vers la base
+        cur.execute(sql)  # la méthode execute() permet de lancer la requête
+        res = cur.fetchall()  # le résultat est stocké sous forme de tableau associatif
+        if (len(res) == 0):
+            print(&#34;La table Exercice est vide&#34;)
+
+        for row in res:  # chaque ligne du tableau res est un tableau, chaque case du tableau correspond à une colonne de la table (cf modèle relationnel des tables )
+            print(&#34;Idexo : &#34;, row[0])
+            print(&#34;Enonce : &#34;, row[1])
+            print(&#34;Corrige : &#34;, row[2])
+            print(&#34;Dateajout : &#34;, row[3])
+            print(&#34;Auteur : &#34;, row[4])
+            print(&#34;\n&#34;)
+        cur.close()  # fermeture du curseur
+        conn.close()  # fermeture de la connexion, elle ne dure que le temps d&#39;une méthode
+
+    except sqlite3.Error as error:  # permet de catcher l&#39;erreur et de l&#39;afficher dans le terminal
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def InsertExo(Enonce, Corrige,
+              Auteur):  # permet d&#39;ajouter dans la table Exercice des données par le biais de requêtes préparées
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        # nécessité de définir chaque colonne dans lesquelles nous allons ajouter
+        # ( si la table nous le permet --&gt; contraintes de la table) des données
+        # Pour associer une données à une column nous insérons des &#39;?&#39; à l&#39;emplacement de la donnée
+        # et nous mettons en relation ces &#39;?&#39; avec la donnée passée en paramètre grâce à une variable
+        sql = &#39;&#39;&#39;Insert into Exercice(enonce,corrige,dateajout,IdAuteur) values (?,?,?,?);&#39;&#39;&#39;
+        cur = conn.cursor()
+        time = datetime.date.today()
+        data = [Enonce, Corrige, str(time),
+                Auteur]  # récupération des données pour les insérer dans l&#39;ordre précis indiqué
+        # ici, Enonce sera le premier &#39;?&#39; et donc ira dans la colonne enonce de la table
+        # la colonne IdExo est gérée en autoincrement donc nous n&#39;avons pas à gérer l&#39;insertion dans cette colonne.
+        cur.execute(sql, data)  # execution de la requête avec le tableau de données à insérer
+        conn.commit()  # commit permet de valider l&#39;insertion
+        print(&#34;Nouvel enregistrement dans la table Exercice ajouté !&#34;)
+        cur.close()
+        conn.close()
+
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def ClearExo():  # permet de nettoyer une table sans supprimer l&#39;ordre des autoIncrements, explications:
+    # si nous avons 3 enregistrement alors le dernier ID est le 3
+    # clear la table va supprimer les données mais le prochain ID sera le 4 et non le 1
+    # aucune action n&#39;est réversible après le commit()
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Delete from Exercice ;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        print(&#34;La table Exercice est désormais vide !&#34;)
+        cur.close()
+        conn.close()
+
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def SelectClassAppChap():  # meme principe que SelectExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;SELECT * FROM ClassAppChap;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        res = cur.fetchall()
+        if (len(res) == 0):
+            print(&#34;La table ClassAppChap est vide&#34;)
+
+        for row in res:
+            print(&#34;IdChap : &#34;, row[0])
+            print(&#34;IdClasse : &#34;, row[1])
+            print(&#34;NomChap : &#34;, row[2])
+            print(&#34;\n&#34;)
+        cur.close()
+        conn.close()
+
+
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def InsertClassAppChap(Chap, Classe):  # meme principe que InsertExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Insert into ClassAppChap(Nomchap,IdClasse) values (?,?);&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [Chap, Classe]
+        cur.execute(sql, data)
+        conn.commit()
+        print(&#34;Nouvel enregistrement dans la table ClassAppChap ajouté !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def ClearClassAppChap():  # meme principe que ClearExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Delete from ClassAppChap ;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        print(&#34;La table ClassAppChap est désormais vide !&#34;)
+        cur.close()
+        conn.close()
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def SelectExoUtilChap():  # meme principe que SelectExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;SELECT * FROM ExoUtilChap;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        res = cur.fetchall()
+        if (len(res) == 0):
+            print(&#34;La table ExoUtilChap est vide&#34;)
+
+        for row in res:
+            print(&#34;IdExo : &#34;, row[0])
+            print(&#34;IdChap : &#34;, row[1])
+            print(&#34;IdClasse : &#34;, row[2])
+            print(&#34;\n&#34;)
+        return res
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def InsertExoUtilChap(Chap, Classe, IdExo):  # meme principe que InsertExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        # la premiere value ajoutée sera dans la colonne IdExo, pour lier les tables nous recherchons la dernière
+        # valeur ajoutée dans la table exercice avec Select IdExo from Exercice ORDER BY IdExo DESC limit 1
+        # pour associer les chapitre et classes ajoutées
+        cur = conn.cursor()
+
+        if (IdExo == 0):
+            sql = &#39;&#39;&#39;Insert into ExoUtilChap(IdExo,NomChap,IdClasse) values ((Select IdExo from Exercice ORDER BY IdExo DESC limit 1),?,?);&#39;&#39;&#39;
+            data = [Chap, Classe]
+        else:
+            sql = &#39;&#39;&#39;Insert into ExoUtilChap(IdExo,NomChap,IdClasse) values (?,?,?);&#39;&#39;&#39;
+            data = [IdExo, Chap, Classe]
+        cur.execute(sql, data)
+        conn.commit()
+        print(&#34;Nouvel enregistrement dans la classe ExoUtilChap ajouté !&#34;)
+        cur.close()
+        conn.close()
+
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def ClearExoUtilChap():  # meme principe que ClearExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Delete from ExoUtilChap;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        print(&#34;La table ExoUtilChap est désormais vide !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def SelectExoPossNiveau():  # meme principe que SelectExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;SELECT * FROM ExoPossNiveau;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        res = cur.fetchall()
+        if (len(res) == 0):
+            print(&#34;La table ExoPossNiveau est vide&#34;)
+
+        for row in res:
+            print(&#34;IdExo : &#34;, row[0])
+            print(&#34;IdClasse : &#34;, row[1])
+            print(&#34;Niveau : &#34;, row[2])
+            print(&#34;\n&#34;)
+        return res
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def InsertExoPossNiveau(Classe, Niv):  # Meme principe que InsertExoUtilChap
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Insert into ExoPossNiveau(IdExo,IdClasse,Niveau) values ((Select IdExo from Exercice ORDER BY IdExo DESC limit 1),?,?);&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [Classe, Niv]
+        cur.execute(sql, data)
+        conn.commit()
+        print(&#34;Nouvel enregistrement dans la table ExoPossNiveau ajouté !&#34;)
+        cur.close()
+        conn.close()
+
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def ClearExoPossNiveau():  # meme principe que ClearExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Delete from ExoPossNiveau;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        print(&#34;La table ExoPossNiveau est désormais vide !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def SelectShortcuts():  # meme principe que SelectExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;SELECT * FROM Shortcuts;&#39;&#39;&#39;
+        cur = conn.cursor()
+        res = cur.execute(sql).fetchall()
+
+        if (len(res) == 0):
+            print(&#34;La table Shortcuts est vide&#34;)
+
+        for row in res:
+            print(&#34;Command : &#34;, row[0])
+            print(&#34;Auteur : &#34;, row[1])
+            print(&#34;Shortcut : &#34;, row[2])
+            print(&#34;\n&#34;)
+
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+    #    raise SGBDException(&#34;Erreur lors de la connexion à la base de données.&#34;)
+
+
+def InsertShortcuts(command, autor, shortcut):  # meme principe que SelectExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Insert into Shortcuts(command,IdAuteur,shortcut) values (?,?,?);&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [command, autor, shortcut]
+        cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+
+    except sqlite3.Error as error:
+
+        if error.__class__ == sqlite3.IntegrityError:
+            raise RuntimeError(&#34;L&#39;auteur et/ou la préférence existe(nt) déjà.&#34;)
+        else:
+            raise RuntimeError(&#34;La préférence n&#39;a pas pu être ajoutée.&#34;)
+
+
+def ClearShortcuts():  # meme principe que ClearExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Delete from Shortcuts;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        print(&#34;La table Shortcuts est désormais vide !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def Createtables():  # permet de recréer les tables, seule la table ClassAppChap n&#39;est jamais supprimer et donc recréer
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+
+        conn.execute(&#39;&#39;&#39;CREATE TABLE IF NOT EXISTS AUTEUR(
+                                IdAuteur TEXT NOT NULL PRIMARY KEY,
+                                 Etablissement TEXT,
+                                 BlackList TEXT );&#39;&#39;&#39;)
+
+        conn.execute(&#39;&#39;&#39;CREATE TABLE IF NOT EXISTS CLASSE(
+                            IdClasse TEXT NOT NULL PRIMARY KEY,
+                            Annee TEXT NOT NULL);&#39;&#39;&#39;)
+
+        conn.execute(&#39;&#39;&#39;    CREATE TABLE IF NOT EXISTS ClassAppChap(
+                                                IdChap    INTEGER NOT NULL,
+                                                NomChap   TEXT NOT NULL UNIQUE,
+                                                IdClasse  TEXT NOT NULL REFERENCES CLASSE(&#34;IdClasse&#34;) ON DELETE CASCADE,
+                                                PRIMARY KEY(&#34;IdChap&#34; AUTOINCREMENT));&#39;&#39;&#39;)
+
+        conn.execute(&#39;&#39;&#39;CREATE TABLE IF NOT EXISTS Shortcuts(
+                                            Command   TEXT NOT NULL,
+                                            IdAuteur    TEXT NOT NULL REFERENCES AUTEUR(IdAuteur) ON DELETE CASCADE,
+                                            Shortcut  TEXT NOT NULL,
+                                            PRIMARY KEY(&#34;IdAuteur&#34;,&#34;Shortcut&#34;));&#39;&#39;&#39;)
+
+        conn.execute(&#39;&#39;&#39;    CREATE TABLE IF NOT EXISTS Exercice(
+                                    IdExo INTEGER NOT NULL,
+                                    Enonce    TEXT NOT NULL UNIQUE,
+                                    Corrige  TEXT NOT NULL UNIQUE,
+                                    DateAjout TEXT NOT NULL,
+                                    IdAuteur TEXT NOT NULL REFERENCES AUTEUR(IdAuteur) ON DELETE CASCADE,
+                                    PRIMARY KEY(&#34;IdExo&#34; AUTOINCREMENT));&#39;&#39;&#39;)
+
+        conn.execute(&#39;&#39;&#39;    CREATE TABLE IF NOT EXISTS &#34;ExoPossNiveau&#34; (
+                                    IdExo INTEGER NOT NULL REFERENCES &#34;Exercice&#34;(&#34;IdExo&#34;) ON DELETE CASCADE,
+                                    IdClasse TEXT NOT NULL REFERENCES CLASSE(&#34;IdClasse&#34;) ON DELETE CASCADE,
+                                    Niveau INTEGER NOT NULL,
+                                    PRIMARY KEY(&#34;IdExo&#34;, &#34;IdClasse&#34;));&#39;&#39;&#39;)
+
+        conn.execute(&#39;&#39;&#39;CREATE TABLE IF NOT EXISTS &#34;ExoUtilChap&#34; (
+                                    IdExo INTEGER NOT NULL REFERENCES &#34;Exercice&#34;(&#34;IdExo&#34;) ON DELETE CASCADE,
+                                    IdClasse TEXT NOT NULL REFERENCES CLASSE(&#34;IdClasse&#34;) ON DELETE CASCADE,
+                                    NomChap   TEXT NOT NULL REFERENCES &#34;ClassAppChap&#34;(&#34;NomChap&#34;) ON DELETE CASCADE,
+                                    PRIMARY KEY(&#34;IdExo&#34;,&#34;NomChap&#34;) );&#39;&#39;&#39;)
+
+        conn.commit()
+        print(&#34;Nouvelles tables créées !&#34;)
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def Droptables():  # Permet de supprimer définitivement les tables, toutes les données, y compris les autoincrements
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+
+        sql0 = &#39;&#39;&#39;Drop table ClassAppChap;&#39;&#39;&#39;
+
+        sql = &#39;&#39;&#39; Drop table Exercice;&#39;&#39;&#39;
+
+        &#34;&#34;&#34;
+        sql2 = &#39;&#39;&#39; Drop table ExoPossNiveau;&#39;&#39;&#39;
+        &#34;&#34;&#34;
+        # exemple de suppresion de table
+        sql3 = &#39;&#39;&#39; Drop table ExoUtilChap;&#39;&#39;&#39;
+        &#34;&#34;&#34;
+        &#34;&#34;&#34;
+        sql4 = &#39;&#39;&#39;Drop table Shortcuts;&#39;&#39;&#39;
+
+        cur = conn.cursor()
+
+        cur.execute(sql0)
+        cur.execute(sql4)
+
+        conn.commit()
+        print(&#34;Table supprimée !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def giveEnonce(idExo):  # renvoi l&#39;enonce pour un idExo donné
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Select enonce from Exercice  where IdExo=?; &#39;&#39;&#39;  # option de requete avec where
+        conn.row_factory = lambda cursor, row: row[0]  # transforme un tableau de liste en tableau à une valeur
+        data = [idExo]
+        cur = conn.cursor()
+        cur.execute(sql, data)
+        res = cur.fetchall()
+        cur.close()
+        conn.close()
+        return res
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def giveCorrige(idExo):  # meme principe que giveEnonce pour le corrige cette fois
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Select corrige from Exercice  where IdExo=?; &#39;&#39;&#39;
+        conn.row_factory = lambda cursor, row: row[0]
+        data = [idExo]
+        cur = conn.cursor()
+        cur.execute(sql, data)
+        res = cur.fetchall()
+        cur.close()
+        conn.close()
+        return res
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def giveChap(Classe):  # récupère l&#39;ensemble des chapitres présent dans une classe donnée
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Select NomChap from ClassAppChap where IdClasse= ?; &#39;&#39;&#39;
+        conn.row_factory = lambda cursor, row: row[0]  # transforme la liste de liste en tableau
+        data = [Classe]
+        cur = conn.cursor()
+        res = cur.execute(sql, data, ).fetchall()
+        cur.close()
+        conn.close()
+        print(res)
+        return res
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def giveClasse():  # donne les différentes classes présentes dans la base
+
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Select DISTINCT IdClasse from ClassAppChap  ; &#39;&#39;&#39;  # DISTINCT evite les doublons
+        conn.row_factory = lambda cursor, row: row[0]
+        cur = conn.cursor()
+        res = cur.execute(sql).fetchall()
+        cur.close()
+        conn.close()
+
+        return res
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def giveAuteur():  # meme principe que giveClasse pour les auteurs
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Select DISTINCT IdAuteur from AUTEUR  ; &#39;&#39;&#39;
+        conn.row_factory = lambda cursor, row: row[0]
+        cur = conn.cursor()
+        res = cur.execute(sql).fetchall()
+        cur.close()
+        conn.close()
+
+        return res
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def GivePrefFromAutor(autor):  # récupère tous les raccourcis et leur commandes pour un auteur donné
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Select command,shortcut from Shortcuts where IdAuteur=?  ; &#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [autor]
+        res = cur.execute(sql, data).fetchall()
+        cur.close()
+        conn.close()
+
+        return res
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def ModifyShortcutToCommand(enonce, autor,
+                            corrige):  # modifie les enonces et les corriges pour enlever les raccourcis d&#39;un auteur.
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Select Command,Shortcut from Shortcuts where IdAuteur=?  &#39;&#39;&#39;  # recupère tous les énoncés d&#39;un auteurs
+        cur = conn.cursor()
+        data = [autor]
+        res = cur.execute(sql, data).fetchall()
+        for var in res:  # pour chaque couple (raccourcis,commande) nous remplaçons le raccourcis ( s&#39;il est présent ) par la commande
+            enonce = enonce.replace(var[1], var[0])
+            corrige = corrige.replace(var[1], var[0])
+
+        return enonce, corrige
+        cur.close()
+        conn.close()
+        print(&#34;Exercice modifié&#34;)
+
+        return enonce, corrige
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la modification : &#34;, error)
+
+
+def ModifyCommandToShortcut(enonce, autor,
+                            corrige):  # meme principe que ModifyShortcutToCommand mais dans le sens invers
+    # pour pouvoir afficher un exercice avec les raccourcis d&#39;un auteur
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Select Shortcut,Command from Shortcuts where IdAuteur=?  &#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [autor]
+        res = cur.execute(sql, data).fetchall()
+        for var in res:
+            enonce = enonce.replace(var[1], var[0])
+            corrige = corrige.replace(var[1], var[0])
+
+        return enonce, corrige
+        cur.close()
+        conn.close()
+        print(&#34;Exercice modifié&#34;)
+
+        return enonce, corrige
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la modification : &#34;, error)
+
+
+def ModifyExo(IdExo, enonce, corrige):  # permet de modifier l&#39;enoncé et le corrigé depuis la page AfficherExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Update Exercice set enonce=?, corrige=? where IdExo=?;&#39;&#39;&#39;  # requete Update...set pour modifier
+        cur = conn.cursor()
+        data = [enonce, corrige, IdExo]
+        cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def CreateTableTempChap():  # table temporaire pour les chapitres sélectionés lors des étapes de la génération de feuille
+    # pour plus d&#39;informations, voir les commentaires sur la fonction GiveExoFromSelect
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;CREATE TABLE IF NOT EXISTS &#34;TempQueryChap&#34; (&#34;Chaps&#34;  TEXT NOT NULL );&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        print(&#34;TableChap temporaire créée !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def InsertTableTempChap(chap):  # meme principe que InsertExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Insert into TempQueryChap(Chaps) values (?)&#39;&#39;&#39;
+        data = [chap]
+        cur = conn.cursor()
+        cur.execute(sql, data)
+        conn.commit()
+        print(&#34;Insertion TableChap temporaire réussi !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def giveTempChap():
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;SELECT Chaps from TempQueryChap;&#39;&#39;&#39;
+        conn.row_factory = lambda cursor, row: row[0]
+        cur = conn.cursor()
+        cur.execute(sql)
+        res = cur.fetchall()
+        cur.close()
+        conn.close()
+        return res
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def DropTableTempChap():  # la table temporaire est obligatoirement supprimée après la recherche d&#39;exercice
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39; Drop table TempQueryChap;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        print(&#34;TableChap temporaire supprimée !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def ClearTableTempChap():
+    DropTableTempChap()
+    CreateTableTempChap()
+
+
+def CreateTableTempLevels():  # meme principe avec la table temporaire CreateTableTempChap
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;CREATE TABLE IF NOT EXISTS &#34;TempQueryLevels&#34; (&#34;Levels&#34; INTEGER NOT NULL );&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        print(&#34;TableLevel temporaire créée !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def ClearTableTempLevels():  # la table levels est clear pour insérer de nouveaux niveau par rapport a la quantité d&#39;exercices sélectionés:
+    # explications : un utilisateur peut selectionner 3 exercice de niveau 1-2 puis 2 exercices de niveau 3-4
+    # ainsi, pour la première boucle avec la quantité 3, la table TempQueryLevels comporte les niveaux 1-2
+    # puis la table est vidée pour accueillir les deux lignes 3-4 pour la quantité 2
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Delete from TempQueryLevels &#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def InsertTableTempLevels(Niv):  # meme principe que InsertExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Insert into TempQueryLevels(Levels) values (?)&#39;&#39;&#39;
+        data = [Niv]
+        cur = conn.cursor()
+        cur.execute(sql, data)
+        conn.commit()
+        print(&#34;Insertion TableLevel temporaire réussi !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def DropTableTempLevels():  # meme principe que DropTableTempChap
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39; Drop table TempQueryLevels;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        print(&#34;TableLevel temporaire supprimée !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def GiveExoFromSelect():  # fonction qui permet la recherche aléatoire des exercices dans la table
+    # selon les critères de selection des exercices, voir fin de page pour les explications de la recherche.
+
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Select DISTINCT IdExo,enonce,corrige from Exercice 
+                   where idexo IN (SELECT DISTINCT ExoUtilChap.IdExo from ExoUtilChap 
+                                   WHERE ExoUtilChap.nomchap in (SELECT DISTINCT Chaps from TempQueryChap) )                
+                   AND idexo IN (Select DISTINCT ExoPossNiveau.IdExo from ExoPossNiveau 
+                                 where ExoPossNiveau.Niveau in (SELECT DISTINCT Levels from TempQueryLevels) 
+                                 ANd ExoPossNiveau.IdClasse in (Select ClassAppChap.IdClasse from ClassAppChap 
+                                                               where ClassAppChap.nomchap in (SELECT DISTINCT Chaps from TempQueryChap)  ))
+                   ORDER BY random()&#39;&#39;&#39;
+
+        cur = conn.cursor()
+        cur.execute(sql)
+        res = cur.fetchall()
+        if (len(res) == 0):
+            print(&#34;La table Exercice est vide&#34;)
+        cur.close()
+        conn.close()
+        return res
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+    # la requete commence par selectionner des données lorsque l&#39;idExo est présent dans les chapitres sélectionnés.
+    # Mais il nous faut aussi s&#39;assurer que les niveaux selectionnés soient présents dans les niveaux sélectionnés .
+    # Un niveau dépend d&#39;une classe donc nous avons besoin de selectionner les classes correspondant aux chapitres sélectionnés
+    # Pour selectionner des données parmis une liste de données, on ne peut pas faire &#34; Selection data1 where data2 in (datax,datax1,datax2,etc.)&#34;
+    # avec des requetes préparés comme pour les autres requetes présentes dans le fichiers.
+    # Nous faisons donc une requete SQL à la place d&#39;une liste : &#34;... where data2 in (Select data ....) &#34;
+
+
+def InsertAUTEUR(auteur,etablissement):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39; Insert into AUTEUR(IdAuteur,Etablissement) VALUES(?,?);&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [auteur,etablissement]
+        cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def InsertCLASSE(classe):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39; Insert into CLASSE(IdClasse,Annee) VALUES(?,&#39;2022-2023&#39;);&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [classe]
+        cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def SupprimerClasse(classe):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39; DELETE FROM CLASSE WHERE IdClasse=?;&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [classe]
+        cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def SupprimerAuteur(auteur):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;DELETE FROM AUTEUR WHERE IdAuteur=?;&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [auteur]
+        cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def SupprimerChap(chap):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39; DELETE FROM ClassAppChap WHERE NomChap=?;&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [chap]
+        cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def RetirerExoChap(idExo, chap):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39; DELETE FROM ExoUtilChap where IdExo=? and NomChap=?;&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [idExo, chap]
+        cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def RetirerExoClasse(idExo, classe):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39; DELETE FROM ExoUtilChap where IdExo=? and IdClasse=?;&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [idExo, classe]
+        cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def fusion(newchap, classe):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        cur = conn.cursor()
+        # on récupère tous les idexos concernés
+        listexo = conn.execute(
+            &#39;&#39;&#39; select DISTINCT ExoUtilChap.IdExo from ExoUtilChap where ExoUtilChap.NomChap in (SELECT * FROM TempQueryChap)&#39;&#39;&#39;).fetchall()
+        datainsert = [classe, newchap]  # le couple de données qui change pas pour l&#39;insertion
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+
+        for exo, in listexo:
+            datainsert.insert(0, exo)
+            conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+            sqlinsert = &#39;&#39;&#39;Insert into ExoUtilChap(IdExo,IdClasse,NomChap) values (?,?,?) &#39;&#39;&#39;
+            cur.execute(sqlinsert, datainsert)
+            datainsert.pop(0)
+
+        sqldelete = &#39;&#39;&#39;Delete from ClassAppChap where NomChap in (SELECT * FROM TempQueryChap )&#39;&#39;&#39;
+        cur.execute(sqldelete)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def GiveExoFromChap(IdExo):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        cur = conn.cursor()
+
+        sql = &#39;&#39;&#39;SELECT  DISTINCT ExoUtilChap.NomChap, ExoPossNiveau.IdClasse, ExoPossNiveau.Niveau from ExoUtilChap,ExoPossNiveau where ExoPossNiveau.IdExo=? 
+        AND ExoPossNiveau.IdClasse=ExoUtilChap.IdClasse 
+        and ExoUtilChap.NomChap In (select ExoUtilChap.NomChap from ExoUtilChap where idexo=?)&#39;&#39;&#39;
+
+        data = [IdExo, IdExo]
+        res = cur.execute(sql, data)
+
+        sortie = {}
+
+        for row in res:
+            if not sortie.get(row[1]):
+                sortie[row[1]] = [[row[0]], row[2]]
+            else:
+                sortie[row[1]][0].append(row[0])
+
+        conn.commit()
+        cur.close()
+        conn.close()
+
+        return sortie
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def ModifyNiveau(IdExo, Classe, newDiff):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        cur = conn.cursor()
+        sql = &#39;&#39;&#39;UPDATE ExoPossNiveau set Niveau=? where IdClasse=? and IdExo=?&#39;&#39;&#39;
+        data = [newDiff, Classe, IdExo]
+        res = cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def SelectNotInChaps(IdExo):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        cur = conn.cursor()
+        sql = &#39;&#39;&#39;Select Cl.nomchap, Cl.idclasse from ClassAppChap AS Cl where Cl.NomChap not in (select Exo.nomchap from ExoUtilChap AS Exo where Exo.IdExo=?)&#39;&#39;&#39;
+        data = [IdExo]
+        res = cur.execute(sql, data)
+
+        sortie = {}
+
+        for row in res:
+            if not sortie.get(row[1]):
+                sortie[row[1]] = [row[0]]
+            else:
+                sortie[row[1]].append(row[0])
+
+        conn.commit()
+        cur.close()
+        conn.close()
+
+        return sortie
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def ExoIdStock():
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Select DISTINCT IdExo from Exercice  ; &#39;&#39;&#39;  # DISTINCT evite les doublons
+        conn.row_factory = lambda cursor, row: row[0]
+        cur = conn.cursor()
+        res = cur.execute(sql).fetchall()
+        cur.close()
+        conn.close()
+
+        return res
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def Exportdb():
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        cur = conn.cursor()
+        sql = &#39;&#39;&#39;SELECT  DISTINCT  Exercice.Enonce, Exercice.Corrige, ExoUtilChap.NomChap, ExoPossNiveau.IdClasse, ExoPossNiveau.Niveau from Exercice,ExoUtilChap,ExoPossNiveau 
+                    where ExoPossNiveau.IdExo in (select DISTINCT Exercice.IdExo from Exercice)
+                            AND ExoPossNiveau.idexo=Exercice.IdExo
+                    AND ExoPossNiveau.IdClasse=ExoUtilChap.IdClasse 
+                    and ExoUtilChap.NomChap In (select ExoUtilChap.NomChap from ExoUtilChap where idexo in (select DISTINCT Exercice.IdExo from Exercice)) &#39;&#39;&#39;
+        res = cur.execute(sql)
+
+        sortie = {}
+
+        for row in res:
+            if not sortie.get(row[1]):
+                sortie[row[1]] = [row[0]]
+            else:
+                sortie[row[1]].append(row[0])
+
+        conn.commit()
+        cur.close()
+        conn.close()
+
+        return sortie
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def AddBlackList(IdAuteur, IdExo):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.row_factory = lambda cursor, row: row[0]
+        cur = conn.cursor()
+        data = [IdAuteur]
+        sqlsearch = &#39;&#39;&#39;Select BlackList from AUTEUR where IdAuteur=?&#39;&#39;&#39;
+        sqlintsert = &#39;&#39;&#39;Update Auteur set Blacklist=? where IdAuteur=?&#39;&#39;&#39;
+        cur.execute(sqlsearch, data)
+        res2 = cur.fetchall()
+        if res2 == [None]:
+            data = [IdExo, IdAuteur]
+            cur.execute(sqlintsert, data)
+        else:
+            newres = res2[0] + &#34; &#34; + str(IdExo)
+            data = [newres, IdAuteur]
+            cur.execute(sqlintsert, data)
+        conn.commit()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+
+def giveBlacklist(IdAuteur):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.row_factory = lambda cursor, row: row[0]
+        cur = conn.cursor()
+        sql = &#39;&#39;&#39;Select BlackList from AUTEUR where IdAuteur=?&#39;&#39;&#39;
+        data = [IdAuteur]
+        res = cur.execute(sql, data).fetchall()
+        cur.close()
+        conn.close()
+        if res[0]==None:
+            return []
+        else :
+
+            return res[0].split(&#34; &#34;)
+
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="Kholibri.SGBD.SGBD.AddBlackList"><code class="name flex">
+<span>def <span class="ident">AddBlackList</span></span>(<span>IdAuteur, IdExo)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def AddBlackList(IdAuteur, IdExo):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.row_factory = lambda cursor, row: row[0]
+        cur = conn.cursor()
+        data = [IdAuteur]
+        sqlsearch = &#39;&#39;&#39;Select BlackList from AUTEUR where IdAuteur=?&#39;&#39;&#39;
+        sqlintsert = &#39;&#39;&#39;Update Auteur set Blacklist=? where IdAuteur=?&#39;&#39;&#39;
+        cur.execute(sqlsearch, data)
+        res2 = cur.fetchall()
+        if res2 == [None]:
+            data = [IdExo, IdAuteur]
+            cur.execute(sqlintsert, data)
+        else:
+            newres = res2[0] + &#34; &#34; + str(IdExo)
+            data = [newres, IdAuteur]
+            cur.execute(sqlintsert, data)
+        conn.commit()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.ClearClassAppChap"><code class="name flex">
+<span>def <span class="ident">ClearClassAppChap</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ClearClassAppChap():  # meme principe que ClearExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Delete from ClassAppChap ;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        print(&#34;La table ClassAppChap est désormais vide !&#34;)
+        cur.close()
+        conn.close()
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.ClearExo"><code class="name flex">
+<span>def <span class="ident">ClearExo</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ClearExo():  # permet de nettoyer une table sans supprimer l&#39;ordre des autoIncrements, explications:
+    # si nous avons 3 enregistrement alors le dernier ID est le 3
+    # clear la table va supprimer les données mais le prochain ID sera le 4 et non le 1
+    # aucune action n&#39;est réversible après le commit()
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Delete from Exercice ;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        print(&#34;La table Exercice est désormais vide !&#34;)
+        cur.close()
+        conn.close()
+
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.ClearExoPossNiveau"><code class="name flex">
+<span>def <span class="ident">ClearExoPossNiveau</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ClearExoPossNiveau():  # meme principe que ClearExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Delete from ExoPossNiveau;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        print(&#34;La table ExoPossNiveau est désormais vide !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.ClearExoUtilChap"><code class="name flex">
+<span>def <span class="ident">ClearExoUtilChap</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ClearExoUtilChap():  # meme principe que ClearExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Delete from ExoUtilChap;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        print(&#34;La table ExoUtilChap est désormais vide !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.ClearShortcuts"><code class="name flex">
+<span>def <span class="ident">ClearShortcuts</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ClearShortcuts():  # meme principe que ClearExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Delete from Shortcuts;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        print(&#34;La table Shortcuts est désormais vide !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.ClearTableTempChap"><code class="name flex">
+<span>def <span class="ident">ClearTableTempChap</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ClearTableTempChap():
+    DropTableTempChap()
+    CreateTableTempChap()</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.ClearTableTempLevels"><code class="name flex">
+<span>def <span class="ident">ClearTableTempLevels</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ClearTableTempLevels():  # la table levels est clear pour insérer de nouveaux niveau par rapport a la quantité d&#39;exercices sélectionés:
+    # explications : un utilisateur peut selectionner 3 exercice de niveau 1-2 puis 2 exercices de niveau 3-4
+    # ainsi, pour la première boucle avec la quantité 3, la table TempQueryLevels comporte les niveaux 1-2
+    # puis la table est vidée pour accueillir les deux lignes 3-4 pour la quantité 2
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Delete from TempQueryLevels &#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.CreateTableTempChap"><code class="name flex">
+<span>def <span class="ident">CreateTableTempChap</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def CreateTableTempChap():  # table temporaire pour les chapitres sélectionés lors des étapes de la génération de feuille
+    # pour plus d&#39;informations, voir les commentaires sur la fonction GiveExoFromSelect
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;CREATE TABLE IF NOT EXISTS &#34;TempQueryChap&#34; (&#34;Chaps&#34;  TEXT NOT NULL );&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        print(&#34;TableChap temporaire créée !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.CreateTableTempLevels"><code class="name flex">
+<span>def <span class="ident">CreateTableTempLevels</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def CreateTableTempLevels():  # meme principe avec la table temporaire CreateTableTempChap
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;CREATE TABLE IF NOT EXISTS &#34;TempQueryLevels&#34; (&#34;Levels&#34; INTEGER NOT NULL );&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        print(&#34;TableLevel temporaire créée !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.Createtables"><code class="name flex">
+<span>def <span class="ident">Createtables</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def Createtables():  # permet de recréer les tables, seule la table ClassAppChap n&#39;est jamais supprimer et donc recréer
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+
+        conn.execute(&#39;&#39;&#39;CREATE TABLE IF NOT EXISTS AUTEUR(
+                                IdAuteur TEXT NOT NULL PRIMARY KEY,
+                                 Etablissement TEXT,
+                                 BlackList TEXT );&#39;&#39;&#39;)
+
+        conn.execute(&#39;&#39;&#39;CREATE TABLE IF NOT EXISTS CLASSE(
+                            IdClasse TEXT NOT NULL PRIMARY KEY,
+                            Annee TEXT NOT NULL);&#39;&#39;&#39;)
+
+        conn.execute(&#39;&#39;&#39;    CREATE TABLE IF NOT EXISTS ClassAppChap(
+                                                IdChap    INTEGER NOT NULL,
+                                                NomChap   TEXT NOT NULL UNIQUE,
+                                                IdClasse  TEXT NOT NULL REFERENCES CLASSE(&#34;IdClasse&#34;) ON DELETE CASCADE,
+                                                PRIMARY KEY(&#34;IdChap&#34; AUTOINCREMENT));&#39;&#39;&#39;)
+
+        conn.execute(&#39;&#39;&#39;CREATE TABLE IF NOT EXISTS Shortcuts(
+                                            Command   TEXT NOT NULL,
+                                            IdAuteur    TEXT NOT NULL REFERENCES AUTEUR(IdAuteur) ON DELETE CASCADE,
+                                            Shortcut  TEXT NOT NULL,
+                                            PRIMARY KEY(&#34;IdAuteur&#34;,&#34;Shortcut&#34;));&#39;&#39;&#39;)
+
+        conn.execute(&#39;&#39;&#39;    CREATE TABLE IF NOT EXISTS Exercice(
+                                    IdExo INTEGER NOT NULL,
+                                    Enonce    TEXT NOT NULL UNIQUE,
+                                    Corrige  TEXT NOT NULL UNIQUE,
+                                    DateAjout TEXT NOT NULL,
+                                    IdAuteur TEXT NOT NULL REFERENCES AUTEUR(IdAuteur) ON DELETE CASCADE,
+                                    PRIMARY KEY(&#34;IdExo&#34; AUTOINCREMENT));&#39;&#39;&#39;)
+
+        conn.execute(&#39;&#39;&#39;    CREATE TABLE IF NOT EXISTS &#34;ExoPossNiveau&#34; (
+                                    IdExo INTEGER NOT NULL REFERENCES &#34;Exercice&#34;(&#34;IdExo&#34;) ON DELETE CASCADE,
+                                    IdClasse TEXT NOT NULL REFERENCES CLASSE(&#34;IdClasse&#34;) ON DELETE CASCADE,
+                                    Niveau INTEGER NOT NULL,
+                                    PRIMARY KEY(&#34;IdExo&#34;, &#34;IdClasse&#34;));&#39;&#39;&#39;)
+
+        conn.execute(&#39;&#39;&#39;CREATE TABLE IF NOT EXISTS &#34;ExoUtilChap&#34; (
+                                    IdExo INTEGER NOT NULL REFERENCES &#34;Exercice&#34;(&#34;IdExo&#34;) ON DELETE CASCADE,
+                                    IdClasse TEXT NOT NULL REFERENCES CLASSE(&#34;IdClasse&#34;) ON DELETE CASCADE,
+                                    NomChap   TEXT NOT NULL REFERENCES &#34;ClassAppChap&#34;(&#34;NomChap&#34;) ON DELETE CASCADE,
+                                    PRIMARY KEY(&#34;IdExo&#34;,&#34;NomChap&#34;) );&#39;&#39;&#39;)
+
+        conn.commit()
+        print(&#34;Nouvelles tables créées !&#34;)
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.DropTableTempChap"><code class="name flex">
+<span>def <span class="ident">DropTableTempChap</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def DropTableTempChap():  # la table temporaire est obligatoirement supprimée après la recherche d&#39;exercice
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39; Drop table TempQueryChap;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        print(&#34;TableChap temporaire supprimée !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.DropTableTempLevels"><code class="name flex">
+<span>def <span class="ident">DropTableTempLevels</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def DropTableTempLevels():  # meme principe que DropTableTempChap
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39; Drop table TempQueryLevels;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        conn.commit()
+        print(&#34;TableLevel temporaire supprimée !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.Droptables"><code class="name flex">
+<span>def <span class="ident">Droptables</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def Droptables():  # Permet de supprimer définitivement les tables, toutes les données, y compris les autoincrements
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+
+        sql0 = &#39;&#39;&#39;Drop table ClassAppChap;&#39;&#39;&#39;
+
+        sql = &#39;&#39;&#39; Drop table Exercice;&#39;&#39;&#39;
+
+        &#34;&#34;&#34;
+        sql2 = &#39;&#39;&#39; Drop table ExoPossNiveau;&#39;&#39;&#39;
+        &#34;&#34;&#34;
+        # exemple de suppresion de table
+        sql3 = &#39;&#39;&#39; Drop table ExoUtilChap;&#39;&#39;&#39;
+        &#34;&#34;&#34;
+        &#34;&#34;&#34;
+        sql4 = &#39;&#39;&#39;Drop table Shortcuts;&#39;&#39;&#39;
+
+        cur = conn.cursor()
+
+        cur.execute(sql0)
+        cur.execute(sql4)
+
+        conn.commit()
+        print(&#34;Table supprimée !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.ExoIdStock"><code class="name flex">
+<span>def <span class="ident">ExoIdStock</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ExoIdStock():
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Select DISTINCT IdExo from Exercice  ; &#39;&#39;&#39;  # DISTINCT evite les doublons
+        conn.row_factory = lambda cursor, row: row[0]
+        cur = conn.cursor()
+        res = cur.execute(sql).fetchall()
+        cur.close()
+        conn.close()
+
+        return res
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.Exportdb"><code class="name flex">
+<span>def <span class="ident">Exportdb</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def Exportdb():
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        cur = conn.cursor()
+        sql = &#39;&#39;&#39;SELECT  DISTINCT  Exercice.Enonce, Exercice.Corrige, ExoUtilChap.NomChap, ExoPossNiveau.IdClasse, ExoPossNiveau.Niveau from Exercice,ExoUtilChap,ExoPossNiveau 
+                    where ExoPossNiveau.IdExo in (select DISTINCT Exercice.IdExo from Exercice)
+                            AND ExoPossNiveau.idexo=Exercice.IdExo
+                    AND ExoPossNiveau.IdClasse=ExoUtilChap.IdClasse 
+                    and ExoUtilChap.NomChap In (select ExoUtilChap.NomChap from ExoUtilChap where idexo in (select DISTINCT Exercice.IdExo from Exercice)) &#39;&#39;&#39;
+        res = cur.execute(sql)
+
+        sortie = {}
+
+        for row in res:
+            if not sortie.get(row[1]):
+                sortie[row[1]] = [row[0]]
+            else:
+                sortie[row[1]].append(row[0])
+
+        conn.commit()
+        cur.close()
+        conn.close()
+
+        return sortie
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.GiveExoFromChap"><code class="name flex">
+<span>def <span class="ident">GiveExoFromChap</span></span>(<span>IdExo)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def GiveExoFromChap(IdExo):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        cur = conn.cursor()
+
+        sql = &#39;&#39;&#39;SELECT  DISTINCT ExoUtilChap.NomChap, ExoPossNiveau.IdClasse, ExoPossNiveau.Niveau from ExoUtilChap,ExoPossNiveau where ExoPossNiveau.IdExo=? 
+        AND ExoPossNiveau.IdClasse=ExoUtilChap.IdClasse 
+        and ExoUtilChap.NomChap In (select ExoUtilChap.NomChap from ExoUtilChap where idexo=?)&#39;&#39;&#39;
+
+        data = [IdExo, IdExo]
+        res = cur.execute(sql, data)
+
+        sortie = {}
+
+        for row in res:
+            if not sortie.get(row[1]):
+                sortie[row[1]] = [[row[0]], row[2]]
+            else:
+                sortie[row[1]][0].append(row[0])
+
+        conn.commit()
+        cur.close()
+        conn.close()
+
+        return sortie
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.GiveExoFromSelect"><code class="name flex">
+<span>def <span class="ident">GiveExoFromSelect</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def GiveExoFromSelect():  # fonction qui permet la recherche aléatoire des exercices dans la table
+    # selon les critères de selection des exercices, voir fin de page pour les explications de la recherche.
+
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Select DISTINCT IdExo,enonce,corrige from Exercice 
+                   where idexo IN (SELECT DISTINCT ExoUtilChap.IdExo from ExoUtilChap 
+                                   WHERE ExoUtilChap.nomchap in (SELECT DISTINCT Chaps from TempQueryChap) )                
+                   AND idexo IN (Select DISTINCT ExoPossNiveau.IdExo from ExoPossNiveau 
+                                 where ExoPossNiveau.Niveau in (SELECT DISTINCT Levels from TempQueryLevels) 
+                                 ANd ExoPossNiveau.IdClasse in (Select ClassAppChap.IdClasse from ClassAppChap 
+                                                               where ClassAppChap.nomchap in (SELECT DISTINCT Chaps from TempQueryChap)  ))
+                   ORDER BY random()&#39;&#39;&#39;
+
+        cur = conn.cursor()
+        cur.execute(sql)
+        res = cur.fetchall()
+        if (len(res) == 0):
+            print(&#34;La table Exercice est vide&#34;)
+        cur.close()
+        conn.close()
+        return res
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+
+    # la requete commence par selectionner des données lorsque l&#39;idExo est présent dans les chapitres sélectionnés.
+    # Mais il nous faut aussi s&#39;assurer que les niveaux selectionnés soient présents dans les niveaux sélectionnés .
+    # Un niveau dépend d&#39;une classe donc nous avons besoin de selectionner les classes correspondant aux chapitres sélectionnés
+    # Pour selectionner des données parmis une liste de données, on ne peut pas faire &#34; Selection data1 where data2 in (datax,datax1,datax2,etc.)&#34;
+    # avec des requetes préparés comme pour les autres requetes présentes dans le fichiers.
+    # Nous faisons donc une requete SQL à la place d&#39;une liste : &#34;... where data2 in (Select data ....) &#34;</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.GivePrefFromAutor"><code class="name flex">
+<span>def <span class="ident">GivePrefFromAutor</span></span>(<span>autor)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def GivePrefFromAutor(autor):  # récupère tous les raccourcis et leur commandes pour un auteur donné
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Select command,shortcut from Shortcuts where IdAuteur=?  ; &#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [autor]
+        res = cur.execute(sql, data).fetchall()
+        cur.close()
+        conn.close()
+
+        return res
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.InsertAUTEUR"><code class="name flex">
+<span>def <span class="ident">InsertAUTEUR</span></span>(<span>auteur, etablissement)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def InsertAUTEUR(auteur,etablissement):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39; Insert into AUTEUR(IdAuteur,Etablissement) VALUES(?,?);&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [auteur,etablissement]
+        cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.InsertCLASSE"><code class="name flex">
+<span>def <span class="ident">InsertCLASSE</span></span>(<span>classe)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def InsertCLASSE(classe):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39; Insert into CLASSE(IdClasse,Annee) VALUES(?,&#39;2022-2023&#39;);&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [classe]
+        cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.InsertClassAppChap"><code class="name flex">
+<span>def <span class="ident">InsertClassAppChap</span></span>(<span>Chap, Classe)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def InsertClassAppChap(Chap, Classe):  # meme principe que InsertExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Insert into ClassAppChap(Nomchap,IdClasse) values (?,?);&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [Chap, Classe]
+        cur.execute(sql, data)
+        conn.commit()
+        print(&#34;Nouvel enregistrement dans la table ClassAppChap ajouté !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.InsertExo"><code class="name flex">
+<span>def <span class="ident">InsertExo</span></span>(<span>Enonce, Corrige, Auteur)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def InsertExo(Enonce, Corrige,
+              Auteur):  # permet d&#39;ajouter dans la table Exercice des données par le biais de requêtes préparées
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        # nécessité de définir chaque colonne dans lesquelles nous allons ajouter
+        # ( si la table nous le permet --&gt; contraintes de la table) des données
+        # Pour associer une données à une column nous insérons des &#39;?&#39; à l&#39;emplacement de la donnée
+        # et nous mettons en relation ces &#39;?&#39; avec la donnée passée en paramètre grâce à une variable
+        sql = &#39;&#39;&#39;Insert into Exercice(enonce,corrige,dateajout,IdAuteur) values (?,?,?,?);&#39;&#39;&#39;
+        cur = conn.cursor()
+        time = datetime.date.today()
+        data = [Enonce, Corrige, str(time),
+                Auteur]  # récupération des données pour les insérer dans l&#39;ordre précis indiqué
+        # ici, Enonce sera le premier &#39;?&#39; et donc ira dans la colonne enonce de la table
+        # la colonne IdExo est gérée en autoincrement donc nous n&#39;avons pas à gérer l&#39;insertion dans cette colonne.
+        cur.execute(sql, data)  # execution de la requête avec le tableau de données à insérer
+        conn.commit()  # commit permet de valider l&#39;insertion
+        print(&#34;Nouvel enregistrement dans la table Exercice ajouté !&#34;)
+        cur.close()
+        conn.close()
+
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.InsertExoPossNiveau"><code class="name flex">
+<span>def <span class="ident">InsertExoPossNiveau</span></span>(<span>Classe, Niv)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def InsertExoPossNiveau(Classe, Niv):  # Meme principe que InsertExoUtilChap
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Insert into ExoPossNiveau(IdExo,IdClasse,Niveau) values ((Select IdExo from Exercice ORDER BY IdExo DESC limit 1),?,?);&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [Classe, Niv]
+        cur.execute(sql, data)
+        conn.commit()
+        print(&#34;Nouvel enregistrement dans la table ExoPossNiveau ajouté !&#34;)
+        cur.close()
+        conn.close()
+
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.InsertExoUtilChap"><code class="name flex">
+<span>def <span class="ident">InsertExoUtilChap</span></span>(<span>Chap, Classe, IdExo)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def InsertExoUtilChap(Chap, Classe, IdExo):  # meme principe que InsertExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        # la premiere value ajoutée sera dans la colonne IdExo, pour lier les tables nous recherchons la dernière
+        # valeur ajoutée dans la table exercice avec Select IdExo from Exercice ORDER BY IdExo DESC limit 1
+        # pour associer les chapitre et classes ajoutées
+        cur = conn.cursor()
+
+        if (IdExo == 0):
+            sql = &#39;&#39;&#39;Insert into ExoUtilChap(IdExo,NomChap,IdClasse) values ((Select IdExo from Exercice ORDER BY IdExo DESC limit 1),?,?);&#39;&#39;&#39;
+            data = [Chap, Classe]
+        else:
+            sql = &#39;&#39;&#39;Insert into ExoUtilChap(IdExo,NomChap,IdClasse) values (?,?,?);&#39;&#39;&#39;
+            data = [IdExo, Chap, Classe]
+        cur.execute(sql, data)
+        conn.commit()
+        print(&#34;Nouvel enregistrement dans la classe ExoUtilChap ajouté !&#34;)
+        cur.close()
+        conn.close()
+
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.InsertShortcuts"><code class="name flex">
+<span>def <span class="ident">InsertShortcuts</span></span>(<span>command, autor, shortcut)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def InsertShortcuts(command, autor, shortcut):  # meme principe que SelectExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Insert into Shortcuts(command,IdAuteur,shortcut) values (?,?,?);&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [command, autor, shortcut]
+        cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+
+    except sqlite3.Error as error:
+
+        if error.__class__ == sqlite3.IntegrityError:
+            raise RuntimeError(&#34;L&#39;auteur et/ou la préférence existe(nt) déjà.&#34;)
+        else:
+            raise RuntimeError(&#34;La préférence n&#39;a pas pu être ajoutée.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.InsertTableTempChap"><code class="name flex">
+<span>def <span class="ident">InsertTableTempChap</span></span>(<span>chap)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def InsertTableTempChap(chap):  # meme principe que InsertExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Insert into TempQueryChap(Chaps) values (?)&#39;&#39;&#39;
+        data = [chap]
+        cur = conn.cursor()
+        cur.execute(sql, data)
+        conn.commit()
+        print(&#34;Insertion TableChap temporaire réussi !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.InsertTableTempLevels"><code class="name flex">
+<span>def <span class="ident">InsertTableTempLevels</span></span>(<span>Niv)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def InsertTableTempLevels(Niv):  # meme principe que InsertExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Insert into TempQueryLevels(Levels) values (?)&#39;&#39;&#39;
+        data = [Niv]
+        cur = conn.cursor()
+        cur.execute(sql, data)
+        conn.commit()
+        print(&#34;Insertion TableLevel temporaire réussi !&#34;)
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.ModifyCommandToShortcut"><code class="name flex">
+<span>def <span class="ident">ModifyCommandToShortcut</span></span>(<span>enonce, autor, corrige)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ModifyCommandToShortcut(enonce, autor,
+                            corrige):  # meme principe que ModifyShortcutToCommand mais dans le sens invers
+    # pour pouvoir afficher un exercice avec les raccourcis d&#39;un auteur
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Select Shortcut,Command from Shortcuts where IdAuteur=?  &#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [autor]
+        res = cur.execute(sql, data).fetchall()
+        for var in res:
+            enonce = enonce.replace(var[1], var[0])
+            corrige = corrige.replace(var[1], var[0])
+
+        return enonce, corrige
+        cur.close()
+        conn.close()
+        print(&#34;Exercice modifié&#34;)
+
+        return enonce, corrige
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la modification : &#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.ModifyExo"><code class="name flex">
+<span>def <span class="ident">ModifyExo</span></span>(<span>IdExo, enonce, corrige)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ModifyExo(IdExo, enonce, corrige):  # permet de modifier l&#39;enoncé et le corrigé depuis la page AfficherExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Update Exercice set enonce=?, corrige=? where IdExo=?;&#39;&#39;&#39;  # requete Update...set pour modifier
+        cur = conn.cursor()
+        data = [enonce, corrige, IdExo]
+        cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.ModifyNiveau"><code class="name flex">
+<span>def <span class="ident">ModifyNiveau</span></span>(<span>IdExo, Classe, newDiff)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ModifyNiveau(IdExo, Classe, newDiff):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        cur = conn.cursor()
+        sql = &#39;&#39;&#39;UPDATE ExoPossNiveau set Niveau=? where IdClasse=? and IdExo=?&#39;&#39;&#39;
+        data = [newDiff, Classe, IdExo]
+        res = cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.ModifyShortcutToCommand"><code class="name flex">
+<span>def <span class="ident">ModifyShortcutToCommand</span></span>(<span>enonce, autor, corrige)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ModifyShortcutToCommand(enonce, autor,
+                            corrige):  # modifie les enonces et les corriges pour enlever les raccourcis d&#39;un auteur.
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;Select Command,Shortcut from Shortcuts where IdAuteur=?  &#39;&#39;&#39;  # recupère tous les énoncés d&#39;un auteurs
+        cur = conn.cursor()
+        data = [autor]
+        res = cur.execute(sql, data).fetchall()
+        for var in res:  # pour chaque couple (raccourcis,commande) nous remplaçons le raccourcis ( s&#39;il est présent ) par la commande
+            enonce = enonce.replace(var[1], var[0])
+            corrige = corrige.replace(var[1], var[0])
+
+        return enonce, corrige
+        cur.close()
+        conn.close()
+        print(&#34;Exercice modifié&#34;)
+
+        return enonce, corrige
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la modification : &#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.RetirerExoChap"><code class="name flex">
+<span>def <span class="ident">RetirerExoChap</span></span>(<span>idExo, chap)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def RetirerExoChap(idExo, chap):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39; DELETE FROM ExoUtilChap where IdExo=? and NomChap=?;&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [idExo, chap]
+        cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.RetirerExoClasse"><code class="name flex">
+<span>def <span class="ident">RetirerExoClasse</span></span>(<span>idExo, classe)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def RetirerExoClasse(idExo, classe):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39; DELETE FROM ExoUtilChap where IdExo=? and IdClasse=?;&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [idExo, classe]
+        cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.SelectClassAppChap"><code class="name flex">
+<span>def <span class="ident">SelectClassAppChap</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def SelectClassAppChap():  # meme principe que SelectExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;SELECT * FROM ClassAppChap;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        res = cur.fetchall()
+        if (len(res) == 0):
+            print(&#34;La table ClassAppChap est vide&#34;)
+
+        for row in res:
+            print(&#34;IdChap : &#34;, row[0])
+            print(&#34;IdClasse : &#34;, row[1])
+            print(&#34;NomChap : &#34;, row[2])
+            print(&#34;\n&#34;)
+        cur.close()
+        conn.close()
+
+
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.SelectExo"><code class="name flex">
+<span>def <span class="ident">SelectExo</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def SelectExo():  # Récupère toutes les données de la table Exercice et les affiche dans le terminal
+
+    try:  # nécessité de mettre la connexion à la base dans une clause try et de renvoyer l&#39;erreur
+        conn = sqlite3.connect(
+            &#39;SGBD/BDProjetTut.db&#39;)  # la connexion à la base BDProjetTut.db créée un objet de type SQLite connexion
+        sql = &#39;&#39;&#39;SELECT * FROM Exercice ;&#39;&#39;&#39;  # la requête est stockée dans une variable
+        cur = conn.cursor()  # cursor() permet à l&#39;objet SQLite d&#39;effectuer des requêtes vers la base
+        cur.execute(sql)  # la méthode execute() permet de lancer la requête
+        res = cur.fetchall()  # le résultat est stocké sous forme de tableau associatif
+        if (len(res) == 0):
+            print(&#34;La table Exercice est vide&#34;)
+
+        for row in res:  # chaque ligne du tableau res est un tableau, chaque case du tableau correspond à une colonne de la table (cf modèle relationnel des tables )
+            print(&#34;Idexo : &#34;, row[0])
+            print(&#34;Enonce : &#34;, row[1])
+            print(&#34;Corrige : &#34;, row[2])
+            print(&#34;Dateajout : &#34;, row[3])
+            print(&#34;Auteur : &#34;, row[4])
+            print(&#34;\n&#34;)
+        cur.close()  # fermeture du curseur
+        conn.close()  # fermeture de la connexion, elle ne dure que le temps d&#39;une méthode
+
+    except sqlite3.Error as error:  # permet de catcher l&#39;erreur et de l&#39;afficher dans le terminal
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.SelectExoPossNiveau"><code class="name flex">
+<span>def <span class="ident">SelectExoPossNiveau</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def SelectExoPossNiveau():  # meme principe que SelectExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;SELECT * FROM ExoPossNiveau;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        res = cur.fetchall()
+        if (len(res) == 0):
+            print(&#34;La table ExoPossNiveau est vide&#34;)
+
+        for row in res:
+            print(&#34;IdExo : &#34;, row[0])
+            print(&#34;IdClasse : &#34;, row[1])
+            print(&#34;Niveau : &#34;, row[2])
+            print(&#34;\n&#34;)
+        return res
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.SelectExoUtilChap"><code class="name flex">
+<span>def <span class="ident">SelectExoUtilChap</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def SelectExoUtilChap():  # meme principe que SelectExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;SELECT * FROM ExoUtilChap;&#39;&#39;&#39;
+        cur = conn.cursor()
+        cur.execute(sql)
+        res = cur.fetchall()
+        if (len(res) == 0):
+            print(&#34;La table ExoUtilChap est vide&#34;)
+
+        for row in res:
+            print(&#34;IdExo : &#34;, row[0])
+            print(&#34;IdChap : &#34;, row[1])
+            print(&#34;IdClasse : &#34;, row[2])
+            print(&#34;\n&#34;)
+        return res
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.SelectNotInChaps"><code class="name flex">
+<span>def <span class="ident">SelectNotInChaps</span></span>(<span>IdExo)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def SelectNotInChaps(IdExo):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        cur = conn.cursor()
+        sql = &#39;&#39;&#39;Select Cl.nomchap, Cl.idclasse from ClassAppChap AS Cl where Cl.NomChap not in (select Exo.nomchap from ExoUtilChap AS Exo where Exo.IdExo=?)&#39;&#39;&#39;
+        data = [IdExo]
+        res = cur.execute(sql, data)
+
+        sortie = {}
+
+        for row in res:
+            if not sortie.get(row[1]):
+                sortie[row[1]] = [row[0]]
+            else:
+                sortie[row[1]].append(row[0])
+
+        conn.commit()
+        cur.close()
+        conn.close()
+
+        return sortie
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.SelectShortcuts"><code class="name flex">
+<span>def <span class="ident">SelectShortcuts</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def SelectShortcuts():  # meme principe que SelectExo
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;SELECT * FROM Shortcuts;&#39;&#39;&#39;
+        cur = conn.cursor()
+        res = cur.execute(sql).fetchall()
+
+        if (len(res) == 0):
+            print(&#34;La table Shortcuts est vide&#34;)
+
+        for row in res:
+            print(&#34;Command : &#34;, row[0])
+            print(&#34;Auteur : &#34;, row[1])
+            print(&#34;Shortcut : &#34;, row[2])
+            print(&#34;\n&#34;)
+
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)
+    #    raise SGBDException(&#34;Erreur lors de la connexion à la base de données.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.SupprimerAuteur"><code class="name flex">
+<span>def <span class="ident">SupprimerAuteur</span></span>(<span>auteur)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def SupprimerAuteur(auteur):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39;DELETE FROM AUTEUR WHERE IdAuteur=?;&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [auteur]
+        cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.SupprimerChap"><code class="name flex">
+<span>def <span class="ident">SupprimerChap</span></span>(<span>chap)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def SupprimerChap(chap):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39; DELETE FROM ClassAppChap WHERE NomChap=?;&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [chap]
+        cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.SupprimerClasse"><code class="name flex">
+<span>def <span class="ident">SupprimerClasse</span></span>(<span>classe)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def SupprimerClasse(classe):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        sql = &#39;&#39;&#39; DELETE FROM CLASSE WHERE IdClasse=?;&#39;&#39;&#39;
+        cur = conn.cursor()
+        data = [classe]
+        cur.execute(sql, data)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.fusion"><code class="name flex">
+<span>def <span class="ident">fusion</span></span>(<span>newchap, classe)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fusion(newchap, classe):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+        cur = conn.cursor()
+        # on récupère tous les idexos concernés
+        listexo = conn.execute(
+            &#39;&#39;&#39; select DISTINCT ExoUtilChap.IdExo from ExoUtilChap where ExoUtilChap.NomChap in (SELECT * FROM TempQueryChap)&#39;&#39;&#39;).fetchall()
+        datainsert = [classe, newchap]  # le couple de données qui change pas pour l&#39;insertion
+        conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+
+        for exo, in listexo:
+            datainsert.insert(0, exo)
+            conn.execute(&#34;PRAGMA foreign_keys = ON&#34;)
+            sqlinsert = &#39;&#39;&#39;Insert into ExoUtilChap(IdExo,IdClasse,NomChap) values (?,?,?) &#39;&#39;&#39;
+            cur.execute(sqlinsert, datainsert)
+            datainsert.pop(0)
+
+        sqldelete = &#39;&#39;&#39;Delete from ClassAppChap where NomChap in (SELECT * FROM TempQueryChap )&#39;&#39;&#39;
+        cur.execute(sqldelete)
+        conn.commit()
+        cur.close()
+        conn.close()
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.giveAuteur"><code class="name flex">
+<span>def <span class="ident">giveAuteur</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def giveAuteur():  # meme principe que giveClasse pour les auteurs
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Select DISTINCT IdAuteur from AUTEUR  ; &#39;&#39;&#39;
+        conn.row_factory = lambda cursor, row: row[0]
+        cur = conn.cursor()
+        res = cur.execute(sql).fetchall()
+        cur.close()
+        conn.close()
+
+        return res
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.giveBlacklist"><code class="name flex">
+<span>def <span class="ident">giveBlacklist</span></span>(<span>IdAuteur)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def giveBlacklist(IdAuteur):
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        conn.row_factory = lambda cursor, row: row[0]
+        cur = conn.cursor()
+        sql = &#39;&#39;&#39;Select BlackList from AUTEUR where IdAuteur=?&#39;&#39;&#39;
+        data = [IdAuteur]
+        res = cur.execute(sql, data).fetchall()
+        cur.close()
+        conn.close()
+        if res[0]==None:
+            return []
+        else :
+
+            return res[0].split(&#34; &#34;)
+
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.giveChap"><code class="name flex">
+<span>def <span class="ident">giveChap</span></span>(<span>Classe)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def giveChap(Classe):  # récupère l&#39;ensemble des chapitres présent dans une classe donnée
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Select NomChap from ClassAppChap where IdClasse= ?; &#39;&#39;&#39;
+        conn.row_factory = lambda cursor, row: row[0]  # transforme la liste de liste en tableau
+        data = [Classe]
+        cur = conn.cursor()
+        res = cur.execute(sql, data, ).fetchall()
+        cur.close()
+        conn.close()
+        print(res)
+        return res
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.giveClasse"><code class="name flex">
+<span>def <span class="ident">giveClasse</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def giveClasse():  # donne les différentes classes présentes dans la base
+
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Select DISTINCT IdClasse from ClassAppChap  ; &#39;&#39;&#39;  # DISTINCT evite les doublons
+        conn.row_factory = lambda cursor, row: row[0]
+        cur = conn.cursor()
+        res = cur.execute(sql).fetchall()
+        cur.close()
+        conn.close()
+
+        return res
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.giveCorrige"><code class="name flex">
+<span>def <span class="ident">giveCorrige</span></span>(<span>idExo)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def giveCorrige(idExo):  # meme principe que giveEnonce pour le corrige cette fois
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Select corrige from Exercice  where IdExo=?; &#39;&#39;&#39;
+        conn.row_factory = lambda cursor, row: row[0]
+        data = [idExo]
+        cur = conn.cursor()
+        cur.execute(sql, data)
+        res = cur.fetchall()
+        cur.close()
+        conn.close()
+        return res
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.giveEnonce"><code class="name flex">
+<span>def <span class="ident">giveEnonce</span></span>(<span>idExo)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def giveEnonce(idExo):  # renvoi l&#39;enonce pour un idExo donné
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;Select enonce from Exercice  where IdExo=?; &#39;&#39;&#39;  # option de requete avec where
+        conn.row_factory = lambda cursor, row: row[0]  # transforme un tableau de liste en tableau à une valeur
+        data = [idExo]
+        cur = conn.cursor()
+        cur.execute(sql, data)
+        res = cur.fetchall()
+        cur.close()
+        conn.close()
+        return res
+
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.SGBD.SGBD.giveTempChap"><code class="name flex">
+<span>def <span class="ident">giveTempChap</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def giveTempChap():
+    try:
+        conn = sqlite3.connect(&#39;SGBD/BDProjetTut.db&#39;)
+        sql = &#39;&#39;&#39;SELECT Chaps from TempQueryChap;&#39;&#39;&#39;
+        conn.row_factory = lambda cursor, row: row[0]
+        cur = conn.cursor()
+        cur.execute(sql)
+        res = cur.fetchall()
+        cur.close()
+        conn.close()
+        return res
+    except sqlite3.Error as error:
+        print(&#34;Erreur lors de la self.connexion à SQLite&#34;, error)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Kholibri.SGBD" href="index.html">Kholibri.SGBD</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="Kholibri.SGBD.SGBD.AddBlackList" href="#Kholibri.SGBD.SGBD.AddBlackList">AddBlackList</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.ClearClassAppChap" href="#Kholibri.SGBD.SGBD.ClearClassAppChap">ClearClassAppChap</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.ClearExo" href="#Kholibri.SGBD.SGBD.ClearExo">ClearExo</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.ClearExoPossNiveau" href="#Kholibri.SGBD.SGBD.ClearExoPossNiveau">ClearExoPossNiveau</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.ClearExoUtilChap" href="#Kholibri.SGBD.SGBD.ClearExoUtilChap">ClearExoUtilChap</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.ClearShortcuts" href="#Kholibri.SGBD.SGBD.ClearShortcuts">ClearShortcuts</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.ClearTableTempChap" href="#Kholibri.SGBD.SGBD.ClearTableTempChap">ClearTableTempChap</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.ClearTableTempLevels" href="#Kholibri.SGBD.SGBD.ClearTableTempLevels">ClearTableTempLevels</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.CreateTableTempChap" href="#Kholibri.SGBD.SGBD.CreateTableTempChap">CreateTableTempChap</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.CreateTableTempLevels" href="#Kholibri.SGBD.SGBD.CreateTableTempLevels">CreateTableTempLevels</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.Createtables" href="#Kholibri.SGBD.SGBD.Createtables">Createtables</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.DropTableTempChap" href="#Kholibri.SGBD.SGBD.DropTableTempChap">DropTableTempChap</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.DropTableTempLevels" href="#Kholibri.SGBD.SGBD.DropTableTempLevels">DropTableTempLevels</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.Droptables" href="#Kholibri.SGBD.SGBD.Droptables">Droptables</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.ExoIdStock" href="#Kholibri.SGBD.SGBD.ExoIdStock">ExoIdStock</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.Exportdb" href="#Kholibri.SGBD.SGBD.Exportdb">Exportdb</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.GiveExoFromChap" href="#Kholibri.SGBD.SGBD.GiveExoFromChap">GiveExoFromChap</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.GiveExoFromSelect" href="#Kholibri.SGBD.SGBD.GiveExoFromSelect">GiveExoFromSelect</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.GivePrefFromAutor" href="#Kholibri.SGBD.SGBD.GivePrefFromAutor">GivePrefFromAutor</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.InsertAUTEUR" href="#Kholibri.SGBD.SGBD.InsertAUTEUR">InsertAUTEUR</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.InsertCLASSE" href="#Kholibri.SGBD.SGBD.InsertCLASSE">InsertCLASSE</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.InsertClassAppChap" href="#Kholibri.SGBD.SGBD.InsertClassAppChap">InsertClassAppChap</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.InsertExo" href="#Kholibri.SGBD.SGBD.InsertExo">InsertExo</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.InsertExoPossNiveau" href="#Kholibri.SGBD.SGBD.InsertExoPossNiveau">InsertExoPossNiveau</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.InsertExoUtilChap" href="#Kholibri.SGBD.SGBD.InsertExoUtilChap">InsertExoUtilChap</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.InsertShortcuts" href="#Kholibri.SGBD.SGBD.InsertShortcuts">InsertShortcuts</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.InsertTableTempChap" href="#Kholibri.SGBD.SGBD.InsertTableTempChap">InsertTableTempChap</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.InsertTableTempLevels" href="#Kholibri.SGBD.SGBD.InsertTableTempLevels">InsertTableTempLevels</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.ModifyCommandToShortcut" href="#Kholibri.SGBD.SGBD.ModifyCommandToShortcut">ModifyCommandToShortcut</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.ModifyExo" href="#Kholibri.SGBD.SGBD.ModifyExo">ModifyExo</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.ModifyNiveau" href="#Kholibri.SGBD.SGBD.ModifyNiveau">ModifyNiveau</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.ModifyShortcutToCommand" href="#Kholibri.SGBD.SGBD.ModifyShortcutToCommand">ModifyShortcutToCommand</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.RetirerExoChap" href="#Kholibri.SGBD.SGBD.RetirerExoChap">RetirerExoChap</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.RetirerExoClasse" href="#Kholibri.SGBD.SGBD.RetirerExoClasse">RetirerExoClasse</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.SelectClassAppChap" href="#Kholibri.SGBD.SGBD.SelectClassAppChap">SelectClassAppChap</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.SelectExo" href="#Kholibri.SGBD.SGBD.SelectExo">SelectExo</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.SelectExoPossNiveau" href="#Kholibri.SGBD.SGBD.SelectExoPossNiveau">SelectExoPossNiveau</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.SelectExoUtilChap" href="#Kholibri.SGBD.SGBD.SelectExoUtilChap">SelectExoUtilChap</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.SelectNotInChaps" href="#Kholibri.SGBD.SGBD.SelectNotInChaps">SelectNotInChaps</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.SelectShortcuts" href="#Kholibri.SGBD.SGBD.SelectShortcuts">SelectShortcuts</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.SupprimerAuteur" href="#Kholibri.SGBD.SGBD.SupprimerAuteur">SupprimerAuteur</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.SupprimerChap" href="#Kholibri.SGBD.SGBD.SupprimerChap">SupprimerChap</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.SupprimerClasse" href="#Kholibri.SGBD.SGBD.SupprimerClasse">SupprimerClasse</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.fusion" href="#Kholibri.SGBD.SGBD.fusion">fusion</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.giveAuteur" href="#Kholibri.SGBD.SGBD.giveAuteur">giveAuteur</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.giveBlacklist" href="#Kholibri.SGBD.SGBD.giveBlacklist">giveBlacklist</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.giveChap" href="#Kholibri.SGBD.SGBD.giveChap">giveChap</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.giveClasse" href="#Kholibri.SGBD.SGBD.giveClasse">giveClasse</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.giveCorrige" href="#Kholibri.SGBD.SGBD.giveCorrige">giveCorrige</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.giveEnonce" href="#Kholibri.SGBD.SGBD.giveEnonce">giveEnonce</a></code></li>
+<li><code><a title="Kholibri.SGBD.SGBD.giveTempChap" href="#Kholibri.SGBD.SGBD.giveTempChap">giveTempChap</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

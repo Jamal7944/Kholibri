@@ -1,0 +1,2025 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>Kholibri.Classes.CreerFeuille API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Kholibri.Classes.CreerFeuille</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python"># Projet DUT2 Soft de génération de feuilles d&#39;exercices
+
+from tkinter import *
+from tkinter.ttk import *
+from tkinter import messagebox
+from typing import Any
+import collections
+
+from Classes import MyThread
+
+from Classes.Utils import Utils
+
+
+class CreerFeuille(Frame):
+    &#34;&#34;&#34;
+    Classe décrivant la fenêtre permettant la création d&#39;une feuille d&#39;exercices
+    &#34;&#34;&#34;
+    listeFinale = []
+
+    def __init__(self, parent, controller):
+        &#34;&#34;&#34;
+        Constructeur de la classe
+
+        Parameters
+        ----------
+        parent : la fenêtre parent
+        controller : le contrôleur de la fenêtre
+        &#34;&#34;&#34;
+        import SGBD
+        self.listeexofinal = {}
+        # Setup
+        Frame.__init__(self, parent)
+        self.parent = parent
+        self.controller = controller
+        self.listeChapAjoute = {}
+        self.questionCours = &#34;&#34;
+
+        # représente l&#39;ensemble des exercices trouvé pour respecter les critères de chapitres et difficultés
+        self.exoDict = {1: {},
+                        2: {},
+                        3: {},
+                        4: {},
+                        5: {}
+                        }
+        # il est organisé de la manière suivante :
+        &#34;&#34;&#34;
+        exoDict = {
+            difficulté : {
+                idExo : {
+                    &#39;exo&#39;: &#34;Exercice&#34;,
+                    &#39;sol&#39;: &#34;Solution&#34;                    
+                },
+                ...
+            },
+            ...
+        }
+        &#34;&#34;&#34;
+
+        # représente les dificultés choisie par l&#39;utilisateur
+        self.difficulteChoisie = {}
+        # il est organisé de la manière suivante :
+        &#34;&#34;&#34;
+        difficulteChoisie = {
+            difficulté : nbExo,
+            ...
+        }
+        &#34;&#34;&#34;
+
+        # représente les exercices affichés sur la ou les feuilles
+        self.exoFinal = {
+        }
+        # il est organisé de la manière suivante :
+        &#34;&#34;&#34;
+        exoFinal = {
+            &#34;nom prenom&#34; : {         // null s&#39;il n&#39;y a pas de nom d&#39;élèves
+                id_exo : {
+                    &#39;exo&#39; : &#34;Exercice&#34;,
+                    &#39;sol&#39; : &#34;Solution&#34;,
+                    &#39;diff&#39;: difficulté (int)
+                },
+                ...
+            },
+            ...
+        }
+        &#34;&#34;&#34;
+
+        self.SGBD = SGBD.SGBD
+
+        # flags des exos lors de l&#39;édition de la feuille
+        self.exoFlag = {}
+
+        self.titre = Label(self, text=&#34;Créer une feuille d&#39;exercice&#34;, font=controller.title_font)
+        self.titre.pack(side=&#34;top&#34;, fill=&#34;x&#34;, pady=10)
+
+        # cadre supérieur de la page, contient le choix d&#39;auteur
+        self.cadreAuteur = Frame(self)
+        labelAuteur = Label(self.cadreAuteur, text=&#34;Choisissez un auteur : &#34;,
+                            font=(&#34;Helvetica&#34;, 10))
+        labelAuteur.pack(side=LEFT)
+        self.cbAuteur = Combobox(self.cadreAuteur, values=self.SGBD.giveAuteur(),
+                                 state=&#39;readonly&#39;)  # changer la values par le select auteur
+        self.cbAuteur.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;)
+        if (Utils.DefaultUser != &#34;&#34;):
+            self.cbAuteur.set(Utils.DefaultUser)
+        else:
+            self.cbAuteur.set(&#39;Choisir un auteur&#39;)
+        self.cbAuteur.pack(pady=5, side=LEFT)
+        self.cadreAuteur.pack(side=TOP)
+
+        ##########################################################################################################
+        # Cadre première partie
+        self.cadre0 = Frame(self)
+
+        self.cadreChoixChap = Frame(self.cadre0)
+        # Combobox choix de la classe
+        self.cbClass = Combobox(self.cadreChoixChap, values=self.SGBD.giveClasse(), state=&#39;readonly&#39;)
+        self.cbClass.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.ActualiseChapitrePropose())
+        self.cbClass.set(&#34;Choisir une classe&#34;)
+        self.cbClass.pack(pady=5, side=LEFT)
+
+        # Combobox choix du chapitre
+        self.cbChap = Combobox(self.cadreChoixChap)
+        self.cbChap.pack(pady=5, side=LEFT)
+        self.cbChap.set(&#34;Choisir le chapitre&#34;)
+        self.cbChap[&#34;state&#34;] = &#34;disabled&#34;
+
+        # Label
+        Label(self.cadreChoixChap, text=&#34;Liste des choix effectués ci-dessous:&#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5,
+                                                                                                              padx=10,
+                                                                                                              side=LEFT)
+
+        # Bouton valider le choix de la classe et chap
+        self.buttonValider = Button(self.cadreChoixChap, text=&#34;Choisir ce chapitre&#34;,
+                                    command=lambda: self.ajouterChapitre())
+        self.buttonValider.pack(pady=5, side=LEFT)
+
+        # Bouton supprimer
+        self.supprimerButton = Button(self.cadreChoixChap, text=&#34;Supprimer&#34;, command=lambda: self.supprimer())
+        self.supprimerButton.pack(pady=5, side=LEFT)
+
+        self.cadreChoixChap.pack()
+
+        # Affichage des choix possibles
+        self.champChoix = Listbox(self.cadre0, selectmode=&#34;multiple&#34;, width=150)
+        self.champChoix.pack(pady=5)
+
+        # Bouton effacer tout les choix
+        self.bouttonRefaireChoixChap = Button(self.cadre0, text=&#34;Réinitialiser&#34;,
+                                              command=lambda: self.refaireChoixChap())
+        self.bouttonRefaireChoixChap.pack(pady=5, side=LEFT)
+
+        # Bouton valider tout les choix et passer à l&#39;étape suivante
+        self.bouttonValiderChoixChap = Button(self.cadre0, text=&#34;Valider et passer à l&#39;étape suivante&#34;,
+                                              command=lambda: self.validerChoixChap())
+        self.bouttonValiderChoixChap.pack(pady=5, side=RIGHT)
+
+        # recherche loading
+        self.Progress_Bar = Progressbar(self.cadre0, orient=HORIZONTAL, length=250, mode=&#39;determinate&#39;)
+
+        ##########################################################################################################
+        # Cadre deuxième partie = choix difficulté
+        self.cadre1 = Frame(self)
+
+        ##########################################################################################################
+        # Cadre troisième partie question cours
+        self.cadre2 = Frame(self)
+
+        # Label q de cours
+        Label(self.cadre2,
+              text=&#34;Si vous souhaitez ajouter une question de cours, remplissez le champ ci-dessous, sinon laissez vide:&#34;,
+              font=(&#34;Helvetica&#34;, 10)).pack(pady=5, padx=10, side=TOP)
+
+        # Texte zone q de cours
+        self.champQuestionCours = Text(self.cadre2, width=80, height=10)
+        self.champQuestionCours.pack(pady=5, side=LEFT)
+
+        ##########################################################################################################
+        # Cadre quatrième partie = Nom d&#39;étudiants colle
+        self.cadre3 = Frame(self)
+
+        # Listbox des noms déja entré
+        self.champChoixNom = Listbox(self.cadre3, selectmode=&#34;multiple&#34;, width=150)
+        self.champChoixNom.pack(pady=5, side=BOTTOM)
+
+        # Label colle
+        Label(self.cadre3,
+              text=&#34;Si vous souhaitez ajouter des noms d&#39;élèves, remplissez les champs ci-contre, sinon laissez vide:&#34;,
+              font=(&#34;Helvetica&#34;, 10)).pack(pady=5, padx=10, side=LEFT)
+
+        # Entry prénom
+        self.champPrenom = Entry(self.cadre3)
+        self.champPrenom.pack(pady=5, side=LEFT)
+
+        # Entry nom
+        self.champNom = Entry(self.cadre3)
+        self.champNom.pack(pady=5, side=LEFT)
+
+        # Bouton validé le nom
+        Button(self.cadre3, text=&#34;Valider le prénom et le nom&#34;, command=lambda: self.ajouterNom()).pack(pady=5,
+                                                                                                        side=LEFT)
+
+        ##########################################################################################################
+        # Cadre 5ème partie = Generation
+        self.cadre4 = Frame(self)
+
+        # Bouton generer la feuille
+        self.buttonGenerer = Button(self.cadre4, text=&#34;Générer la feuille&#34;, command=self.gernerFeuilleBefore)
+        self.buttonGenerer.pack(pady=5, padx=150, side=RIGHT)
+
+        ##########################################################################################################
+        # Cadre 6 ème partie = Modification de la feuille
+        # (nouvelle page)
+
+        self.cadre5 = Frame(self)
+
+        self.cadreEdit = Frame(self.cadre5)
+
+        # Cadre gauche indiquant les exercices
+        self.cadreExos = LabelFrame(self.cadreEdit, text=&#34;Exercices présents dans la feuille&#34;)
+        # les exercices y seront ajouter dans la fonction editFeuille
+        self.cadreExos.pack(side=LEFT, padx=20, anchor=&#39;w&#39;)
+
+        # le cadre de suppression de l&#39;exercice
+        self.cadreSuppr = LabelFrame(self.cadreEdit, text=&#34;Supprimer l&#39;exercice&#34;)
+        self.cadreSuppr.pack(side=LEFT, padx=5)
+        # le cadre de remplacement de l&#39;exercice
+        self.cadreRempl = LabelFrame(self.cadreEdit, text=&#34;Remplacer l&#39;exercice&#34;)
+        self.cadreRempl.pack(side=LEFT, padx=5)
+        # et le cadre de blackList
+        self.cadreBlackList = LabelFrame(self.cadreEdit, text=&#34;Blacklister l&#39;exercice&#34;)
+        self.cadreBlackList.pack(side=LEFT, padx=5)
+
+        self.cadreEdit.pack()
+
+        # Bouton pour regénérer la feuille
+        self.buttonRegenerate = Button(self.cadre5, text=&#34;Régénérer la feuille&#34;, command=self.regenerate)
+        self.buttonRegenerate.pack(pady=10)
+
+        self.cadre0.pack(pady=5)
+
+        self.nomprenomactuel = ()
+
+    def ActualiseChapitrePropose(self):
+        &#34;&#34;&#34;
+        Permet de mettre à jour la liste des chapitres proposés
+        &#34;&#34;&#34;
+
+        if not self.cbClass.get() or self.cbClass.get() == &#34;Choisir une classe&#34;:
+            return
+
+        # Proposé uniquement des chapitres non ajoutés
+        chapToAdd = []
+        for i in self.SGBD.giveChap(self.cbClass.get()):
+            if not self.listeChapAjoute.get(self.cbClass.get()) or i not in self.listeChapAjoute[self.cbClass.get()]:
+                chapToAdd.append(i)
+
+        self.cbChap[&#34;values&#34;] = chapToAdd
+
+        if not chapToAdd:
+            self.cbChap[&#39;state&#39;] = &#34;disabled&#34;
+        else:
+            self.cbChap.current(0)
+            self.cbChap[&#39;state&#39;] = &#34;readonly&#34;
+
+        self.cbChap.set(&#34;Choisir le chapitre&#34;)
+
+    def ajouterChapitre(self):
+        &#34;&#34;&#34;
+        Fonction permettant d&#39;ajouter dans la liste des choix de chapitres et de classes un choix venant d&#39;être effectué
+        &#34;&#34;&#34;
+
+        if self.cbClass.get() in self.listeChapAjoute.keys() and self.cbChap.get() in self.listeChapAjoute[
+            self.cbClass.get()]:
+            return
+        if self.cbChap.get() == &#34;Choisir le chapitre&#34; or self.cbClass.get() == &#34;Choisir une classe&#34;:  # Si valeur de base
+            return
+
+        ArrayChap = self.listeChapAjoute.get(self.cbClass.get())
+
+        if ArrayChap:
+            self.listeChapAjoute[self.cbClass.get()].append(self.cbChap.get())
+        else:
+            self.listeChapAjoute[self.cbClass.get()] = [self.cbChap.get()]
+
+        self.champChoix.insert(&#39;end&#39;, f&#34;Classe : {self.cbClass.get()}, Chapitre : {self.cbChap.get()}&#34;)
+
+        self.ActualiseChapitrePropose()
+
+
+    def supprimer(self):
+        &#34;&#34;&#34;
+        Fonction qui supprime les éléments selectionnés dans la liste des chapitres
+        &#34;&#34;&#34;
+
+        for i in self.champChoix.curselection():
+
+            StringRecup = self.champChoix.get(i)
+            StringSplitted = StringRecup.split(&#34;, &#34;)
+
+            StringClasse = StringSplitted[0][9:len(StringSplitted[0])]
+            StringChap = StringSplitted[1][11:len(StringSplitted[1])]
+
+            ArrayChap = self.listeChapAjoute.get(StringClasse)
+            if ArrayChap:
+                if StringChap in ArrayChap:
+                    self.listeChapAjoute[StringClasse].remove(StringChap)
+
+        self.champChoix.delete(0, &#34;end&#34;)
+
+        for key, value in self.listeChapAjoute.items():
+            for i in value:
+                self.champChoix.insert(&#34;end&#34;, f&#34;Classe : {key}, Chapitre : {i}&#34;)
+
+        self.ActualiseChapitrePropose()
+
+    def refaireChoixChap(self):
+        &#34;&#34;&#34;
+        fonction permettant de refaire les choix des chapitres et des classes
+        &#34;&#34;&#34;
+        self.listeChapAjoute.clear()
+        self.cbClass.set(&#34;Choisir une classe&#34;)
+        self.cbChap.set(&#34;Choisir le chapitre&#34;)
+        self.cbChap[&#34;state&#34;] = &#34;disabled&#34;
+        self.champChoix.delete(0, &#34;end&#34;)
+
+    def validerChoixChap(self):
+        &#34;&#34;&#34;
+        fonction permettant de valider le choix fait pour les chapitres et les classes
+        &#34;&#34;&#34;
+        if self.champChoix.size() == 0:
+            messagebox.showinfo(title=&#34;Choix des chapitres&#34;,
+                                message=&#34;Merci de choisir au moins un chapitre avant de continuer.&#34;)
+            return
+
+        self.cbClass[&#39;state&#39;] = &#34;disabled&#34;
+        self.cbChap[&#39;state&#39;] = &#34;disabled&#34;
+        self.buttonValider.destroy()
+        self.bouttonValiderChoixChap.destroy()
+        self.bouttonRefaireChoixChap.destroy()
+        self.champChoix[&#39;state&#39;] = &#39;disabled&#39;
+        self.supprimerButton.destroy()
+
+        self.countExosfromLevel()
+        self.choixDiff()
+
+    def countExosfromLevel(self):
+        &#34;&#34;&#34;
+        fonction permettant de savoir combien d&#39;exercices sont disponibles selon le type de difficulté et les critères choisies
+        &#34;&#34;&#34;
+        # le fonctionnement de cette fonction est le même principe que la fonction save
+
+        self.SGBD.CreateTableTempChap()
+        self.SGBD.CreateTableTempLevels()
+        for chapArray in self.listeChapAjoute.values():
+            for chap in chapArray:
+                self.SGBD.InsertTableTempChap(chap)
+
+        blacklist = self.SGBD.giveBlacklist(self.cbAuteur.get())
+        for i in range(5):
+            self.SGBD.InsertTableTempLevels(i + 1)
+            exos = self.SGBD.GiveExoFromSelect()
+
+            for ind, exo, sol in exos:
+                if str(ind) not in blacklist:
+                    self.exoDict[i + 1][ind] = {
+                        &#34;exo&#34;: exo,
+                        &#34;sol&#34;: sol
+                    }
+            self.SGBD.ClearTableTempLevels()
+
+        self.SGBD.DropTableTempChap()
+        self.SGBD.DropTableTempLevels()
+
+    def choixDiff(self):
+        &#34;&#34;&#34;
+        fonction permettant de choisir la difficulté des exercices
+        &#34;&#34;&#34;
+        self.cadre1 = Frame(self)
+        Label(self.cadre1, text=&#34;Nombre d&#39;exercices par difficulté: &#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5, side=TOP)
+        Label(self.cadre1, text=&#34;Difficulté 1: &#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5, side=LEFT)
+
+        self.cbDiff1 = Combobox(self.cadre1, values=list(range(len(self.exoDict[1]) + 1)), state=&#39;readonly&#39;)
+        self.cbDiff1.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateEtapeSuivante())
+        self.cbDiff1.set(len(self.exoDict[1]))
+        self.cbDiff1.pack(pady=5, side=LEFT)
+
+        Label(self.cadre1, text=&#34;Difficulté 2: &#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5, side=LEFT)
+        self.cbDiff2 = Combobox(self.cadre1, values=list(range(len(self.exoDict[2]) + 1)), state=&#39;readonly&#39;)
+        self.cbDiff2.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateEtapeSuivante())
+        self.cbDiff2.set(len(self.exoDict[2]))
+        self.cbDiff2.pack(pady=5, side=LEFT)
+
+        Label(self.cadre1, text=&#34;Difficulté 3: &#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5, side=LEFT)
+        self.cbDiff3 = Combobox(self.cadre1, values=list(range(len(self.exoDict[3]) + 1)), state=&#39;readonly&#39;)
+        self.cbDiff3.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateEtapeSuivante())
+        self.cbDiff3.set(len(self.exoDict[3]))
+        self.cbDiff3.pack(pady=5, side=LEFT)
+
+        Label(self.cadre1, text=&#34;Difficulté 4: &#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5, side=LEFT)
+        self.cbDiff4 = Combobox(self.cadre1, values=list(range(len(self.exoDict[4]) + 1)), state=&#39;readonly&#39;)
+        self.cbDiff4.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateEtapeSuivante())
+        self.cbDiff4.set(len(self.exoDict[4]))
+        self.cbDiff4.pack(pady=5, side=LEFT)
+
+        Label(self.cadre1, text=&#34;Difficulté 5: &#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5, side=LEFT)
+        self.cbDiff5 = Combobox(self.cadre1, values=list(range(len(self.exoDict[5]) + 1)), state=&#39;readonly&#39;)
+        self.cbDiff5.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateEtapeSuivante())
+        self.cbDiff5.set(len(self.exoDict[5]))
+        self.cbDiff5.pack(pady=5, side=LEFT)
+
+        self.cadre1.pack(pady=5)
+
+        self.bouttonValiderChoixDiff = Button(self.cadre1, text=&#34;Passer à l&#39;étape suivante&#34;,
+                                              command=lambda: self.validerChoixDiff())
+        self.bouttonValiderChoixDiff.pack(pady=5, side=LEFT)
+
+    def UpdateEtapeSuivante(self):
+        &#34;&#34;&#34;
+        fonction permettant de mettre à jour l&#39;étape suivante
+        afin d&#39;activer le boutton valider
+        &#34;&#34;&#34;
+        if self.cbDiff5.get() == &#34;0&#34; and self.cbDiff4.get() == &#34;0&#34; and self.cbDiff3.get() == &#34;0&#34; and self.cbDiff2.get() == &#34;0&#34; and self.cbDiff1.get() == &#34;0&#34;:
+            self.bouttonValiderChoixDiff[&#34;state&#34;] = &#34;disabled&#34;
+        else:
+            self.bouttonValiderChoixDiff[&#34;state&#34;] = &#34;normal&#34;
+
+
+    def validerChoixDiff(self):
+        &#34;&#34;&#34;
+        fonction permettant de valider le choix de difficulté du deuxième type
+        &#34;&#34;&#34;
+        if self.cbAuteur.get() == &#34;Choisir un auteur&#34;:
+            messagebox.showinfo(title=&#34;Génération de feuilles&#34;,
+                                message=&#34;Veuillez renseigner l&#39;auteur&#34;)
+            return
+        self.cadre0.destroy()
+
+        self.cadre2.pack(pady=5)
+        self.cadre3.pack(pady=5)
+        self.cadre4.pack(pady=5)
+
+        self.cbDiff1[&#39;state&#39;] = &#34;disabled&#34;
+        self.cbDiff2[&#39;state&#39;] = &#34;disabled&#34;
+        self.cbDiff3[&#39;state&#39;] = &#34;disabled&#34;
+        self.cbDiff4[&#39;state&#39;] = &#34;disabled&#34;
+        self.cbDiff5[&#39;state&#39;] = &#34;disabled&#34;
+
+        self.difficulteChoisie={
+            1: int(self.cbDiff1.get()),
+            2: int(self.cbDiff2.get()),
+            3: int(self.cbDiff3.get()),
+            4: int(self.cbDiff4.get()),
+            5: int(self.cbDiff5.get())
+        }
+
+        self.bouttonValiderChoixDiff.destroy()
+
+    def ajouterNom(self):
+        &#34;&#34;&#34;
+        fonction permettant d&#39;ajouter un nom et prénom dans la liste concernée pour l&#39;ajouter ensuite sur la feuille
+        &#34;&#34;&#34;
+        if self.champNom.get() == &#34;&#34; or self.champPrenom.get() == &#34;&#34;:
+            messagebox.showinfo(title=&#34;Génération de feuilles&#34;,
+                                message=&#34;Veuillez renseigner le nom et le prénom&#34;)
+            return
+
+        if self.difficulteChoisie.get(1)*(len(self.exoFinal.keys())+1) &gt; len(self.exoDict.get(1)) or\
+            self.difficulteChoisie.get(2)*(len(self.exoFinal.keys())+1) &gt; len(self.exoDict.get(2)) or\
+            self.difficulteChoisie.get(3)*(len(self.exoFinal.keys())+1) &gt; len(self.exoDict.get(3)) or\
+            self.difficulteChoisie.get(4)*(len(self.exoFinal.keys())+1) &gt; len(self.exoDict.get(4)) or\
+            self.difficulteChoisie.get(5)*(len(self.exoFinal.keys())+1) &gt; len(self.exoDict.get(5)):
+            messagebox.showinfo(title=&#34;Génération de feuilles&#34;,
+                                message=&#34;Vous avez choisi trop d&#39;exercices&#34;)
+            return
+
+        self.exoFinal[(self.champPrenom.get(), self.champNom.get())] = {}
+
+        self.champChoixNom.insert(&#39;end&#39;, &#34;Prénom : &#34; + self.champPrenom.get() + &#34;  Nom : &#34; + self.champNom.get())
+
+        self.champPrenom.delete(0, END)
+        self.champNom.delete(0, END)
+
+    def gernerFeuilleBefore(self):
+        &#34;&#34;&#34;
+        Première étape de la génération de feuilles
+        permet de gérer la presence de plusieurs élèves
+        elle appelle la fonction gernerFeuille autant de fois que l&#39;on a choisi d&#39;élèves
+        elle appelle aussi la fonction editFeuille afin de pouvoir éditer les feuilles générées
+        &#34;&#34;&#34;
+        self.questionCours = self.champQuestionCours.get(&#34;1.0&#34;,&#34;end-1c&#34;)
+        if len(self.exoFinal.keys()) == 0:
+            self.exoFinal[None] = {}
+            self.gernerFeuille(0)
+        else :
+            for i, j in enumerate(self.exoFinal.keys()):
+                self.gernerFeuille(i)
+        self.editFeuille()
+
+    def gernerFeuille(self, numfeuille):
+        &#34;&#34;&#34;
+        fonction permettant de lancer la selection aléatoire d&#39;exercices selon les critères de l&#39;utilisateur
+        Parameters
+        ----------
+        numfeuille : le numéro de la feuille à générer (permet d&#39;identifier le nom et prénom de l&#39;élève)
+        &#34;&#34;&#34;
+        nom_prenom = list(self.exoFinal.keys())[numfeuille]
+
+        for diff, quantity in self.difficulteChoisie.items():
+            if quantity == 0:
+                continue
+            else:
+                fixed_exo = list(self.exoDict.get(diff).keys())
+
+                for exoId in fixed_exo[:quantity]:
+                    self.exoFinal[nom_prenom][exoId] = self.exoDict.get(diff).get(exoId).copy()
+                    self.exoFinal[nom_prenom][exoId][&#34;diff&#34;] = diff
+                    self.exoDict.get(diff).pop(exoId)
+        # ajout de la liste finale dans une variable globale pour y accéder depuis MyThread.py
+        CreerFeuille.listeFinale = self.exoFinal
+
+        threadCompil = MyThread.myThread(&#34;ThreadPrevisualisationFeuille&#34;,
+                                            questionCours=self.questionCours,
+                                            etudiant=nom_prenom, auteur=self.cbAuteur.get())  # création du thread de type PrévisualisationFeuille
+        threadCompil.start()
+
+        self.cadre1.destroy()
+        self.cadre2.destroy()
+        self.cadre3.destroy()
+        self.cadre4.destroy()
+
+    def editFeuille(self):
+        &#34;&#34;&#34;
+        fonction permettant de lancer l&#39;édition des feuilles générées
+        elle affiche pour chque exercice les boutons supprimer, remplacer et blacklist
+        une séparation est présente entre chaque élève
+        &#34;&#34;&#34;
+        self.cadre5.pack()
+        for nom_prenom in self.exoFinal.keys():
+            for ind, exo in enumerate(self.exoFinal.get(nom_prenom).keys()):
+                # identification de l&#39;exercice
+                Button(self.cadreExos,
+                       text=f&#34;exercice n°{ind + 1}{&#39;&#39; if ind + 1 &gt; 10 else &#39; &#39;} id : {exo}{&#39; &#39; * (3 - len(str(exo)) - 1)}&#34;,
+                       command=lambda: print(exo)
+                       ).pack(pady=5)
+
+                supprVar = IntVar()
+                supprButton = Checkbutton(self.cadreSuppr, variable=supprVar, onvalue=1, offvalue=0)
+                supprButton.pack(pady=10)
+                remplButton = Checkbutton(self.cadreRempl, variable=supprVar, onvalue=2, offvalue=0)
+                remplButton.pack(pady=10)
+
+                blackVar = IntVar()
+                blackButton = Checkbutton(self.cadreBlackList, variable=blackVar,
+                                          command=lambda idExo=exo: self.blacklist(idExo))
+                blackButton.pack(pady=10)
+
+                self.exoFlag[exo] = {
+                                     &#34;suppr&#34;: {&#39;var&#39;: supprVar, &#39;button&#39;: supprButton},
+                                     &#39;rempl&#39;: {&#39;var&#39;: supprVar, &#39;button&#39;: remplButton},
+                                     &#34;black&#34;: {&#39;var&#39;: blackVar, &#39;button&#39;: blackButton}
+                                     }
+            if list(self.exoFinal.keys()).index(nom_prenom) &lt; len(self.exoFinal.keys()) - 1:
+                Separator(self.cadreExos, orient=&#39;horizontal&#39;).pack(fill=&#39;x&#39;)
+                Separator(self.cadreSuppr, orient=&#39;horizontal&#39;).pack(fill=&#39;x&#39;)
+                Separator(self.cadreRempl, orient=&#39;horizontal&#39;).pack(fill=&#39;x&#39;)
+                Separator(self.cadreBlackList, orient=&#39;horizontal&#39;).pack(fill=&#39;x&#39;)
+
+
+    def regenerate(self):
+        &#34;&#34;&#34;
+        fonction appelé lors du click sur le bouton régénérer
+        permet de d&#39;appliquer les changements effectués sur les exercices et de relancer la génération
+        &#34;&#34;&#34;
+        for nom_prenom in self.exoFinal.keys() :
+            for exoID in self.exoFinal.get(nom_prenom).keys():
+                if self.exoFlag[exoID][&#39;suppr&#39;][&#39;var&#39;].get() == 1:
+                    self.exoFinal.get(nom_prenom).pop(exoID)
+                elif self.exoFlag[exoID][&#39;rempl&#39;][&#39;var&#39;].get() == 2:
+                    diff = self.exoFinal.get(nom_prenom).get(exoID).get(&#34;diff&#34;)
+                    print(self.exoDict)
+                    if len(self.exoDict.get(diff)) == 0:
+                        messagebox.showerror(title=&#34;Régénération de feuille&#34;,
+                                             message=f&#34;Il n&#39;y a plus d&#39;exercices dans la difficulté {diff}&#34;)
+                        return
+                    else:
+                        firstExoId = list(self.exoDict.get(diff))[0]
+                        self.exoFinal[nom_prenom] = CreerFeuille.insertInDict(self.exoFinal.get(nom_prenom),
+                                                  {firstExoId:self.exoDict.get(diff).get(firstExoId)},
+                                                  list(self.exoFinal.get(nom_prenom)).index(exoID))
+                        self.exoFinal.get(nom_prenom).get(firstExoId)[&#34;diff&#34;]=diff
+                        self.exoDict.get(diff).pop(firstExoId)
+                        self.exoFinal.get(nom_prenom).pop(exoID)
+                if self.exoFlag[exoID][&#39;black&#39;][&#39;var&#39;].get() == 1:
+                    self.SGBD.AddBlackList(self.cbAuteur.get(), exoID)
+
+            CreerFeuille.listeFinale = self.exoFinal
+
+            threadCompil = MyThread.myThread(&#34;ThreadPrevisualisationFeuille&#34;,
+                                             questionCours=self.questionCours,
+                                             etudiant=nom_prenom,
+                                             auteur=self.cbAuteur.get())  # création du thread de type PrévisualisationFeuille
+            threadCompil.start()
+
+        for i in self.cadreExos.winfo_children() + self.cadreSuppr.winfo_children() + self.cadreRempl.winfo_children() + self.cadreBlackList.winfo_children():
+            i.destroy()
+
+        self.editFeuille()
+
+    def blacklist(self, idExo):
+        &#34;&#34;&#34;
+        fonction appelé lors du click sur le checkBox blacklist
+        permet de gérer le comportement des checkBox
+
+        Parameters
+        ----------
+        idExo : l&#39;id de l&#39;exercice concerné
+        &#34;&#34;&#34;
+        if self.exoFlag[idExo][&#39;black&#39;][&#39;var&#39;].get() == 1:
+            if self.exoFlag[idExo][&#39;suppr&#39;][&#39;var&#39;].get() == 0:
+                self.exoFlag[idExo][&#39;rempl&#39;][&#39;var&#39;].set(2)
+            self.exoFlag[idExo][&#39;rempl&#39;][&#39;button&#39;].configure(offvalue=1)
+            self.exoFlag[idExo][&#39;suppr&#39;][&#39;button&#39;].configure(offvalue=2)
+        else:
+            self.exoFlag[idExo][&#39;rempl&#39;][&#39;var&#39;].set(0)
+            self.exoFlag[idExo][&#39;rempl&#39;][&#39;button&#39;].configure(offvalue=0)
+            self.exoFlag[idExo][&#39;suppr&#39;][&#39;button&#39;].configure(offvalue=0)
+
+    @staticmethod
+    def insertInDict(_dict, obj, pos):
+        &#34;&#34;&#34;
+        fonction permettant d&#39;insérer un objet dans un dictionnaire à une position donnée
+        (fonction récupéré sur stackoverflow)
+
+        Parameters
+        ----------
+        _dict : le dictionnaire dans lequel on veut insérer l&#39;objet
+        obj : l&#39;objet à insérer
+        pos : la position où on veut insérer l&#39;objet
+        &#34;&#34;&#34;
+        return {k: v for k, v in (list(_dict.items())[:pos] + list(obj.items()) + list(_dict.items())[pos:])}</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille"><code class="flex name class">
+<span>class <span class="ident">CreerFeuille</span></span>
+<span>(</span><span>parent, controller)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Classe décrivant la fenêtre permettant la création d'une feuille d'exercices</p>
+<p>Constructeur de la classe</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>parent</code></strong> :&ensp;<code>la fenêtre parent</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>controller</code></strong> :&ensp;<code>le contrôleur de la fenêtre</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CreerFeuille(Frame):
+    &#34;&#34;&#34;
+    Classe décrivant la fenêtre permettant la création d&#39;une feuille d&#39;exercices
+    &#34;&#34;&#34;
+    listeFinale = []
+
+    def __init__(self, parent, controller):
+        &#34;&#34;&#34;
+        Constructeur de la classe
+
+        Parameters
+        ----------
+        parent : la fenêtre parent
+        controller : le contrôleur de la fenêtre
+        &#34;&#34;&#34;
+        import SGBD
+        self.listeexofinal = {}
+        # Setup
+        Frame.__init__(self, parent)
+        self.parent = parent
+        self.controller = controller
+        self.listeChapAjoute = {}
+        self.questionCours = &#34;&#34;
+
+        # représente l&#39;ensemble des exercices trouvé pour respecter les critères de chapitres et difficultés
+        self.exoDict = {1: {},
+                        2: {},
+                        3: {},
+                        4: {},
+                        5: {}
+                        }
+        # il est organisé de la manière suivante :
+        &#34;&#34;&#34;
+        exoDict = {
+            difficulté : {
+                idExo : {
+                    &#39;exo&#39;: &#34;Exercice&#34;,
+                    &#39;sol&#39;: &#34;Solution&#34;                    
+                },
+                ...
+            },
+            ...
+        }
+        &#34;&#34;&#34;
+
+        # représente les dificultés choisie par l&#39;utilisateur
+        self.difficulteChoisie = {}
+        # il est organisé de la manière suivante :
+        &#34;&#34;&#34;
+        difficulteChoisie = {
+            difficulté : nbExo,
+            ...
+        }
+        &#34;&#34;&#34;
+
+        # représente les exercices affichés sur la ou les feuilles
+        self.exoFinal = {
+        }
+        # il est organisé de la manière suivante :
+        &#34;&#34;&#34;
+        exoFinal = {
+            &#34;nom prenom&#34; : {         // null s&#39;il n&#39;y a pas de nom d&#39;élèves
+                id_exo : {
+                    &#39;exo&#39; : &#34;Exercice&#34;,
+                    &#39;sol&#39; : &#34;Solution&#34;,
+                    &#39;diff&#39;: difficulté (int)
+                },
+                ...
+            },
+            ...
+        }
+        &#34;&#34;&#34;
+
+        self.SGBD = SGBD.SGBD
+
+        # flags des exos lors de l&#39;édition de la feuille
+        self.exoFlag = {}
+
+        self.titre = Label(self, text=&#34;Créer une feuille d&#39;exercice&#34;, font=controller.title_font)
+        self.titre.pack(side=&#34;top&#34;, fill=&#34;x&#34;, pady=10)
+
+        # cadre supérieur de la page, contient le choix d&#39;auteur
+        self.cadreAuteur = Frame(self)
+        labelAuteur = Label(self.cadreAuteur, text=&#34;Choisissez un auteur : &#34;,
+                            font=(&#34;Helvetica&#34;, 10))
+        labelAuteur.pack(side=LEFT)
+        self.cbAuteur = Combobox(self.cadreAuteur, values=self.SGBD.giveAuteur(),
+                                 state=&#39;readonly&#39;)  # changer la values par le select auteur
+        self.cbAuteur.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;)
+        if (Utils.DefaultUser != &#34;&#34;):
+            self.cbAuteur.set(Utils.DefaultUser)
+        else:
+            self.cbAuteur.set(&#39;Choisir un auteur&#39;)
+        self.cbAuteur.pack(pady=5, side=LEFT)
+        self.cadreAuteur.pack(side=TOP)
+
+        ##########################################################################################################
+        # Cadre première partie
+        self.cadre0 = Frame(self)
+
+        self.cadreChoixChap = Frame(self.cadre0)
+        # Combobox choix de la classe
+        self.cbClass = Combobox(self.cadreChoixChap, values=self.SGBD.giveClasse(), state=&#39;readonly&#39;)
+        self.cbClass.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.ActualiseChapitrePropose())
+        self.cbClass.set(&#34;Choisir une classe&#34;)
+        self.cbClass.pack(pady=5, side=LEFT)
+
+        # Combobox choix du chapitre
+        self.cbChap = Combobox(self.cadreChoixChap)
+        self.cbChap.pack(pady=5, side=LEFT)
+        self.cbChap.set(&#34;Choisir le chapitre&#34;)
+        self.cbChap[&#34;state&#34;] = &#34;disabled&#34;
+
+        # Label
+        Label(self.cadreChoixChap, text=&#34;Liste des choix effectués ci-dessous:&#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5,
+                                                                                                              padx=10,
+                                                                                                              side=LEFT)
+
+        # Bouton valider le choix de la classe et chap
+        self.buttonValider = Button(self.cadreChoixChap, text=&#34;Choisir ce chapitre&#34;,
+                                    command=lambda: self.ajouterChapitre())
+        self.buttonValider.pack(pady=5, side=LEFT)
+
+        # Bouton supprimer
+        self.supprimerButton = Button(self.cadreChoixChap, text=&#34;Supprimer&#34;, command=lambda: self.supprimer())
+        self.supprimerButton.pack(pady=5, side=LEFT)
+
+        self.cadreChoixChap.pack()
+
+        # Affichage des choix possibles
+        self.champChoix = Listbox(self.cadre0, selectmode=&#34;multiple&#34;, width=150)
+        self.champChoix.pack(pady=5)
+
+        # Bouton effacer tout les choix
+        self.bouttonRefaireChoixChap = Button(self.cadre0, text=&#34;Réinitialiser&#34;,
+                                              command=lambda: self.refaireChoixChap())
+        self.bouttonRefaireChoixChap.pack(pady=5, side=LEFT)
+
+        # Bouton valider tout les choix et passer à l&#39;étape suivante
+        self.bouttonValiderChoixChap = Button(self.cadre0, text=&#34;Valider et passer à l&#39;étape suivante&#34;,
+                                              command=lambda: self.validerChoixChap())
+        self.bouttonValiderChoixChap.pack(pady=5, side=RIGHT)
+
+        # recherche loading
+        self.Progress_Bar = Progressbar(self.cadre0, orient=HORIZONTAL, length=250, mode=&#39;determinate&#39;)
+
+        ##########################################################################################################
+        # Cadre deuxième partie = choix difficulté
+        self.cadre1 = Frame(self)
+
+        ##########################################################################################################
+        # Cadre troisième partie question cours
+        self.cadre2 = Frame(self)
+
+        # Label q de cours
+        Label(self.cadre2,
+              text=&#34;Si vous souhaitez ajouter une question de cours, remplissez le champ ci-dessous, sinon laissez vide:&#34;,
+              font=(&#34;Helvetica&#34;, 10)).pack(pady=5, padx=10, side=TOP)
+
+        # Texte zone q de cours
+        self.champQuestionCours = Text(self.cadre2, width=80, height=10)
+        self.champQuestionCours.pack(pady=5, side=LEFT)
+
+        ##########################################################################################################
+        # Cadre quatrième partie = Nom d&#39;étudiants colle
+        self.cadre3 = Frame(self)
+
+        # Listbox des noms déja entré
+        self.champChoixNom = Listbox(self.cadre3, selectmode=&#34;multiple&#34;, width=150)
+        self.champChoixNom.pack(pady=5, side=BOTTOM)
+
+        # Label colle
+        Label(self.cadre3,
+              text=&#34;Si vous souhaitez ajouter des noms d&#39;élèves, remplissez les champs ci-contre, sinon laissez vide:&#34;,
+              font=(&#34;Helvetica&#34;, 10)).pack(pady=5, padx=10, side=LEFT)
+
+        # Entry prénom
+        self.champPrenom = Entry(self.cadre3)
+        self.champPrenom.pack(pady=5, side=LEFT)
+
+        # Entry nom
+        self.champNom = Entry(self.cadre3)
+        self.champNom.pack(pady=5, side=LEFT)
+
+        # Bouton validé le nom
+        Button(self.cadre3, text=&#34;Valider le prénom et le nom&#34;, command=lambda: self.ajouterNom()).pack(pady=5,
+                                                                                                        side=LEFT)
+
+        ##########################################################################################################
+        # Cadre 5ème partie = Generation
+        self.cadre4 = Frame(self)
+
+        # Bouton generer la feuille
+        self.buttonGenerer = Button(self.cadre4, text=&#34;Générer la feuille&#34;, command=self.gernerFeuilleBefore)
+        self.buttonGenerer.pack(pady=5, padx=150, side=RIGHT)
+
+        ##########################################################################################################
+        # Cadre 6 ème partie = Modification de la feuille
+        # (nouvelle page)
+
+        self.cadre5 = Frame(self)
+
+        self.cadreEdit = Frame(self.cadre5)
+
+        # Cadre gauche indiquant les exercices
+        self.cadreExos = LabelFrame(self.cadreEdit, text=&#34;Exercices présents dans la feuille&#34;)
+        # les exercices y seront ajouter dans la fonction editFeuille
+        self.cadreExos.pack(side=LEFT, padx=20, anchor=&#39;w&#39;)
+
+        # le cadre de suppression de l&#39;exercice
+        self.cadreSuppr = LabelFrame(self.cadreEdit, text=&#34;Supprimer l&#39;exercice&#34;)
+        self.cadreSuppr.pack(side=LEFT, padx=5)
+        # le cadre de remplacement de l&#39;exercice
+        self.cadreRempl = LabelFrame(self.cadreEdit, text=&#34;Remplacer l&#39;exercice&#34;)
+        self.cadreRempl.pack(side=LEFT, padx=5)
+        # et le cadre de blackList
+        self.cadreBlackList = LabelFrame(self.cadreEdit, text=&#34;Blacklister l&#39;exercice&#34;)
+        self.cadreBlackList.pack(side=LEFT, padx=5)
+
+        self.cadreEdit.pack()
+
+        # Bouton pour regénérer la feuille
+        self.buttonRegenerate = Button(self.cadre5, text=&#34;Régénérer la feuille&#34;, command=self.regenerate)
+        self.buttonRegenerate.pack(pady=10)
+
+        self.cadre0.pack(pady=5)
+
+        self.nomprenomactuel = ()
+
+    def ActualiseChapitrePropose(self):
+        &#34;&#34;&#34;
+        Permet de mettre à jour la liste des chapitres proposés
+        &#34;&#34;&#34;
+
+        if not self.cbClass.get() or self.cbClass.get() == &#34;Choisir une classe&#34;:
+            return
+
+        # Proposé uniquement des chapitres non ajoutés
+        chapToAdd = []
+        for i in self.SGBD.giveChap(self.cbClass.get()):
+            if not self.listeChapAjoute.get(self.cbClass.get()) or i not in self.listeChapAjoute[self.cbClass.get()]:
+                chapToAdd.append(i)
+
+        self.cbChap[&#34;values&#34;] = chapToAdd
+
+        if not chapToAdd:
+            self.cbChap[&#39;state&#39;] = &#34;disabled&#34;
+        else:
+            self.cbChap.current(0)
+            self.cbChap[&#39;state&#39;] = &#34;readonly&#34;
+
+        self.cbChap.set(&#34;Choisir le chapitre&#34;)
+
+    def ajouterChapitre(self):
+        &#34;&#34;&#34;
+        Fonction permettant d&#39;ajouter dans la liste des choix de chapitres et de classes un choix venant d&#39;être effectué
+        &#34;&#34;&#34;
+
+        if self.cbClass.get() in self.listeChapAjoute.keys() and self.cbChap.get() in self.listeChapAjoute[
+            self.cbClass.get()]:
+            return
+        if self.cbChap.get() == &#34;Choisir le chapitre&#34; or self.cbClass.get() == &#34;Choisir une classe&#34;:  # Si valeur de base
+            return
+
+        ArrayChap = self.listeChapAjoute.get(self.cbClass.get())
+
+        if ArrayChap:
+            self.listeChapAjoute[self.cbClass.get()].append(self.cbChap.get())
+        else:
+            self.listeChapAjoute[self.cbClass.get()] = [self.cbChap.get()]
+
+        self.champChoix.insert(&#39;end&#39;, f&#34;Classe : {self.cbClass.get()}, Chapitre : {self.cbChap.get()}&#34;)
+
+        self.ActualiseChapitrePropose()
+
+
+    def supprimer(self):
+        &#34;&#34;&#34;
+        Fonction qui supprime les éléments selectionnés dans la liste des chapitres
+        &#34;&#34;&#34;
+
+        for i in self.champChoix.curselection():
+
+            StringRecup = self.champChoix.get(i)
+            StringSplitted = StringRecup.split(&#34;, &#34;)
+
+            StringClasse = StringSplitted[0][9:len(StringSplitted[0])]
+            StringChap = StringSplitted[1][11:len(StringSplitted[1])]
+
+            ArrayChap = self.listeChapAjoute.get(StringClasse)
+            if ArrayChap:
+                if StringChap in ArrayChap:
+                    self.listeChapAjoute[StringClasse].remove(StringChap)
+
+        self.champChoix.delete(0, &#34;end&#34;)
+
+        for key, value in self.listeChapAjoute.items():
+            for i in value:
+                self.champChoix.insert(&#34;end&#34;, f&#34;Classe : {key}, Chapitre : {i}&#34;)
+
+        self.ActualiseChapitrePropose()
+
+    def refaireChoixChap(self):
+        &#34;&#34;&#34;
+        fonction permettant de refaire les choix des chapitres et des classes
+        &#34;&#34;&#34;
+        self.listeChapAjoute.clear()
+        self.cbClass.set(&#34;Choisir une classe&#34;)
+        self.cbChap.set(&#34;Choisir le chapitre&#34;)
+        self.cbChap[&#34;state&#34;] = &#34;disabled&#34;
+        self.champChoix.delete(0, &#34;end&#34;)
+
+    def validerChoixChap(self):
+        &#34;&#34;&#34;
+        fonction permettant de valider le choix fait pour les chapitres et les classes
+        &#34;&#34;&#34;
+        if self.champChoix.size() == 0:
+            messagebox.showinfo(title=&#34;Choix des chapitres&#34;,
+                                message=&#34;Merci de choisir au moins un chapitre avant de continuer.&#34;)
+            return
+
+        self.cbClass[&#39;state&#39;] = &#34;disabled&#34;
+        self.cbChap[&#39;state&#39;] = &#34;disabled&#34;
+        self.buttonValider.destroy()
+        self.bouttonValiderChoixChap.destroy()
+        self.bouttonRefaireChoixChap.destroy()
+        self.champChoix[&#39;state&#39;] = &#39;disabled&#39;
+        self.supprimerButton.destroy()
+
+        self.countExosfromLevel()
+        self.choixDiff()
+
+    def countExosfromLevel(self):
+        &#34;&#34;&#34;
+        fonction permettant de savoir combien d&#39;exercices sont disponibles selon le type de difficulté et les critères choisies
+        &#34;&#34;&#34;
+        # le fonctionnement de cette fonction est le même principe que la fonction save
+
+        self.SGBD.CreateTableTempChap()
+        self.SGBD.CreateTableTempLevels()
+        for chapArray in self.listeChapAjoute.values():
+            for chap in chapArray:
+                self.SGBD.InsertTableTempChap(chap)
+
+        blacklist = self.SGBD.giveBlacklist(self.cbAuteur.get())
+        for i in range(5):
+            self.SGBD.InsertTableTempLevels(i + 1)
+            exos = self.SGBD.GiveExoFromSelect()
+
+            for ind, exo, sol in exos:
+                if str(ind) not in blacklist:
+                    self.exoDict[i + 1][ind] = {
+                        &#34;exo&#34;: exo,
+                        &#34;sol&#34;: sol
+                    }
+            self.SGBD.ClearTableTempLevels()
+
+        self.SGBD.DropTableTempChap()
+        self.SGBD.DropTableTempLevels()
+
+    def choixDiff(self):
+        &#34;&#34;&#34;
+        fonction permettant de choisir la difficulté des exercices
+        &#34;&#34;&#34;
+        self.cadre1 = Frame(self)
+        Label(self.cadre1, text=&#34;Nombre d&#39;exercices par difficulté: &#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5, side=TOP)
+        Label(self.cadre1, text=&#34;Difficulté 1: &#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5, side=LEFT)
+
+        self.cbDiff1 = Combobox(self.cadre1, values=list(range(len(self.exoDict[1]) + 1)), state=&#39;readonly&#39;)
+        self.cbDiff1.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateEtapeSuivante())
+        self.cbDiff1.set(len(self.exoDict[1]))
+        self.cbDiff1.pack(pady=5, side=LEFT)
+
+        Label(self.cadre1, text=&#34;Difficulté 2: &#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5, side=LEFT)
+        self.cbDiff2 = Combobox(self.cadre1, values=list(range(len(self.exoDict[2]) + 1)), state=&#39;readonly&#39;)
+        self.cbDiff2.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateEtapeSuivante())
+        self.cbDiff2.set(len(self.exoDict[2]))
+        self.cbDiff2.pack(pady=5, side=LEFT)
+
+        Label(self.cadre1, text=&#34;Difficulté 3: &#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5, side=LEFT)
+        self.cbDiff3 = Combobox(self.cadre1, values=list(range(len(self.exoDict[3]) + 1)), state=&#39;readonly&#39;)
+        self.cbDiff3.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateEtapeSuivante())
+        self.cbDiff3.set(len(self.exoDict[3]))
+        self.cbDiff3.pack(pady=5, side=LEFT)
+
+        Label(self.cadre1, text=&#34;Difficulté 4: &#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5, side=LEFT)
+        self.cbDiff4 = Combobox(self.cadre1, values=list(range(len(self.exoDict[4]) + 1)), state=&#39;readonly&#39;)
+        self.cbDiff4.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateEtapeSuivante())
+        self.cbDiff4.set(len(self.exoDict[4]))
+        self.cbDiff4.pack(pady=5, side=LEFT)
+
+        Label(self.cadre1, text=&#34;Difficulté 5: &#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5, side=LEFT)
+        self.cbDiff5 = Combobox(self.cadre1, values=list(range(len(self.exoDict[5]) + 1)), state=&#39;readonly&#39;)
+        self.cbDiff5.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateEtapeSuivante())
+        self.cbDiff5.set(len(self.exoDict[5]))
+        self.cbDiff5.pack(pady=5, side=LEFT)
+
+        self.cadre1.pack(pady=5)
+
+        self.bouttonValiderChoixDiff = Button(self.cadre1, text=&#34;Passer à l&#39;étape suivante&#34;,
+                                              command=lambda: self.validerChoixDiff())
+        self.bouttonValiderChoixDiff.pack(pady=5, side=LEFT)
+
+    def UpdateEtapeSuivante(self):
+        &#34;&#34;&#34;
+        fonction permettant de mettre à jour l&#39;étape suivante
+        afin d&#39;activer le boutton valider
+        &#34;&#34;&#34;
+        if self.cbDiff5.get() == &#34;0&#34; and self.cbDiff4.get() == &#34;0&#34; and self.cbDiff3.get() == &#34;0&#34; and self.cbDiff2.get() == &#34;0&#34; and self.cbDiff1.get() == &#34;0&#34;:
+            self.bouttonValiderChoixDiff[&#34;state&#34;] = &#34;disabled&#34;
+        else:
+            self.bouttonValiderChoixDiff[&#34;state&#34;] = &#34;normal&#34;
+
+
+    def validerChoixDiff(self):
+        &#34;&#34;&#34;
+        fonction permettant de valider le choix de difficulté du deuxième type
+        &#34;&#34;&#34;
+        if self.cbAuteur.get() == &#34;Choisir un auteur&#34;:
+            messagebox.showinfo(title=&#34;Génération de feuilles&#34;,
+                                message=&#34;Veuillez renseigner l&#39;auteur&#34;)
+            return
+        self.cadre0.destroy()
+
+        self.cadre2.pack(pady=5)
+        self.cadre3.pack(pady=5)
+        self.cadre4.pack(pady=5)
+
+        self.cbDiff1[&#39;state&#39;] = &#34;disabled&#34;
+        self.cbDiff2[&#39;state&#39;] = &#34;disabled&#34;
+        self.cbDiff3[&#39;state&#39;] = &#34;disabled&#34;
+        self.cbDiff4[&#39;state&#39;] = &#34;disabled&#34;
+        self.cbDiff5[&#39;state&#39;] = &#34;disabled&#34;
+
+        self.difficulteChoisie={
+            1: int(self.cbDiff1.get()),
+            2: int(self.cbDiff2.get()),
+            3: int(self.cbDiff3.get()),
+            4: int(self.cbDiff4.get()),
+            5: int(self.cbDiff5.get())
+        }
+
+        self.bouttonValiderChoixDiff.destroy()
+
+    def ajouterNom(self):
+        &#34;&#34;&#34;
+        fonction permettant d&#39;ajouter un nom et prénom dans la liste concernée pour l&#39;ajouter ensuite sur la feuille
+        &#34;&#34;&#34;
+        if self.champNom.get() == &#34;&#34; or self.champPrenom.get() == &#34;&#34;:
+            messagebox.showinfo(title=&#34;Génération de feuilles&#34;,
+                                message=&#34;Veuillez renseigner le nom et le prénom&#34;)
+            return
+
+        if self.difficulteChoisie.get(1)*(len(self.exoFinal.keys())+1) &gt; len(self.exoDict.get(1)) or\
+            self.difficulteChoisie.get(2)*(len(self.exoFinal.keys())+1) &gt; len(self.exoDict.get(2)) or\
+            self.difficulteChoisie.get(3)*(len(self.exoFinal.keys())+1) &gt; len(self.exoDict.get(3)) or\
+            self.difficulteChoisie.get(4)*(len(self.exoFinal.keys())+1) &gt; len(self.exoDict.get(4)) or\
+            self.difficulteChoisie.get(5)*(len(self.exoFinal.keys())+1) &gt; len(self.exoDict.get(5)):
+            messagebox.showinfo(title=&#34;Génération de feuilles&#34;,
+                                message=&#34;Vous avez choisi trop d&#39;exercices&#34;)
+            return
+
+        self.exoFinal[(self.champPrenom.get(), self.champNom.get())] = {}
+
+        self.champChoixNom.insert(&#39;end&#39;, &#34;Prénom : &#34; + self.champPrenom.get() + &#34;  Nom : &#34; + self.champNom.get())
+
+        self.champPrenom.delete(0, END)
+        self.champNom.delete(0, END)
+
+    def gernerFeuilleBefore(self):
+        &#34;&#34;&#34;
+        Première étape de la génération de feuilles
+        permet de gérer la presence de plusieurs élèves
+        elle appelle la fonction gernerFeuille autant de fois que l&#39;on a choisi d&#39;élèves
+        elle appelle aussi la fonction editFeuille afin de pouvoir éditer les feuilles générées
+        &#34;&#34;&#34;
+        self.questionCours = self.champQuestionCours.get(&#34;1.0&#34;,&#34;end-1c&#34;)
+        if len(self.exoFinal.keys()) == 0:
+            self.exoFinal[None] = {}
+            self.gernerFeuille(0)
+        else :
+            for i, j in enumerate(self.exoFinal.keys()):
+                self.gernerFeuille(i)
+        self.editFeuille()
+
+    def gernerFeuille(self, numfeuille):
+        &#34;&#34;&#34;
+        fonction permettant de lancer la selection aléatoire d&#39;exercices selon les critères de l&#39;utilisateur
+        Parameters
+        ----------
+        numfeuille : le numéro de la feuille à générer (permet d&#39;identifier le nom et prénom de l&#39;élève)
+        &#34;&#34;&#34;
+        nom_prenom = list(self.exoFinal.keys())[numfeuille]
+
+        for diff, quantity in self.difficulteChoisie.items():
+            if quantity == 0:
+                continue
+            else:
+                fixed_exo = list(self.exoDict.get(diff).keys())
+
+                for exoId in fixed_exo[:quantity]:
+                    self.exoFinal[nom_prenom][exoId] = self.exoDict.get(diff).get(exoId).copy()
+                    self.exoFinal[nom_prenom][exoId][&#34;diff&#34;] = diff
+                    self.exoDict.get(diff).pop(exoId)
+        # ajout de la liste finale dans une variable globale pour y accéder depuis MyThread.py
+        CreerFeuille.listeFinale = self.exoFinal
+
+        threadCompil = MyThread.myThread(&#34;ThreadPrevisualisationFeuille&#34;,
+                                            questionCours=self.questionCours,
+                                            etudiant=nom_prenom, auteur=self.cbAuteur.get())  # création du thread de type PrévisualisationFeuille
+        threadCompil.start()
+
+        self.cadre1.destroy()
+        self.cadre2.destroy()
+        self.cadre3.destroy()
+        self.cadre4.destroy()
+
+    def editFeuille(self):
+        &#34;&#34;&#34;
+        fonction permettant de lancer l&#39;édition des feuilles générées
+        elle affiche pour chque exercice les boutons supprimer, remplacer et blacklist
+        une séparation est présente entre chaque élève
+        &#34;&#34;&#34;
+        self.cadre5.pack()
+        for nom_prenom in self.exoFinal.keys():
+            for ind, exo in enumerate(self.exoFinal.get(nom_prenom).keys()):
+                # identification de l&#39;exercice
+                Button(self.cadreExos,
+                       text=f&#34;exercice n°{ind + 1}{&#39;&#39; if ind + 1 &gt; 10 else &#39; &#39;} id : {exo}{&#39; &#39; * (3 - len(str(exo)) - 1)}&#34;,
+                       command=lambda: print(exo)
+                       ).pack(pady=5)
+
+                supprVar = IntVar()
+                supprButton = Checkbutton(self.cadreSuppr, variable=supprVar, onvalue=1, offvalue=0)
+                supprButton.pack(pady=10)
+                remplButton = Checkbutton(self.cadreRempl, variable=supprVar, onvalue=2, offvalue=0)
+                remplButton.pack(pady=10)
+
+                blackVar = IntVar()
+                blackButton = Checkbutton(self.cadreBlackList, variable=blackVar,
+                                          command=lambda idExo=exo: self.blacklist(idExo))
+                blackButton.pack(pady=10)
+
+                self.exoFlag[exo] = {
+                                     &#34;suppr&#34;: {&#39;var&#39;: supprVar, &#39;button&#39;: supprButton},
+                                     &#39;rempl&#39;: {&#39;var&#39;: supprVar, &#39;button&#39;: remplButton},
+                                     &#34;black&#34;: {&#39;var&#39;: blackVar, &#39;button&#39;: blackButton}
+                                     }
+            if list(self.exoFinal.keys()).index(nom_prenom) &lt; len(self.exoFinal.keys()) - 1:
+                Separator(self.cadreExos, orient=&#39;horizontal&#39;).pack(fill=&#39;x&#39;)
+                Separator(self.cadreSuppr, orient=&#39;horizontal&#39;).pack(fill=&#39;x&#39;)
+                Separator(self.cadreRempl, orient=&#39;horizontal&#39;).pack(fill=&#39;x&#39;)
+                Separator(self.cadreBlackList, orient=&#39;horizontal&#39;).pack(fill=&#39;x&#39;)
+
+
+    def regenerate(self):
+        &#34;&#34;&#34;
+        fonction appelé lors du click sur le bouton régénérer
+        permet de d&#39;appliquer les changements effectués sur les exercices et de relancer la génération
+        &#34;&#34;&#34;
+        for nom_prenom in self.exoFinal.keys() :
+            for exoID in self.exoFinal.get(nom_prenom).keys():
+                if self.exoFlag[exoID][&#39;suppr&#39;][&#39;var&#39;].get() == 1:
+                    self.exoFinal.get(nom_prenom).pop(exoID)
+                elif self.exoFlag[exoID][&#39;rempl&#39;][&#39;var&#39;].get() == 2:
+                    diff = self.exoFinal.get(nom_prenom).get(exoID).get(&#34;diff&#34;)
+                    print(self.exoDict)
+                    if len(self.exoDict.get(diff)) == 0:
+                        messagebox.showerror(title=&#34;Régénération de feuille&#34;,
+                                             message=f&#34;Il n&#39;y a plus d&#39;exercices dans la difficulté {diff}&#34;)
+                        return
+                    else:
+                        firstExoId = list(self.exoDict.get(diff))[0]
+                        self.exoFinal[nom_prenom] = CreerFeuille.insertInDict(self.exoFinal.get(nom_prenom),
+                                                  {firstExoId:self.exoDict.get(diff).get(firstExoId)},
+                                                  list(self.exoFinal.get(nom_prenom)).index(exoID))
+                        self.exoFinal.get(nom_prenom).get(firstExoId)[&#34;diff&#34;]=diff
+                        self.exoDict.get(diff).pop(firstExoId)
+                        self.exoFinal.get(nom_prenom).pop(exoID)
+                if self.exoFlag[exoID][&#39;black&#39;][&#39;var&#39;].get() == 1:
+                    self.SGBD.AddBlackList(self.cbAuteur.get(), exoID)
+
+            CreerFeuille.listeFinale = self.exoFinal
+
+            threadCompil = MyThread.myThread(&#34;ThreadPrevisualisationFeuille&#34;,
+                                             questionCours=self.questionCours,
+                                             etudiant=nom_prenom,
+                                             auteur=self.cbAuteur.get())  # création du thread de type PrévisualisationFeuille
+            threadCompil.start()
+
+        for i in self.cadreExos.winfo_children() + self.cadreSuppr.winfo_children() + self.cadreRempl.winfo_children() + self.cadreBlackList.winfo_children():
+            i.destroy()
+
+        self.editFeuille()
+
+    def blacklist(self, idExo):
+        &#34;&#34;&#34;
+        fonction appelé lors du click sur le checkBox blacklist
+        permet de gérer le comportement des checkBox
+
+        Parameters
+        ----------
+        idExo : l&#39;id de l&#39;exercice concerné
+        &#34;&#34;&#34;
+        if self.exoFlag[idExo][&#39;black&#39;][&#39;var&#39;].get() == 1:
+            if self.exoFlag[idExo][&#39;suppr&#39;][&#39;var&#39;].get() == 0:
+                self.exoFlag[idExo][&#39;rempl&#39;][&#39;var&#39;].set(2)
+            self.exoFlag[idExo][&#39;rempl&#39;][&#39;button&#39;].configure(offvalue=1)
+            self.exoFlag[idExo][&#39;suppr&#39;][&#39;button&#39;].configure(offvalue=2)
+        else:
+            self.exoFlag[idExo][&#39;rempl&#39;][&#39;var&#39;].set(0)
+            self.exoFlag[idExo][&#39;rempl&#39;][&#39;button&#39;].configure(offvalue=0)
+            self.exoFlag[idExo][&#39;suppr&#39;][&#39;button&#39;].configure(offvalue=0)
+
+    @staticmethod
+    def insertInDict(_dict, obj, pos):
+        &#34;&#34;&#34;
+        fonction permettant d&#39;insérer un objet dans un dictionnaire à une position donnée
+        (fonction récupéré sur stackoverflow)
+
+        Parameters
+        ----------
+        _dict : le dictionnaire dans lequel on veut insérer l&#39;objet
+        obj : l&#39;objet à insérer
+        pos : la position où on veut insérer l&#39;objet
+        &#34;&#34;&#34;
+        return {k: v for k, v in (list(_dict.items())[:pos] + list(obj.items()) + list(_dict.items())[pos:])}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>tkinter.ttk.Frame</li>
+<li>tkinter.ttk.Widget</li>
+<li>tkinter.Widget</li>
+<li>tkinter.BaseWidget</li>
+<li>tkinter.Misc</li>
+<li>tkinter.Pack</li>
+<li>tkinter.Place</li>
+<li>tkinter.Grid</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.listeFinale"><code class="name">var <span class="ident">listeFinale</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.insertInDict"><code class="name flex">
+<span>def <span class="ident">insertInDict</span></span>(<span>_dict, obj, pos)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>fonction permettant d'insérer un objet dans un dictionnaire à une position donnée
+(fonction récupéré sur stackoverflow)</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>_dict</code></strong> :&ensp;<code>le dictionnaire dans lequel on veut insérer l'objet</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>obj</code></strong> :&ensp;<code>l'objet à insérer</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>pos</code></strong> :&ensp;<code>la position où on veut insérer l'objet</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def insertInDict(_dict, obj, pos):
+    &#34;&#34;&#34;
+    fonction permettant d&#39;insérer un objet dans un dictionnaire à une position donnée
+    (fonction récupéré sur stackoverflow)
+
+    Parameters
+    ----------
+    _dict : le dictionnaire dans lequel on veut insérer l&#39;objet
+    obj : l&#39;objet à insérer
+    pos : la position où on veut insérer l&#39;objet
+    &#34;&#34;&#34;
+    return {k: v for k, v in (list(_dict.items())[:pos] + list(obj.items()) + list(_dict.items())[pos:])}</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.difficulteChoisie"><code class="name">var <span class="ident">difficulteChoisie</span></code></dt>
+<dd>
+<div class="desc"><p>difficulteChoisie = {
+difficulté : nbExo,
+&hellip;
+}</p></div>
+</dd>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.exoDict"><code class="name">var <span class="ident">exoDict</span></code></dt>
+<dd>
+<div class="desc"><p>exoDict = {
+difficulté : {
+idExo : {
+'exo': "Exercice",
+'sol': "Solution"
+<br>
+},
+&hellip;
+},
+&hellip;
+}</p></div>
+</dd>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.exoFinal"><code class="name">var <span class="ident">exoFinal</span></code></dt>
+<dd>
+<div class="desc"><p>exoFinal = {
+"nom prenom" : {
+// null s'il n'y a pas de nom d'élèves
+id_exo : {
+'exo' : "Exercice",
+'sol' : "Solution",
+'diff': difficulté (int)
+},
+&hellip;
+},
+&hellip;
+}</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.ActualiseChapitrePropose"><code class="name flex">
+<span>def <span class="ident">ActualiseChapitrePropose</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Permet de mettre à jour la liste des chapitres proposés</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ActualiseChapitrePropose(self):
+    &#34;&#34;&#34;
+    Permet de mettre à jour la liste des chapitres proposés
+    &#34;&#34;&#34;
+
+    if not self.cbClass.get() or self.cbClass.get() == &#34;Choisir une classe&#34;:
+        return
+
+    # Proposé uniquement des chapitres non ajoutés
+    chapToAdd = []
+    for i in self.SGBD.giveChap(self.cbClass.get()):
+        if not self.listeChapAjoute.get(self.cbClass.get()) or i not in self.listeChapAjoute[self.cbClass.get()]:
+            chapToAdd.append(i)
+
+    self.cbChap[&#34;values&#34;] = chapToAdd
+
+    if not chapToAdd:
+        self.cbChap[&#39;state&#39;] = &#34;disabled&#34;
+    else:
+        self.cbChap.current(0)
+        self.cbChap[&#39;state&#39;] = &#34;readonly&#34;
+
+    self.cbChap.set(&#34;Choisir le chapitre&#34;)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.UpdateEtapeSuivante"><code class="name flex">
+<span>def <span class="ident">UpdateEtapeSuivante</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>fonction permettant de mettre à jour l'étape suivante
+afin d'activer le boutton valider</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def UpdateEtapeSuivante(self):
+    &#34;&#34;&#34;
+    fonction permettant de mettre à jour l&#39;étape suivante
+    afin d&#39;activer le boutton valider
+    &#34;&#34;&#34;
+    if self.cbDiff5.get() == &#34;0&#34; and self.cbDiff4.get() == &#34;0&#34; and self.cbDiff3.get() == &#34;0&#34; and self.cbDiff2.get() == &#34;0&#34; and self.cbDiff1.get() == &#34;0&#34;:
+        self.bouttonValiderChoixDiff[&#34;state&#34;] = &#34;disabled&#34;
+    else:
+        self.bouttonValiderChoixDiff[&#34;state&#34;] = &#34;normal&#34;</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.ajouterChapitre"><code class="name flex">
+<span>def <span class="ident">ajouterChapitre</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fonction permettant d'ajouter dans la liste des choix de chapitres et de classes un choix venant d'être effectué</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ajouterChapitre(self):
+    &#34;&#34;&#34;
+    Fonction permettant d&#39;ajouter dans la liste des choix de chapitres et de classes un choix venant d&#39;être effectué
+    &#34;&#34;&#34;
+
+    if self.cbClass.get() in self.listeChapAjoute.keys() and self.cbChap.get() in self.listeChapAjoute[
+        self.cbClass.get()]:
+        return
+    if self.cbChap.get() == &#34;Choisir le chapitre&#34; or self.cbClass.get() == &#34;Choisir une classe&#34;:  # Si valeur de base
+        return
+
+    ArrayChap = self.listeChapAjoute.get(self.cbClass.get())
+
+    if ArrayChap:
+        self.listeChapAjoute[self.cbClass.get()].append(self.cbChap.get())
+    else:
+        self.listeChapAjoute[self.cbClass.get()] = [self.cbChap.get()]
+
+    self.champChoix.insert(&#39;end&#39;, f&#34;Classe : {self.cbClass.get()}, Chapitre : {self.cbChap.get()}&#34;)
+
+    self.ActualiseChapitrePropose()</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.ajouterNom"><code class="name flex">
+<span>def <span class="ident">ajouterNom</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>fonction permettant d'ajouter un nom et prénom dans la liste concernée pour l'ajouter ensuite sur la feuille</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ajouterNom(self):
+    &#34;&#34;&#34;
+    fonction permettant d&#39;ajouter un nom et prénom dans la liste concernée pour l&#39;ajouter ensuite sur la feuille
+    &#34;&#34;&#34;
+    if self.champNom.get() == &#34;&#34; or self.champPrenom.get() == &#34;&#34;:
+        messagebox.showinfo(title=&#34;Génération de feuilles&#34;,
+                            message=&#34;Veuillez renseigner le nom et le prénom&#34;)
+        return
+
+    if self.difficulteChoisie.get(1)*(len(self.exoFinal.keys())+1) &gt; len(self.exoDict.get(1)) or\
+        self.difficulteChoisie.get(2)*(len(self.exoFinal.keys())+1) &gt; len(self.exoDict.get(2)) or\
+        self.difficulteChoisie.get(3)*(len(self.exoFinal.keys())+1) &gt; len(self.exoDict.get(3)) or\
+        self.difficulteChoisie.get(4)*(len(self.exoFinal.keys())+1) &gt; len(self.exoDict.get(4)) or\
+        self.difficulteChoisie.get(5)*(len(self.exoFinal.keys())+1) &gt; len(self.exoDict.get(5)):
+        messagebox.showinfo(title=&#34;Génération de feuilles&#34;,
+                            message=&#34;Vous avez choisi trop d&#39;exercices&#34;)
+        return
+
+    self.exoFinal[(self.champPrenom.get(), self.champNom.get())] = {}
+
+    self.champChoixNom.insert(&#39;end&#39;, &#34;Prénom : &#34; + self.champPrenom.get() + &#34;  Nom : &#34; + self.champNom.get())
+
+    self.champPrenom.delete(0, END)
+    self.champNom.delete(0, END)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.blacklist"><code class="name flex">
+<span>def <span class="ident">blacklist</span></span>(<span>self, idExo)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>fonction appelé lors du click sur le checkBox blacklist
+permet de gérer le comportement des checkBox</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>idExo</code></strong> :&ensp;<code>l'id de l'exercice concerné</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def blacklist(self, idExo):
+    &#34;&#34;&#34;
+    fonction appelé lors du click sur le checkBox blacklist
+    permet de gérer le comportement des checkBox
+
+    Parameters
+    ----------
+    idExo : l&#39;id de l&#39;exercice concerné
+    &#34;&#34;&#34;
+    if self.exoFlag[idExo][&#39;black&#39;][&#39;var&#39;].get() == 1:
+        if self.exoFlag[idExo][&#39;suppr&#39;][&#39;var&#39;].get() == 0:
+            self.exoFlag[idExo][&#39;rempl&#39;][&#39;var&#39;].set(2)
+        self.exoFlag[idExo][&#39;rempl&#39;][&#39;button&#39;].configure(offvalue=1)
+        self.exoFlag[idExo][&#39;suppr&#39;][&#39;button&#39;].configure(offvalue=2)
+    else:
+        self.exoFlag[idExo][&#39;rempl&#39;][&#39;var&#39;].set(0)
+        self.exoFlag[idExo][&#39;rempl&#39;][&#39;button&#39;].configure(offvalue=0)
+        self.exoFlag[idExo][&#39;suppr&#39;][&#39;button&#39;].configure(offvalue=0)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.choixDiff"><code class="name flex">
+<span>def <span class="ident">choixDiff</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>fonction permettant de choisir la difficulté des exercices</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def choixDiff(self):
+    &#34;&#34;&#34;
+    fonction permettant de choisir la difficulté des exercices
+    &#34;&#34;&#34;
+    self.cadre1 = Frame(self)
+    Label(self.cadre1, text=&#34;Nombre d&#39;exercices par difficulté: &#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5, side=TOP)
+    Label(self.cadre1, text=&#34;Difficulté 1: &#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5, side=LEFT)
+
+    self.cbDiff1 = Combobox(self.cadre1, values=list(range(len(self.exoDict[1]) + 1)), state=&#39;readonly&#39;)
+    self.cbDiff1.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateEtapeSuivante())
+    self.cbDiff1.set(len(self.exoDict[1]))
+    self.cbDiff1.pack(pady=5, side=LEFT)
+
+    Label(self.cadre1, text=&#34;Difficulté 2: &#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5, side=LEFT)
+    self.cbDiff2 = Combobox(self.cadre1, values=list(range(len(self.exoDict[2]) + 1)), state=&#39;readonly&#39;)
+    self.cbDiff2.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateEtapeSuivante())
+    self.cbDiff2.set(len(self.exoDict[2]))
+    self.cbDiff2.pack(pady=5, side=LEFT)
+
+    Label(self.cadre1, text=&#34;Difficulté 3: &#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5, side=LEFT)
+    self.cbDiff3 = Combobox(self.cadre1, values=list(range(len(self.exoDict[3]) + 1)), state=&#39;readonly&#39;)
+    self.cbDiff3.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateEtapeSuivante())
+    self.cbDiff3.set(len(self.exoDict[3]))
+    self.cbDiff3.pack(pady=5, side=LEFT)
+
+    Label(self.cadre1, text=&#34;Difficulté 4: &#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5, side=LEFT)
+    self.cbDiff4 = Combobox(self.cadre1, values=list(range(len(self.exoDict[4]) + 1)), state=&#39;readonly&#39;)
+    self.cbDiff4.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateEtapeSuivante())
+    self.cbDiff4.set(len(self.exoDict[4]))
+    self.cbDiff4.pack(pady=5, side=LEFT)
+
+    Label(self.cadre1, text=&#34;Difficulté 5: &#34;, font=(&#34;Helvetica&#34;, 10)).pack(pady=5, side=LEFT)
+    self.cbDiff5 = Combobox(self.cadre1, values=list(range(len(self.exoDict[5]) + 1)), state=&#39;readonly&#39;)
+    self.cbDiff5.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateEtapeSuivante())
+    self.cbDiff5.set(len(self.exoDict[5]))
+    self.cbDiff5.pack(pady=5, side=LEFT)
+
+    self.cadre1.pack(pady=5)
+
+    self.bouttonValiderChoixDiff = Button(self.cadre1, text=&#34;Passer à l&#39;étape suivante&#34;,
+                                          command=lambda: self.validerChoixDiff())
+    self.bouttonValiderChoixDiff.pack(pady=5, side=LEFT)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.countExosfromLevel"><code class="name flex">
+<span>def <span class="ident">countExosfromLevel</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>fonction permettant de savoir combien d'exercices sont disponibles selon le type de difficulté et les critères choisies</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def countExosfromLevel(self):
+    &#34;&#34;&#34;
+    fonction permettant de savoir combien d&#39;exercices sont disponibles selon le type de difficulté et les critères choisies
+    &#34;&#34;&#34;
+    # le fonctionnement de cette fonction est le même principe que la fonction save
+
+    self.SGBD.CreateTableTempChap()
+    self.SGBD.CreateTableTempLevels()
+    for chapArray in self.listeChapAjoute.values():
+        for chap in chapArray:
+            self.SGBD.InsertTableTempChap(chap)
+
+    blacklist = self.SGBD.giveBlacklist(self.cbAuteur.get())
+    for i in range(5):
+        self.SGBD.InsertTableTempLevels(i + 1)
+        exos = self.SGBD.GiveExoFromSelect()
+
+        for ind, exo, sol in exos:
+            if str(ind) not in blacklist:
+                self.exoDict[i + 1][ind] = {
+                    &#34;exo&#34;: exo,
+                    &#34;sol&#34;: sol
+                }
+        self.SGBD.ClearTableTempLevels()
+
+    self.SGBD.DropTableTempChap()
+    self.SGBD.DropTableTempLevels()</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.editFeuille"><code class="name flex">
+<span>def <span class="ident">editFeuille</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>fonction permettant de lancer l'édition des feuilles générées
+elle affiche pour chque exercice les boutons supprimer, remplacer et blacklist
+une séparation est présente entre chaque élève</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def editFeuille(self):
+    &#34;&#34;&#34;
+    fonction permettant de lancer l&#39;édition des feuilles générées
+    elle affiche pour chque exercice les boutons supprimer, remplacer et blacklist
+    une séparation est présente entre chaque élève
+    &#34;&#34;&#34;
+    self.cadre5.pack()
+    for nom_prenom in self.exoFinal.keys():
+        for ind, exo in enumerate(self.exoFinal.get(nom_prenom).keys()):
+            # identification de l&#39;exercice
+            Button(self.cadreExos,
+                   text=f&#34;exercice n°{ind + 1}{&#39;&#39; if ind + 1 &gt; 10 else &#39; &#39;} id : {exo}{&#39; &#39; * (3 - len(str(exo)) - 1)}&#34;,
+                   command=lambda: print(exo)
+                   ).pack(pady=5)
+
+            supprVar = IntVar()
+            supprButton = Checkbutton(self.cadreSuppr, variable=supprVar, onvalue=1, offvalue=0)
+            supprButton.pack(pady=10)
+            remplButton = Checkbutton(self.cadreRempl, variable=supprVar, onvalue=2, offvalue=0)
+            remplButton.pack(pady=10)
+
+            blackVar = IntVar()
+            blackButton = Checkbutton(self.cadreBlackList, variable=blackVar,
+                                      command=lambda idExo=exo: self.blacklist(idExo))
+            blackButton.pack(pady=10)
+
+            self.exoFlag[exo] = {
+                                 &#34;suppr&#34;: {&#39;var&#39;: supprVar, &#39;button&#39;: supprButton},
+                                 &#39;rempl&#39;: {&#39;var&#39;: supprVar, &#39;button&#39;: remplButton},
+                                 &#34;black&#34;: {&#39;var&#39;: blackVar, &#39;button&#39;: blackButton}
+                                 }
+        if list(self.exoFinal.keys()).index(nom_prenom) &lt; len(self.exoFinal.keys()) - 1:
+            Separator(self.cadreExos, orient=&#39;horizontal&#39;).pack(fill=&#39;x&#39;)
+            Separator(self.cadreSuppr, orient=&#39;horizontal&#39;).pack(fill=&#39;x&#39;)
+            Separator(self.cadreRempl, orient=&#39;horizontal&#39;).pack(fill=&#39;x&#39;)
+            Separator(self.cadreBlackList, orient=&#39;horizontal&#39;).pack(fill=&#39;x&#39;)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.gernerFeuille"><code class="name flex">
+<span>def <span class="ident">gernerFeuille</span></span>(<span>self, numfeuille)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>fonction permettant de lancer la selection aléatoire d'exercices selon les critères de l'utilisateur
+Parameters</p>
+<hr>
+<dl>
+<dt><strong><code>numfeuille</code></strong> :&ensp;<code>le numéro de la feuille à générer (permet d'identifier le nom et prénom de l'élève)</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def gernerFeuille(self, numfeuille):
+    &#34;&#34;&#34;
+    fonction permettant de lancer la selection aléatoire d&#39;exercices selon les critères de l&#39;utilisateur
+    Parameters
+    ----------
+    numfeuille : le numéro de la feuille à générer (permet d&#39;identifier le nom et prénom de l&#39;élève)
+    &#34;&#34;&#34;
+    nom_prenom = list(self.exoFinal.keys())[numfeuille]
+
+    for diff, quantity in self.difficulteChoisie.items():
+        if quantity == 0:
+            continue
+        else:
+            fixed_exo = list(self.exoDict.get(diff).keys())
+
+            for exoId in fixed_exo[:quantity]:
+                self.exoFinal[nom_prenom][exoId] = self.exoDict.get(diff).get(exoId).copy()
+                self.exoFinal[nom_prenom][exoId][&#34;diff&#34;] = diff
+                self.exoDict.get(diff).pop(exoId)
+    # ajout de la liste finale dans une variable globale pour y accéder depuis MyThread.py
+    CreerFeuille.listeFinale = self.exoFinal
+
+    threadCompil = MyThread.myThread(&#34;ThreadPrevisualisationFeuille&#34;,
+                                        questionCours=self.questionCours,
+                                        etudiant=nom_prenom, auteur=self.cbAuteur.get())  # création du thread de type PrévisualisationFeuille
+    threadCompil.start()
+
+    self.cadre1.destroy()
+    self.cadre2.destroy()
+    self.cadre3.destroy()
+    self.cadre4.destroy()</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.gernerFeuilleBefore"><code class="name flex">
+<span>def <span class="ident">gernerFeuilleBefore</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Première étape de la génération de feuilles
+permet de gérer la presence de plusieurs élèves
+elle appelle la fonction gernerFeuille autant de fois que l'on a choisi d'élèves
+elle appelle aussi la fonction editFeuille afin de pouvoir éditer les feuilles générées</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def gernerFeuilleBefore(self):
+    &#34;&#34;&#34;
+    Première étape de la génération de feuilles
+    permet de gérer la presence de plusieurs élèves
+    elle appelle la fonction gernerFeuille autant de fois que l&#39;on a choisi d&#39;élèves
+    elle appelle aussi la fonction editFeuille afin de pouvoir éditer les feuilles générées
+    &#34;&#34;&#34;
+    self.questionCours = self.champQuestionCours.get(&#34;1.0&#34;,&#34;end-1c&#34;)
+    if len(self.exoFinal.keys()) == 0:
+        self.exoFinal[None] = {}
+        self.gernerFeuille(0)
+    else :
+        for i, j in enumerate(self.exoFinal.keys()):
+            self.gernerFeuille(i)
+    self.editFeuille()</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.refaireChoixChap"><code class="name flex">
+<span>def <span class="ident">refaireChoixChap</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>fonction permettant de refaire les choix des chapitres et des classes</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def refaireChoixChap(self):
+    &#34;&#34;&#34;
+    fonction permettant de refaire les choix des chapitres et des classes
+    &#34;&#34;&#34;
+    self.listeChapAjoute.clear()
+    self.cbClass.set(&#34;Choisir une classe&#34;)
+    self.cbChap.set(&#34;Choisir le chapitre&#34;)
+    self.cbChap[&#34;state&#34;] = &#34;disabled&#34;
+    self.champChoix.delete(0, &#34;end&#34;)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.regenerate"><code class="name flex">
+<span>def <span class="ident">regenerate</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>fonction appelé lors du click sur le bouton régénérer
+permet de d'appliquer les changements effectués sur les exercices et de relancer la génération</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def regenerate(self):
+    &#34;&#34;&#34;
+    fonction appelé lors du click sur le bouton régénérer
+    permet de d&#39;appliquer les changements effectués sur les exercices et de relancer la génération
+    &#34;&#34;&#34;
+    for nom_prenom in self.exoFinal.keys() :
+        for exoID in self.exoFinal.get(nom_prenom).keys():
+            if self.exoFlag[exoID][&#39;suppr&#39;][&#39;var&#39;].get() == 1:
+                self.exoFinal.get(nom_prenom).pop(exoID)
+            elif self.exoFlag[exoID][&#39;rempl&#39;][&#39;var&#39;].get() == 2:
+                diff = self.exoFinal.get(nom_prenom).get(exoID).get(&#34;diff&#34;)
+                print(self.exoDict)
+                if len(self.exoDict.get(diff)) == 0:
+                    messagebox.showerror(title=&#34;Régénération de feuille&#34;,
+                                         message=f&#34;Il n&#39;y a plus d&#39;exercices dans la difficulté {diff}&#34;)
+                    return
+                else:
+                    firstExoId = list(self.exoDict.get(diff))[0]
+                    self.exoFinal[nom_prenom] = CreerFeuille.insertInDict(self.exoFinal.get(nom_prenom),
+                                              {firstExoId:self.exoDict.get(diff).get(firstExoId)},
+                                              list(self.exoFinal.get(nom_prenom)).index(exoID))
+                    self.exoFinal.get(nom_prenom).get(firstExoId)[&#34;diff&#34;]=diff
+                    self.exoDict.get(diff).pop(firstExoId)
+                    self.exoFinal.get(nom_prenom).pop(exoID)
+            if self.exoFlag[exoID][&#39;black&#39;][&#39;var&#39;].get() == 1:
+                self.SGBD.AddBlackList(self.cbAuteur.get(), exoID)
+
+        CreerFeuille.listeFinale = self.exoFinal
+
+        threadCompil = MyThread.myThread(&#34;ThreadPrevisualisationFeuille&#34;,
+                                         questionCours=self.questionCours,
+                                         etudiant=nom_prenom,
+                                         auteur=self.cbAuteur.get())  # création du thread de type PrévisualisationFeuille
+        threadCompil.start()
+
+    for i in self.cadreExos.winfo_children() + self.cadreSuppr.winfo_children() + self.cadreRempl.winfo_children() + self.cadreBlackList.winfo_children():
+        i.destroy()
+
+    self.editFeuille()</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.supprimer"><code class="name flex">
+<span>def <span class="ident">supprimer</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fonction qui supprime les éléments selectionnés dans la liste des chapitres</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def supprimer(self):
+    &#34;&#34;&#34;
+    Fonction qui supprime les éléments selectionnés dans la liste des chapitres
+    &#34;&#34;&#34;
+
+    for i in self.champChoix.curselection():
+
+        StringRecup = self.champChoix.get(i)
+        StringSplitted = StringRecup.split(&#34;, &#34;)
+
+        StringClasse = StringSplitted[0][9:len(StringSplitted[0])]
+        StringChap = StringSplitted[1][11:len(StringSplitted[1])]
+
+        ArrayChap = self.listeChapAjoute.get(StringClasse)
+        if ArrayChap:
+            if StringChap in ArrayChap:
+                self.listeChapAjoute[StringClasse].remove(StringChap)
+
+    self.champChoix.delete(0, &#34;end&#34;)
+
+    for key, value in self.listeChapAjoute.items():
+        for i in value:
+            self.champChoix.insert(&#34;end&#34;, f&#34;Classe : {key}, Chapitre : {i}&#34;)
+
+    self.ActualiseChapitrePropose()</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.validerChoixChap"><code class="name flex">
+<span>def <span class="ident">validerChoixChap</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>fonction permettant de valider le choix fait pour les chapitres et les classes</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def validerChoixChap(self):
+    &#34;&#34;&#34;
+    fonction permettant de valider le choix fait pour les chapitres et les classes
+    &#34;&#34;&#34;
+    if self.champChoix.size() == 0:
+        messagebox.showinfo(title=&#34;Choix des chapitres&#34;,
+                            message=&#34;Merci de choisir au moins un chapitre avant de continuer.&#34;)
+        return
+
+    self.cbClass[&#39;state&#39;] = &#34;disabled&#34;
+    self.cbChap[&#39;state&#39;] = &#34;disabled&#34;
+    self.buttonValider.destroy()
+    self.bouttonValiderChoixChap.destroy()
+    self.bouttonRefaireChoixChap.destroy()
+    self.champChoix[&#39;state&#39;] = &#39;disabled&#39;
+    self.supprimerButton.destroy()
+
+    self.countExosfromLevel()
+    self.choixDiff()</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.CreerFeuille.CreerFeuille.validerChoixDiff"><code class="name flex">
+<span>def <span class="ident">validerChoixDiff</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>fonction permettant de valider le choix de difficulté du deuxième type</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def validerChoixDiff(self):
+    &#34;&#34;&#34;
+    fonction permettant de valider le choix de difficulté du deuxième type
+    &#34;&#34;&#34;
+    if self.cbAuteur.get() == &#34;Choisir un auteur&#34;:
+        messagebox.showinfo(title=&#34;Génération de feuilles&#34;,
+                            message=&#34;Veuillez renseigner l&#39;auteur&#34;)
+        return
+    self.cadre0.destroy()
+
+    self.cadre2.pack(pady=5)
+    self.cadre3.pack(pady=5)
+    self.cadre4.pack(pady=5)
+
+    self.cbDiff1[&#39;state&#39;] = &#34;disabled&#34;
+    self.cbDiff2[&#39;state&#39;] = &#34;disabled&#34;
+    self.cbDiff3[&#39;state&#39;] = &#34;disabled&#34;
+    self.cbDiff4[&#39;state&#39;] = &#34;disabled&#34;
+    self.cbDiff5[&#39;state&#39;] = &#34;disabled&#34;
+
+    self.difficulteChoisie={
+        1: int(self.cbDiff1.get()),
+        2: int(self.cbDiff2.get()),
+        3: int(self.cbDiff3.get()),
+        4: int(self.cbDiff4.get()),
+        5: int(self.cbDiff5.get())
+    }
+
+    self.bouttonValiderChoixDiff.destroy()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Kholibri.Classes" href="index.html">Kholibri.Classes</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille" href="#Kholibri.Classes.CreerFeuille.CreerFeuille">CreerFeuille</a></code></h4>
+<ul class="">
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.ActualiseChapitrePropose" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.ActualiseChapitrePropose">ActualiseChapitrePropose</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.UpdateEtapeSuivante" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.UpdateEtapeSuivante">UpdateEtapeSuivante</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.ajouterChapitre" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.ajouterChapitre">ajouterChapitre</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.ajouterNom" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.ajouterNom">ajouterNom</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.blacklist" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.blacklist">blacklist</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.choixDiff" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.choixDiff">choixDiff</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.countExosfromLevel" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.countExosfromLevel">countExosfromLevel</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.difficulteChoisie" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.difficulteChoisie">difficulteChoisie</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.editFeuille" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.editFeuille">editFeuille</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.exoDict" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.exoDict">exoDict</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.exoFinal" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.exoFinal">exoFinal</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.gernerFeuille" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.gernerFeuille">gernerFeuille</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.gernerFeuilleBefore" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.gernerFeuilleBefore">gernerFeuilleBefore</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.insertInDict" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.insertInDict">insertInDict</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.listeFinale" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.listeFinale">listeFinale</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.refaireChoixChap" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.refaireChoixChap">refaireChoixChap</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.regenerate" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.regenerate">regenerate</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.supprimer" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.supprimer">supprimer</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.validerChoixChap" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.validerChoixChap">validerChoixChap</a></code></li>
+<li><code><a title="Kholibri.Classes.CreerFeuille.CreerFeuille.validerChoixDiff" href="#Kholibri.Classes.CreerFeuille.CreerFeuille.validerChoixDiff">validerChoixDiff</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

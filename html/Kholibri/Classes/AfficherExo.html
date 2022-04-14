@@ -1,0 +1,1234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>Kholibri.Classes.AfficherExo API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>Kholibri.Classes.AfficherExo</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from tkinter import *
+from tkinter import messagebox
+
+from tkinter.ttk import *
+
+from Classes import MyThread
+from Classes.Utils import Utils
+
+
+class AfficherExo(Frame):
+    &#34;&#34;&#34;
+    Classe de la fenêtre permettant l&#39;affichage d&#39;un exercice selon son ID
+    &#34;&#34;&#34;
+
+    def __init__(self, parent, controller):
+        &#34;&#34;&#34;
+        Constructeur de la fenêtre
+
+        Parameters
+        ----------
+        parent: le parent de la fenêtre
+        controller: le contrôleur de la fenêtre
+        &#34;&#34;&#34;
+        import SGBD
+        Frame.__init__(self, parent)
+
+        ###############################################################################################
+        # Init
+
+        s = Style()
+        s.configure(&#39;My.TFrame&#39;, background=&#39;red&#39;)
+
+        self.controller = controller
+        self.enonce = []
+        self.corrige = []
+
+        self.SGBD = SGBD.SGBD
+
+        ###############################################################################################
+        # Self
+
+        # Titre
+        label = Label(self, text=&#34;Afficher un Exercice&#34;, font=controller.title_font)  # Titre
+        label.pack(side=&#34;top&#34;, fill=&#34;x&#34;, pady=10)
+
+        ###############################################################################################
+        # Top cadre
+
+        self.cadre0 = Frame(self)
+
+        self.cadre01 = Frame(self.cadre0)
+        self.cadre01.pack(side=LEFT, pady=5, padx=50)
+
+        label = Label(self.cadre01, text=&#34;Indiquez un ID d&#39;exercice :&#34;, font=(&#34;Helvetica&#34;, 10))
+        label.pack(pady=5, side=LEFT)
+
+        self.choixExo = Text(self.cadre01, width=50, height=1)
+        self.choixExo.pack(pady=5, side=LEFT)
+
+        self.b1 = Button(self.cadre01, text=&#34;Rechercher&#34;,
+                         command=lambda: self.rechercherExo(self.choixExo.get(1.0, &#34;end&#34;)))
+        self.b1.pack(pady=5, side=LEFT)
+
+        self.cbAuteur = Combobox(self.cadre0, values=self.SGBD.giveAuteur(), state=&#39;readonly&#39;)
+        if (Utils.DefaultUser != &#34;&#34;):
+            self.cbAuteur.set(Utils.DefaultUser)
+        else:
+            self.cbAuteur.set(&#39;Choisir un auteur&#39;)
+        self.cbAuteur.pack(pady=5, side=RIGHT)
+
+        self.cadre0.pack(pady=5)
+
+        ###############################################################################################
+        # Cadre exercice
+
+        self.cadre1 = Frame(self)
+
+        self.champEnonce = Text(self.cadre1, width=200, height=15, bg=&#34;#E5E5E5&#34;, fg=&#34;black&#34;, insertbackground=&#34;black&#34;,
+                                font=&#34;Helvetica 10&#34;, undo=True)
+        Utils.configureColor(self.champEnonce)
+        self.champEnonce.pack(pady=5)
+        self.champEnonce.bind(&#34;&lt;Key&gt;&#34;, lambda event: self.updatecode(self.champEnonce))
+
+        self.champCorrection = Text(self.cadre1, width=200, height=15, bg=&#34;#E5E5E5&#34;, fg=&#34;black&#34;,
+                                    insertbackground=&#34;black&#34;, font=&#34;Helvetica 10&#34;, undo=True)
+        Utils.configureColor(self.champCorrection)
+        self.champCorrection.pack(pady=5)
+        self.champCorrection.bind(&#34;&lt;Key&gt;&#34;, lambda event: self.updatecode(self.champCorrection))
+
+        self.cadre10 = Frame(self.cadre1)
+
+        self.compilationButton = Button(self.cadre10, text=&#34;Compiler&#34;, command=lambda: self.compiler())
+        self.compilationButton.pack(pady=5, padx=10, side=LEFT)
+
+        self.validButton = Button(self.cadre10, text=&#34;Enregistrer les modifcations&#34;,
+                                  command=lambda: self.validate(self.ExoRegarde))
+        self.validButton[&#34;state&#34;] = &#34;disabled&#34;
+        self.validButton.pack(pady=5, side=LEFT)
+
+        self.cadre10.pack()
+
+        self.cadre1.pack(pady=5)
+
+        ###############################################################################################
+        # Cadre modification niveau
+
+        self.cadre2 = Frame(self)
+
+        labelChapPres = Label(self.cadre2, text=&#34;Chapitres où l&#39;exercice est présent :&#34;, font=(&#34;Helvetica&#34;, 10))
+        labelChapPres.pack(pady=5, padx=5, side=LEFT)
+
+        self.cbClasseCP = Combobox(self.cadre2, state=&#39;readonly&#39;)
+        self.cbClasseCP.set(&#39;Choisir une classe&#39;)
+        self.cbClasseCP[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbClasseCP.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateChapitrePresent())
+        self.cbClasseCP.pack(pady=5, padx=5, side=LEFT)
+
+        self.cbChapCP = Combobox(self.cadre2, state=&#39;readonly&#39;)
+        self.cbChapCP.set(&#39;Choisir un chapitre&#39;)
+        self.cbChapCP[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbChapCP.pack(pady=5, padx=5, side=LEFT)
+
+        self.cbNivCP = Combobox(self.cadre2, state=&#39;readonly&#39;)
+        self.cbNivCP.set(&#39;Choisir un niveau&#39;)
+        self.cbNivCP[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbNivCP.pack(pady=5, padx=5, side=LEFT)
+
+        self.b1CP = Button(self.cadre2, text=&#34;Enregistrer la modification de niveau&#34;, command=lambda: self.ModifNiv())
+        self.b1CP.pack(pady=5, padx=5, side=LEFT)
+
+        self.b2CP = Button(self.cadre2, text=&#34;Supprimer l&#39;exercice du chapitre&#34;, command=lambda: self.SupprExo())
+        self.b2CP.pack(pady=5, padx=5, side=LEFT)
+
+        self.cadre2.pack(pady=(80, 10))
+
+        ###############################################################################################
+        # Cadre retirer chap
+
+        self.cadre3 = Frame(self)
+
+        labelChapNonPres = Label(self.cadre3, text=&#34;Chapitres où l&#39;exercice n&#39;est pas présent :&#34;,
+                                 font=(&#34;Helvetica&#34;, 10))
+        labelChapNonPres.pack(pady=5, padx=5, side=LEFT)
+
+        self.cbClasseCNP = Combobox(self.cadre3, state=&#39;readonly&#39;)
+        self.cbClasseCNP.set(&#39;Choisir une classe&#39;)
+        self.cbClasseCNP[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbClasseCNP.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateChapitreNonPresent())
+        self.cbClasseCNP.pack(pady=5, padx=5, side=LEFT)
+
+        self.cbChapCNP = Combobox(self.cadre3, state=&#39;readonly&#39;)
+        self.cbChapCNP.set(&#39;Choisir un chapitre&#39;)
+        self.cbChapCNP[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbChapCNP.pack(pady=5, padx=5, side=LEFT)
+
+        self.cbNivCNP = Combobox(self.cadre3, state=&#39;readonly&#39;)
+        self.cbNivCNP.set(&#39;Choisir un niveau&#39;)
+        self.cbNivCNP[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbNivCNP.pack(pady=5, padx=5, side=LEFT)
+
+        self.b1CNP = Button(self.cadre3, text=&#34;Enregistrer l&#39;exercice dans le chapitre&#34;,
+                            command=lambda: self.AjoutExo())
+        self.b1CNP.pack(pady=5, padx=(5, 275), side=LEFT)
+
+        self.cadre3.pack(pady=10)
+
+    # fonction permettant d&#39;afficher un exercice dans les champs de textes selon son ID
+    def rechercherExo(self, idExo):
+        &#34;&#34;&#34;
+        Fonction permettant d&#39;afficher un exercice dans les champs de textes selon son ID
+
+        Parameters
+        ----------
+        idExo: l&#39;id de l&#39;exercice à afficher
+        &#34;&#34;&#34;
+
+        if not idExo.replace(chr(10), &#39;&#39;).isnumeric():
+            messagebox.showinfo(title=&#34;ID&#34;, message=&#34;Merci d&#39;écrire un id valable.&#34;)
+            return
+
+        self.ExoRegarde = idExo.replace(chr(10), &#39;&#39;)
+
+        if self.cbAuteur.get() == &#34;Choisir un auteur&#34;:
+            messagebox.showinfo(title=&#34;Auteur&#34;, message=&#34;Merci de préciser un auteur.&#34;)
+            return
+
+        if not self.SGBD.giveEnonce(self.ExoRegarde):
+            messagebox.showinfo(title=&#34;Exercice&#34;, message=&#34;Il n&#39;existe pas d&#39;exercice relié à cette ID.&#34;)
+            return
+
+        # Modif level
+        chapP = self.SGBD.GiveExoFromChap(self.ExoRegarde)
+        self.cbClasseCP[&#34;values&#34;] = list(chapP.keys())
+        if list(chapP.keys()) == []:
+            self.cbClasseCP[&#34;state&#34;] = &#34;disabled&#34;
+        else:
+            self.cbClasseCP[&#34;state&#34;] = &#34;readonly&#34;
+        self.cbClasseCP.set(&#39;Choisir une classe&#39;)
+
+        self.cbChapCP.set(&#39;Choisir un chapitre&#39;)
+        self.cbChapCP[&#34;state&#34;] = &#34;disabled&#34;
+
+        self.cbNivCP.set(&#39;Choisir un niveau&#39;)
+        self.cbNivCP[&#34;state&#34;] = &#34;disabled&#34;
+        ###
+
+        # Exo pas present
+        chapNP = self.SGBD.SelectNotInChaps(self.ExoRegarde)
+        self.cbClasseCNP[&#34;values&#34;] = list(chapNP.keys())
+        if list(chapNP.keys()) == []:
+            self.cbClasseCNP[&#34;state&#34;] = &#34;disabled&#34;
+        else:
+            self.cbClasseCNP[&#34;state&#34;] = &#34;readonly&#34;
+        self.cbClasseCNP.set(&#39;Choisir une classe&#39;)
+
+        self.cbChapCNP.set(&#39;Choisir un chapitre&#39;)
+        self.cbChapCNP[&#34;state&#34;] = &#34;disabled&#34;
+
+        self.cbNivCNP.set(&#39;Choisir un niveau&#39;)
+        self.cbNivCNP[&#34;state&#34;] = &#34;disabled&#34;
+        ###
+
+        self.enonce, self.corrige = self.SGBD.ModifyCommandToShortcut(
+            self.SGBD.giveEnonce(self.ExoRegarde)[0],
+            self.cbAuteur.get(),
+            self.SGBD.giveCorrige(self.ExoRegarde)[0]
+        )
+
+        self.champEnonce.delete(1.0, &#34;end&#34;)
+        self.champEnonce.insert(&#39;end&#39;, self.enonce)
+        self.updatecode(self.champEnonce)
+
+        self.champCorrection.delete(1.0, &#34;end&#34;)
+        self.champCorrection.insert(&#39;end&#39;, self.corrige)
+        self.updatecode(self.champCorrection)
+
+    def UpdateChapitrePresent(self):
+        &#34;&#34;&#34;
+        Fonction permettant de mettre à jour sur la fenêtre les chapitres présents dans la base de données
+        &#34;&#34;&#34;
+        chapP = self.SGBD.GiveExoFromChap(self.ExoRegarde)
+
+        if not self.cbClasseCP.get() or self.cbClasseCP.get() == &#34;Choisir une classe&#34;:
+
+            self.cbChapCP.set(&#39;Choisir un chapitre&#39;)
+            self.cbChapCP[&#34;state&#34;] = &#34;disabled&#34;
+
+            self.cbNivCP.set(&#39;Choisir un niveau&#39;)
+            self.cbNivCP[&#34;state&#34;] = &#34;disabled&#34;
+
+            if list(chapP.keys()) == []:
+                self.cbClasseCP[&#34;state&#34;] = &#34;disabled&#34;
+            else:
+                self.cbClasseCP[&#34;state&#34;] = &#34;readonly&#34;
+            self.cbClasseCP[&#34;values&#34;] = list(chapP.keys())
+
+            return
+
+        self.cbChapCP[&#34;state&#34;] = &#34;readonly&#34;
+        self.cbChapCP[&#39;values&#39;] = chapP[self.cbClasseCP.get()][0]
+
+        self.cbNivCP[&#34;state&#34;] = &#34;readonly&#34;
+        self.cbNivCP[&#39;values&#39;] = list(range(1, 6))
+        self.cbNivCP.set(chapP[self.cbClasseCP.get()][1])
+
+    def UpdateChapitreNonPresent(self):
+        &#34;&#34;&#34;
+        Fonction permettant de mettre à jour les chapitres non présents dans la base de données
+        &#34;&#34;&#34;
+
+        chapP = self.SGBD.GiveExoFromChap(self.ExoRegarde)
+        chapNP = self.SGBD.SelectNotInChaps(self.ExoRegarde)
+
+        if not self.cbClasseCNP.get() or self.cbClasseCNP.get() == &#34;Choisir une classe&#34;:
+
+            self.cbChapCNP.set(&#39;Choisir un chapitre&#39;)
+            self.cbChapCNP[&#34;state&#34;] = &#34;disabled&#34;
+
+            self.cbNivCNP.set(&#39;Choisir un niveau&#39;)
+            self.cbNivCNP[&#34;state&#34;] = &#34;disabled&#34;
+
+            if list(chapNP.keys()) == []:
+                self.cbClasseCNP[&#34;state&#34;] = &#34;disabled&#34;
+            else:
+                self.cbClasseCNP[&#34;state&#34;] = &#34;readonly&#34;
+            self.cbClasseCNP[&#34;values&#34;] = list(chapNP.keys())
+
+            return
+
+        self.cbChapCNP[&#34;state&#34;] = &#34;readonly&#34;
+        self.cbChapCNP[&#39;values&#39;] = chapNP[self.cbClasseCNP.get()]
+
+        self.cbNivCNP[&#34;state&#34;] = &#34;readonly&#34;
+
+        if chapP.get(self.cbClasseCNP.get()):
+            self.cbNivCNP[&#39;values&#39;] = chapP[self.cbClasseCNP.get()][1]
+        else:
+            self.cbNivCNP[&#39;values&#39;] = list(range(1, 6))
+
+    def AjoutExo(self):
+        &#34;&#34;&#34;
+        Fonction permettant d&#39;ajouter un exercice dans la base de données
+        &#34;&#34;&#34;
+        if self.cbClasseCNP.get() == &#34;Choisir une classe&#34; or self.cbChapCNP.get() == &#34;Choisir un chapitre&#34; or self.cbNivCNP.get() == &#34;Choisir un niveau&#34;:
+            messagebox.showinfo(title=&#34;Ajout d&#39;exerice&#34;,
+                                message=&#34;Merci de choisir la classe, le chapitre et le niveau.&#34;)
+            return
+
+        self.SGBD.InsertExoUtilChap(self.cbChapCNP.get(), self.cbClasseCNP.get(), self.ExoRegarde)
+        self.SGBD.ModifyNiveau(self.ExoRegarde, self.cbClasseCNP.get(), self.cbNivCNP.get())
+
+        self.cbClasseCP.set(&#34;Choisir une classe&#34;)
+        self.UpdateChapitrePresent()
+        self.cbClasseCNP.set(&#34;Choisir une classe&#34;)
+        self.UpdateChapitreNonPresent()
+        messagebox.showinfo(title=&#34;Ajout d&#39;exerice&#34;, message=&#34;L&#39;exercice a bien été ajouté.&#34;)
+
+    def ModifNiv(self):
+        &#34;&#34;&#34;
+        Fonction permettant de modifier le niveau d&#39;un exercice
+        &#34;&#34;&#34;
+        if self.cbClasseCP.get() == &#34;Choisir une classe&#34;:
+            messagebox.showinfo(title=&#34;Changement de niveau&#34;, message=&#34;Merci de choisir la classe et le niveau.&#34;)
+            return
+
+        self.SGBD.ModifyNiveau(self.ExoRegarde, self.cbClasseCP.get(), self.cbNivCP.get())
+
+        self.cbClasseCP.set(&#34;Choisir une classe&#34;)
+        self.UpdateChapitrePresent()
+        self.cbClasseCNP.set(&#34;Choisir une classe&#34;)
+        self.UpdateChapitreNonPresent()
+
+        messagebox.showinfo(title=&#34;Modification de niveau&#34;, message=&#34;Le niveau de l&#39;exercice a bien été modifié.&#34;)
+
+    def SupprExo(self):
+        &#34;&#34;&#34;
+        Fonction permettant de supprimer un exercice de la base de données
+        &#34;&#34;&#34;
+
+        if self.cbClasseCP.get() == &#34;Choisir une classe&#34; or self.cbChapCP.get() == &#34;Choisir un chapitre&#34;:
+            messagebox.showinfo(title=&#34;Suppression d&#39;exercice&#34;, message=&#34;Merci de choisir une classe et un chapitre.&#34;)
+            return
+
+        self.SGBD.RetirerExoChap(self.ExoRegarde, self.cbChapCP.get())
+
+        self.cbClasseCP.set(&#34;Choisir une classe&#34;)
+        self.UpdateChapitrePresent()
+        self.cbClasseCNP.set(&#34;Choisir une classe&#34;)
+        self.UpdateChapitreNonPresent()
+
+        messagebox.showinfo(title=&#34;Ajout d&#39;exerice&#34;, message=&#34;L&#39;exercice a bien été supprimé.&#34;)
+
+    def compiler(self):
+        &#34;&#34;&#34;
+        Fonction permettant de compiler le code latex et d&#39;enregistrer le fichier pdf
+        &#34;&#34;&#34;
+        threadCompil = MyThread.myThread(&#34;ThreadPrevisualisationExo&#34;, enonceTemp=self.champEnonce.get(&#34;1.0&#34;, &#34;end-1c&#34;),
+                                         corrigeTemp=self.champCorrection.get(&#34;1.0&#34;, &#34;end-1c&#34;),
+                                         auteur=self.cbAuteur.get())
+        threadCompil.start()
+
+        self.validButton[&#34;state&#34;] = &#34;normal&#34;
+
+    def validate(self, idExo):
+        &#34;&#34;&#34;
+        Fonction permettant de valider un exercice
+
+        Parameters
+        ----------
+        idExo: l&#39;id de l&#39;exercice
+        &#34;&#34;&#34;
+
+        if not idExo:
+            return
+
+        self.validButton[&#34;state&#34;] = &#34;disabled&#34;
+
+        if self.cbAuteur.get() == &#34;Choisir un auteur&#34;:
+            messagebox.showinfo(title=&#34;Classe&#34;, message=&#34;Merci de préciser un auteur.&#34;)
+            return
+
+        self.enonce = self.champEnonce.get(&#34;1.0&#34;, &#34;end-1c&#34;)
+        self.corrige = self.champCorrection.get(&#34;1.0&#34;, &#34;end-1c&#34;)
+
+        self.SGBD.ModifyExo(idExo, self.enonce, self.corrige)
+
+    def updatecode(self, champ):
+        &#34;&#34;&#34;
+        Fonction permettant de mettre à jour le code latex et d&#39;appliquer la colloration syntaxique
+
+        Parameters
+        ----------
+        champ : le champ de texte dans lequel effectuer la colloration syntaxique
+        &#34;&#34;&#34;
+
+        Utils.tagHighlight(champ)
+        Utils.scan(champ)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="Kholibri.Classes.AfficherExo.AfficherExo"><code class="flex name class">
+<span>class <span class="ident">AfficherExo</span></span>
+<span>(</span><span>parent, controller)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Classe de la fenêtre permettant l'affichage d'un exercice selon son ID</p>
+<p>Constructeur de la fenêtre</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>parent</code></strong> :&ensp;<code>le parent de la fenêtre</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>controller</code></strong> :&ensp;<code>le contrôleur de la fenêtre</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AfficherExo(Frame):
+    &#34;&#34;&#34;
+    Classe de la fenêtre permettant l&#39;affichage d&#39;un exercice selon son ID
+    &#34;&#34;&#34;
+
+    def __init__(self, parent, controller):
+        &#34;&#34;&#34;
+        Constructeur de la fenêtre
+
+        Parameters
+        ----------
+        parent: le parent de la fenêtre
+        controller: le contrôleur de la fenêtre
+        &#34;&#34;&#34;
+        import SGBD
+        Frame.__init__(self, parent)
+
+        ###############################################################################################
+        # Init
+
+        s = Style()
+        s.configure(&#39;My.TFrame&#39;, background=&#39;red&#39;)
+
+        self.controller = controller
+        self.enonce = []
+        self.corrige = []
+
+        self.SGBD = SGBD.SGBD
+
+        ###############################################################################################
+        # Self
+
+        # Titre
+        label = Label(self, text=&#34;Afficher un Exercice&#34;, font=controller.title_font)  # Titre
+        label.pack(side=&#34;top&#34;, fill=&#34;x&#34;, pady=10)
+
+        ###############################################################################################
+        # Top cadre
+
+        self.cadre0 = Frame(self)
+
+        self.cadre01 = Frame(self.cadre0)
+        self.cadre01.pack(side=LEFT, pady=5, padx=50)
+
+        label = Label(self.cadre01, text=&#34;Indiquez un ID d&#39;exercice :&#34;, font=(&#34;Helvetica&#34;, 10))
+        label.pack(pady=5, side=LEFT)
+
+        self.choixExo = Text(self.cadre01, width=50, height=1)
+        self.choixExo.pack(pady=5, side=LEFT)
+
+        self.b1 = Button(self.cadre01, text=&#34;Rechercher&#34;,
+                         command=lambda: self.rechercherExo(self.choixExo.get(1.0, &#34;end&#34;)))
+        self.b1.pack(pady=5, side=LEFT)
+
+        self.cbAuteur = Combobox(self.cadre0, values=self.SGBD.giveAuteur(), state=&#39;readonly&#39;)
+        if (Utils.DefaultUser != &#34;&#34;):
+            self.cbAuteur.set(Utils.DefaultUser)
+        else:
+            self.cbAuteur.set(&#39;Choisir un auteur&#39;)
+        self.cbAuteur.pack(pady=5, side=RIGHT)
+
+        self.cadre0.pack(pady=5)
+
+        ###############################################################################################
+        # Cadre exercice
+
+        self.cadre1 = Frame(self)
+
+        self.champEnonce = Text(self.cadre1, width=200, height=15, bg=&#34;#E5E5E5&#34;, fg=&#34;black&#34;, insertbackground=&#34;black&#34;,
+                                font=&#34;Helvetica 10&#34;, undo=True)
+        Utils.configureColor(self.champEnonce)
+        self.champEnonce.pack(pady=5)
+        self.champEnonce.bind(&#34;&lt;Key&gt;&#34;, lambda event: self.updatecode(self.champEnonce))
+
+        self.champCorrection = Text(self.cadre1, width=200, height=15, bg=&#34;#E5E5E5&#34;, fg=&#34;black&#34;,
+                                    insertbackground=&#34;black&#34;, font=&#34;Helvetica 10&#34;, undo=True)
+        Utils.configureColor(self.champCorrection)
+        self.champCorrection.pack(pady=5)
+        self.champCorrection.bind(&#34;&lt;Key&gt;&#34;, lambda event: self.updatecode(self.champCorrection))
+
+        self.cadre10 = Frame(self.cadre1)
+
+        self.compilationButton = Button(self.cadre10, text=&#34;Compiler&#34;, command=lambda: self.compiler())
+        self.compilationButton.pack(pady=5, padx=10, side=LEFT)
+
+        self.validButton = Button(self.cadre10, text=&#34;Enregistrer les modifcations&#34;,
+                                  command=lambda: self.validate(self.ExoRegarde))
+        self.validButton[&#34;state&#34;] = &#34;disabled&#34;
+        self.validButton.pack(pady=5, side=LEFT)
+
+        self.cadre10.pack()
+
+        self.cadre1.pack(pady=5)
+
+        ###############################################################################################
+        # Cadre modification niveau
+
+        self.cadre2 = Frame(self)
+
+        labelChapPres = Label(self.cadre2, text=&#34;Chapitres où l&#39;exercice est présent :&#34;, font=(&#34;Helvetica&#34;, 10))
+        labelChapPres.pack(pady=5, padx=5, side=LEFT)
+
+        self.cbClasseCP = Combobox(self.cadre2, state=&#39;readonly&#39;)
+        self.cbClasseCP.set(&#39;Choisir une classe&#39;)
+        self.cbClasseCP[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbClasseCP.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateChapitrePresent())
+        self.cbClasseCP.pack(pady=5, padx=5, side=LEFT)
+
+        self.cbChapCP = Combobox(self.cadre2, state=&#39;readonly&#39;)
+        self.cbChapCP.set(&#39;Choisir un chapitre&#39;)
+        self.cbChapCP[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbChapCP.pack(pady=5, padx=5, side=LEFT)
+
+        self.cbNivCP = Combobox(self.cadre2, state=&#39;readonly&#39;)
+        self.cbNivCP.set(&#39;Choisir un niveau&#39;)
+        self.cbNivCP[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbNivCP.pack(pady=5, padx=5, side=LEFT)
+
+        self.b1CP = Button(self.cadre2, text=&#34;Enregistrer la modification de niveau&#34;, command=lambda: self.ModifNiv())
+        self.b1CP.pack(pady=5, padx=5, side=LEFT)
+
+        self.b2CP = Button(self.cadre2, text=&#34;Supprimer l&#39;exercice du chapitre&#34;, command=lambda: self.SupprExo())
+        self.b2CP.pack(pady=5, padx=5, side=LEFT)
+
+        self.cadre2.pack(pady=(80, 10))
+
+        ###############################################################################################
+        # Cadre retirer chap
+
+        self.cadre3 = Frame(self)
+
+        labelChapNonPres = Label(self.cadre3, text=&#34;Chapitres où l&#39;exercice n&#39;est pas présent :&#34;,
+                                 font=(&#34;Helvetica&#34;, 10))
+        labelChapNonPres.pack(pady=5, padx=5, side=LEFT)
+
+        self.cbClasseCNP = Combobox(self.cadre3, state=&#39;readonly&#39;)
+        self.cbClasseCNP.set(&#39;Choisir une classe&#39;)
+        self.cbClasseCNP[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbClasseCNP.bind(&#39;&lt;&lt;ComboboxSelected&gt;&gt;&#39;, lambda event: self.UpdateChapitreNonPresent())
+        self.cbClasseCNP.pack(pady=5, padx=5, side=LEFT)
+
+        self.cbChapCNP = Combobox(self.cadre3, state=&#39;readonly&#39;)
+        self.cbChapCNP.set(&#39;Choisir un chapitre&#39;)
+        self.cbChapCNP[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbChapCNP.pack(pady=5, padx=5, side=LEFT)
+
+        self.cbNivCNP = Combobox(self.cadre3, state=&#39;readonly&#39;)
+        self.cbNivCNP.set(&#39;Choisir un niveau&#39;)
+        self.cbNivCNP[&#34;state&#34;] = &#34;disabled&#34;
+        self.cbNivCNP.pack(pady=5, padx=5, side=LEFT)
+
+        self.b1CNP = Button(self.cadre3, text=&#34;Enregistrer l&#39;exercice dans le chapitre&#34;,
+                            command=lambda: self.AjoutExo())
+        self.b1CNP.pack(pady=5, padx=(5, 275), side=LEFT)
+
+        self.cadre3.pack(pady=10)
+
+    # fonction permettant d&#39;afficher un exercice dans les champs de textes selon son ID
+    def rechercherExo(self, idExo):
+        &#34;&#34;&#34;
+        Fonction permettant d&#39;afficher un exercice dans les champs de textes selon son ID
+
+        Parameters
+        ----------
+        idExo: l&#39;id de l&#39;exercice à afficher
+        &#34;&#34;&#34;
+
+        if not idExo.replace(chr(10), &#39;&#39;).isnumeric():
+            messagebox.showinfo(title=&#34;ID&#34;, message=&#34;Merci d&#39;écrire un id valable.&#34;)
+            return
+
+        self.ExoRegarde = idExo.replace(chr(10), &#39;&#39;)
+
+        if self.cbAuteur.get() == &#34;Choisir un auteur&#34;:
+            messagebox.showinfo(title=&#34;Auteur&#34;, message=&#34;Merci de préciser un auteur.&#34;)
+            return
+
+        if not self.SGBD.giveEnonce(self.ExoRegarde):
+            messagebox.showinfo(title=&#34;Exercice&#34;, message=&#34;Il n&#39;existe pas d&#39;exercice relié à cette ID.&#34;)
+            return
+
+        # Modif level
+        chapP = self.SGBD.GiveExoFromChap(self.ExoRegarde)
+        self.cbClasseCP[&#34;values&#34;] = list(chapP.keys())
+        if list(chapP.keys()) == []:
+            self.cbClasseCP[&#34;state&#34;] = &#34;disabled&#34;
+        else:
+            self.cbClasseCP[&#34;state&#34;] = &#34;readonly&#34;
+        self.cbClasseCP.set(&#39;Choisir une classe&#39;)
+
+        self.cbChapCP.set(&#39;Choisir un chapitre&#39;)
+        self.cbChapCP[&#34;state&#34;] = &#34;disabled&#34;
+
+        self.cbNivCP.set(&#39;Choisir un niveau&#39;)
+        self.cbNivCP[&#34;state&#34;] = &#34;disabled&#34;
+        ###
+
+        # Exo pas present
+        chapNP = self.SGBD.SelectNotInChaps(self.ExoRegarde)
+        self.cbClasseCNP[&#34;values&#34;] = list(chapNP.keys())
+        if list(chapNP.keys()) == []:
+            self.cbClasseCNP[&#34;state&#34;] = &#34;disabled&#34;
+        else:
+            self.cbClasseCNP[&#34;state&#34;] = &#34;readonly&#34;
+        self.cbClasseCNP.set(&#39;Choisir une classe&#39;)
+
+        self.cbChapCNP.set(&#39;Choisir un chapitre&#39;)
+        self.cbChapCNP[&#34;state&#34;] = &#34;disabled&#34;
+
+        self.cbNivCNP.set(&#39;Choisir un niveau&#39;)
+        self.cbNivCNP[&#34;state&#34;] = &#34;disabled&#34;
+        ###
+
+        self.enonce, self.corrige = self.SGBD.ModifyCommandToShortcut(
+            self.SGBD.giveEnonce(self.ExoRegarde)[0],
+            self.cbAuteur.get(),
+            self.SGBD.giveCorrige(self.ExoRegarde)[0]
+        )
+
+        self.champEnonce.delete(1.0, &#34;end&#34;)
+        self.champEnonce.insert(&#39;end&#39;, self.enonce)
+        self.updatecode(self.champEnonce)
+
+        self.champCorrection.delete(1.0, &#34;end&#34;)
+        self.champCorrection.insert(&#39;end&#39;, self.corrige)
+        self.updatecode(self.champCorrection)
+
+    def UpdateChapitrePresent(self):
+        &#34;&#34;&#34;
+        Fonction permettant de mettre à jour sur la fenêtre les chapitres présents dans la base de données
+        &#34;&#34;&#34;
+        chapP = self.SGBD.GiveExoFromChap(self.ExoRegarde)
+
+        if not self.cbClasseCP.get() or self.cbClasseCP.get() == &#34;Choisir une classe&#34;:
+
+            self.cbChapCP.set(&#39;Choisir un chapitre&#39;)
+            self.cbChapCP[&#34;state&#34;] = &#34;disabled&#34;
+
+            self.cbNivCP.set(&#39;Choisir un niveau&#39;)
+            self.cbNivCP[&#34;state&#34;] = &#34;disabled&#34;
+
+            if list(chapP.keys()) == []:
+                self.cbClasseCP[&#34;state&#34;] = &#34;disabled&#34;
+            else:
+                self.cbClasseCP[&#34;state&#34;] = &#34;readonly&#34;
+            self.cbClasseCP[&#34;values&#34;] = list(chapP.keys())
+
+            return
+
+        self.cbChapCP[&#34;state&#34;] = &#34;readonly&#34;
+        self.cbChapCP[&#39;values&#39;] = chapP[self.cbClasseCP.get()][0]
+
+        self.cbNivCP[&#34;state&#34;] = &#34;readonly&#34;
+        self.cbNivCP[&#39;values&#39;] = list(range(1, 6))
+        self.cbNivCP.set(chapP[self.cbClasseCP.get()][1])
+
+    def UpdateChapitreNonPresent(self):
+        &#34;&#34;&#34;
+        Fonction permettant de mettre à jour les chapitres non présents dans la base de données
+        &#34;&#34;&#34;
+
+        chapP = self.SGBD.GiveExoFromChap(self.ExoRegarde)
+        chapNP = self.SGBD.SelectNotInChaps(self.ExoRegarde)
+
+        if not self.cbClasseCNP.get() or self.cbClasseCNP.get() == &#34;Choisir une classe&#34;:
+
+            self.cbChapCNP.set(&#39;Choisir un chapitre&#39;)
+            self.cbChapCNP[&#34;state&#34;] = &#34;disabled&#34;
+
+            self.cbNivCNP.set(&#39;Choisir un niveau&#39;)
+            self.cbNivCNP[&#34;state&#34;] = &#34;disabled&#34;
+
+            if list(chapNP.keys()) == []:
+                self.cbClasseCNP[&#34;state&#34;] = &#34;disabled&#34;
+            else:
+                self.cbClasseCNP[&#34;state&#34;] = &#34;readonly&#34;
+            self.cbClasseCNP[&#34;values&#34;] = list(chapNP.keys())
+
+            return
+
+        self.cbChapCNP[&#34;state&#34;] = &#34;readonly&#34;
+        self.cbChapCNP[&#39;values&#39;] = chapNP[self.cbClasseCNP.get()]
+
+        self.cbNivCNP[&#34;state&#34;] = &#34;readonly&#34;
+
+        if chapP.get(self.cbClasseCNP.get()):
+            self.cbNivCNP[&#39;values&#39;] = chapP[self.cbClasseCNP.get()][1]
+        else:
+            self.cbNivCNP[&#39;values&#39;] = list(range(1, 6))
+
+    def AjoutExo(self):
+        &#34;&#34;&#34;
+        Fonction permettant d&#39;ajouter un exercice dans la base de données
+        &#34;&#34;&#34;
+        if self.cbClasseCNP.get() == &#34;Choisir une classe&#34; or self.cbChapCNP.get() == &#34;Choisir un chapitre&#34; or self.cbNivCNP.get() == &#34;Choisir un niveau&#34;:
+            messagebox.showinfo(title=&#34;Ajout d&#39;exerice&#34;,
+                                message=&#34;Merci de choisir la classe, le chapitre et le niveau.&#34;)
+            return
+
+        self.SGBD.InsertExoUtilChap(self.cbChapCNP.get(), self.cbClasseCNP.get(), self.ExoRegarde)
+        self.SGBD.ModifyNiveau(self.ExoRegarde, self.cbClasseCNP.get(), self.cbNivCNP.get())
+
+        self.cbClasseCP.set(&#34;Choisir une classe&#34;)
+        self.UpdateChapitrePresent()
+        self.cbClasseCNP.set(&#34;Choisir une classe&#34;)
+        self.UpdateChapitreNonPresent()
+        messagebox.showinfo(title=&#34;Ajout d&#39;exerice&#34;, message=&#34;L&#39;exercice a bien été ajouté.&#34;)
+
+    def ModifNiv(self):
+        &#34;&#34;&#34;
+        Fonction permettant de modifier le niveau d&#39;un exercice
+        &#34;&#34;&#34;
+        if self.cbClasseCP.get() == &#34;Choisir une classe&#34;:
+            messagebox.showinfo(title=&#34;Changement de niveau&#34;, message=&#34;Merci de choisir la classe et le niveau.&#34;)
+            return
+
+        self.SGBD.ModifyNiveau(self.ExoRegarde, self.cbClasseCP.get(), self.cbNivCP.get())
+
+        self.cbClasseCP.set(&#34;Choisir une classe&#34;)
+        self.UpdateChapitrePresent()
+        self.cbClasseCNP.set(&#34;Choisir une classe&#34;)
+        self.UpdateChapitreNonPresent()
+
+        messagebox.showinfo(title=&#34;Modification de niveau&#34;, message=&#34;Le niveau de l&#39;exercice a bien été modifié.&#34;)
+
+    def SupprExo(self):
+        &#34;&#34;&#34;
+        Fonction permettant de supprimer un exercice de la base de données
+        &#34;&#34;&#34;
+
+        if self.cbClasseCP.get() == &#34;Choisir une classe&#34; or self.cbChapCP.get() == &#34;Choisir un chapitre&#34;:
+            messagebox.showinfo(title=&#34;Suppression d&#39;exercice&#34;, message=&#34;Merci de choisir une classe et un chapitre.&#34;)
+            return
+
+        self.SGBD.RetirerExoChap(self.ExoRegarde, self.cbChapCP.get())
+
+        self.cbClasseCP.set(&#34;Choisir une classe&#34;)
+        self.UpdateChapitrePresent()
+        self.cbClasseCNP.set(&#34;Choisir une classe&#34;)
+        self.UpdateChapitreNonPresent()
+
+        messagebox.showinfo(title=&#34;Ajout d&#39;exerice&#34;, message=&#34;L&#39;exercice a bien été supprimé.&#34;)
+
+    def compiler(self):
+        &#34;&#34;&#34;
+        Fonction permettant de compiler le code latex et d&#39;enregistrer le fichier pdf
+        &#34;&#34;&#34;
+        threadCompil = MyThread.myThread(&#34;ThreadPrevisualisationExo&#34;, enonceTemp=self.champEnonce.get(&#34;1.0&#34;, &#34;end-1c&#34;),
+                                         corrigeTemp=self.champCorrection.get(&#34;1.0&#34;, &#34;end-1c&#34;),
+                                         auteur=self.cbAuteur.get())
+        threadCompil.start()
+
+        self.validButton[&#34;state&#34;] = &#34;normal&#34;
+
+    def validate(self, idExo):
+        &#34;&#34;&#34;
+        Fonction permettant de valider un exercice
+
+        Parameters
+        ----------
+        idExo: l&#39;id de l&#39;exercice
+        &#34;&#34;&#34;
+
+        if not idExo:
+            return
+
+        self.validButton[&#34;state&#34;] = &#34;disabled&#34;
+
+        if self.cbAuteur.get() == &#34;Choisir un auteur&#34;:
+            messagebox.showinfo(title=&#34;Classe&#34;, message=&#34;Merci de préciser un auteur.&#34;)
+            return
+
+        self.enonce = self.champEnonce.get(&#34;1.0&#34;, &#34;end-1c&#34;)
+        self.corrige = self.champCorrection.get(&#34;1.0&#34;, &#34;end-1c&#34;)
+
+        self.SGBD.ModifyExo(idExo, self.enonce, self.corrige)
+
+    def updatecode(self, champ):
+        &#34;&#34;&#34;
+        Fonction permettant de mettre à jour le code latex et d&#39;appliquer la colloration syntaxique
+
+        Parameters
+        ----------
+        champ : le champ de texte dans lequel effectuer la colloration syntaxique
+        &#34;&#34;&#34;
+
+        Utils.tagHighlight(champ)
+        Utils.scan(champ)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>tkinter.ttk.Frame</li>
+<li>tkinter.ttk.Widget</li>
+<li>tkinter.Widget</li>
+<li>tkinter.BaseWidget</li>
+<li>tkinter.Misc</li>
+<li>tkinter.Pack</li>
+<li>tkinter.Place</li>
+<li>tkinter.Grid</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="Kholibri.Classes.AfficherExo.AfficherExo.AjoutExo"><code class="name flex">
+<span>def <span class="ident">AjoutExo</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fonction permettant d'ajouter un exercice dans la base de données</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def AjoutExo(self):
+    &#34;&#34;&#34;
+    Fonction permettant d&#39;ajouter un exercice dans la base de données
+    &#34;&#34;&#34;
+    if self.cbClasseCNP.get() == &#34;Choisir une classe&#34; or self.cbChapCNP.get() == &#34;Choisir un chapitre&#34; or self.cbNivCNP.get() == &#34;Choisir un niveau&#34;:
+        messagebox.showinfo(title=&#34;Ajout d&#39;exerice&#34;,
+                            message=&#34;Merci de choisir la classe, le chapitre et le niveau.&#34;)
+        return
+
+    self.SGBD.InsertExoUtilChap(self.cbChapCNP.get(), self.cbClasseCNP.get(), self.ExoRegarde)
+    self.SGBD.ModifyNiveau(self.ExoRegarde, self.cbClasseCNP.get(), self.cbNivCNP.get())
+
+    self.cbClasseCP.set(&#34;Choisir une classe&#34;)
+    self.UpdateChapitrePresent()
+    self.cbClasseCNP.set(&#34;Choisir une classe&#34;)
+    self.UpdateChapitreNonPresent()
+    messagebox.showinfo(title=&#34;Ajout d&#39;exerice&#34;, message=&#34;L&#39;exercice a bien été ajouté.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.AfficherExo.AfficherExo.ModifNiv"><code class="name flex">
+<span>def <span class="ident">ModifNiv</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fonction permettant de modifier le niveau d'un exercice</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ModifNiv(self):
+    &#34;&#34;&#34;
+    Fonction permettant de modifier le niveau d&#39;un exercice
+    &#34;&#34;&#34;
+    if self.cbClasseCP.get() == &#34;Choisir une classe&#34;:
+        messagebox.showinfo(title=&#34;Changement de niveau&#34;, message=&#34;Merci de choisir la classe et le niveau.&#34;)
+        return
+
+    self.SGBD.ModifyNiveau(self.ExoRegarde, self.cbClasseCP.get(), self.cbNivCP.get())
+
+    self.cbClasseCP.set(&#34;Choisir une classe&#34;)
+    self.UpdateChapitrePresent()
+    self.cbClasseCNP.set(&#34;Choisir une classe&#34;)
+    self.UpdateChapitreNonPresent()
+
+    messagebox.showinfo(title=&#34;Modification de niveau&#34;, message=&#34;Le niveau de l&#39;exercice a bien été modifié.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.AfficherExo.AfficherExo.SupprExo"><code class="name flex">
+<span>def <span class="ident">SupprExo</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fonction permettant de supprimer un exercice de la base de données</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def SupprExo(self):
+    &#34;&#34;&#34;
+    Fonction permettant de supprimer un exercice de la base de données
+    &#34;&#34;&#34;
+
+    if self.cbClasseCP.get() == &#34;Choisir une classe&#34; or self.cbChapCP.get() == &#34;Choisir un chapitre&#34;:
+        messagebox.showinfo(title=&#34;Suppression d&#39;exercice&#34;, message=&#34;Merci de choisir une classe et un chapitre.&#34;)
+        return
+
+    self.SGBD.RetirerExoChap(self.ExoRegarde, self.cbChapCP.get())
+
+    self.cbClasseCP.set(&#34;Choisir une classe&#34;)
+    self.UpdateChapitrePresent()
+    self.cbClasseCNP.set(&#34;Choisir une classe&#34;)
+    self.UpdateChapitreNonPresent()
+
+    messagebox.showinfo(title=&#34;Ajout d&#39;exerice&#34;, message=&#34;L&#39;exercice a bien été supprimé.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.AfficherExo.AfficherExo.UpdateChapitreNonPresent"><code class="name flex">
+<span>def <span class="ident">UpdateChapitreNonPresent</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fonction permettant de mettre à jour les chapitres non présents dans la base de données</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def UpdateChapitreNonPresent(self):
+    &#34;&#34;&#34;
+    Fonction permettant de mettre à jour les chapitres non présents dans la base de données
+    &#34;&#34;&#34;
+
+    chapP = self.SGBD.GiveExoFromChap(self.ExoRegarde)
+    chapNP = self.SGBD.SelectNotInChaps(self.ExoRegarde)
+
+    if not self.cbClasseCNP.get() or self.cbClasseCNP.get() == &#34;Choisir une classe&#34;:
+
+        self.cbChapCNP.set(&#39;Choisir un chapitre&#39;)
+        self.cbChapCNP[&#34;state&#34;] = &#34;disabled&#34;
+
+        self.cbNivCNP.set(&#39;Choisir un niveau&#39;)
+        self.cbNivCNP[&#34;state&#34;] = &#34;disabled&#34;
+
+        if list(chapNP.keys()) == []:
+            self.cbClasseCNP[&#34;state&#34;] = &#34;disabled&#34;
+        else:
+            self.cbClasseCNP[&#34;state&#34;] = &#34;readonly&#34;
+        self.cbClasseCNP[&#34;values&#34;] = list(chapNP.keys())
+
+        return
+
+    self.cbChapCNP[&#34;state&#34;] = &#34;readonly&#34;
+    self.cbChapCNP[&#39;values&#39;] = chapNP[self.cbClasseCNP.get()]
+
+    self.cbNivCNP[&#34;state&#34;] = &#34;readonly&#34;
+
+    if chapP.get(self.cbClasseCNP.get()):
+        self.cbNivCNP[&#39;values&#39;] = chapP[self.cbClasseCNP.get()][1]
+    else:
+        self.cbNivCNP[&#39;values&#39;] = list(range(1, 6))</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.AfficherExo.AfficherExo.UpdateChapitrePresent"><code class="name flex">
+<span>def <span class="ident">UpdateChapitrePresent</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fonction permettant de mettre à jour sur la fenêtre les chapitres présents dans la base de données</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def UpdateChapitrePresent(self):
+    &#34;&#34;&#34;
+    Fonction permettant de mettre à jour sur la fenêtre les chapitres présents dans la base de données
+    &#34;&#34;&#34;
+    chapP = self.SGBD.GiveExoFromChap(self.ExoRegarde)
+
+    if not self.cbClasseCP.get() or self.cbClasseCP.get() == &#34;Choisir une classe&#34;:
+
+        self.cbChapCP.set(&#39;Choisir un chapitre&#39;)
+        self.cbChapCP[&#34;state&#34;] = &#34;disabled&#34;
+
+        self.cbNivCP.set(&#39;Choisir un niveau&#39;)
+        self.cbNivCP[&#34;state&#34;] = &#34;disabled&#34;
+
+        if list(chapP.keys()) == []:
+            self.cbClasseCP[&#34;state&#34;] = &#34;disabled&#34;
+        else:
+            self.cbClasseCP[&#34;state&#34;] = &#34;readonly&#34;
+        self.cbClasseCP[&#34;values&#34;] = list(chapP.keys())
+
+        return
+
+    self.cbChapCP[&#34;state&#34;] = &#34;readonly&#34;
+    self.cbChapCP[&#39;values&#39;] = chapP[self.cbClasseCP.get()][0]
+
+    self.cbNivCP[&#34;state&#34;] = &#34;readonly&#34;
+    self.cbNivCP[&#39;values&#39;] = list(range(1, 6))
+    self.cbNivCP.set(chapP[self.cbClasseCP.get()][1])</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.AfficherExo.AfficherExo.compiler"><code class="name flex">
+<span>def <span class="ident">compiler</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fonction permettant de compiler le code latex et d'enregistrer le fichier pdf</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compiler(self):
+    &#34;&#34;&#34;
+    Fonction permettant de compiler le code latex et d&#39;enregistrer le fichier pdf
+    &#34;&#34;&#34;
+    threadCompil = MyThread.myThread(&#34;ThreadPrevisualisationExo&#34;, enonceTemp=self.champEnonce.get(&#34;1.0&#34;, &#34;end-1c&#34;),
+                                     corrigeTemp=self.champCorrection.get(&#34;1.0&#34;, &#34;end-1c&#34;),
+                                     auteur=self.cbAuteur.get())
+    threadCompil.start()
+
+    self.validButton[&#34;state&#34;] = &#34;normal&#34;</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.AfficherExo.AfficherExo.rechercherExo"><code class="name flex">
+<span>def <span class="ident">rechercherExo</span></span>(<span>self, idExo)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fonction permettant d'afficher un exercice dans les champs de textes selon son ID</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>idExo</code></strong> :&ensp;<code>l'id de l'exercice à afficher</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rechercherExo(self, idExo):
+    &#34;&#34;&#34;
+    Fonction permettant d&#39;afficher un exercice dans les champs de textes selon son ID
+
+    Parameters
+    ----------
+    idExo: l&#39;id de l&#39;exercice à afficher
+    &#34;&#34;&#34;
+
+    if not idExo.replace(chr(10), &#39;&#39;).isnumeric():
+        messagebox.showinfo(title=&#34;ID&#34;, message=&#34;Merci d&#39;écrire un id valable.&#34;)
+        return
+
+    self.ExoRegarde = idExo.replace(chr(10), &#39;&#39;)
+
+    if self.cbAuteur.get() == &#34;Choisir un auteur&#34;:
+        messagebox.showinfo(title=&#34;Auteur&#34;, message=&#34;Merci de préciser un auteur.&#34;)
+        return
+
+    if not self.SGBD.giveEnonce(self.ExoRegarde):
+        messagebox.showinfo(title=&#34;Exercice&#34;, message=&#34;Il n&#39;existe pas d&#39;exercice relié à cette ID.&#34;)
+        return
+
+    # Modif level
+    chapP = self.SGBD.GiveExoFromChap(self.ExoRegarde)
+    self.cbClasseCP[&#34;values&#34;] = list(chapP.keys())
+    if list(chapP.keys()) == []:
+        self.cbClasseCP[&#34;state&#34;] = &#34;disabled&#34;
+    else:
+        self.cbClasseCP[&#34;state&#34;] = &#34;readonly&#34;
+    self.cbClasseCP.set(&#39;Choisir une classe&#39;)
+
+    self.cbChapCP.set(&#39;Choisir un chapitre&#39;)
+    self.cbChapCP[&#34;state&#34;] = &#34;disabled&#34;
+
+    self.cbNivCP.set(&#39;Choisir un niveau&#39;)
+    self.cbNivCP[&#34;state&#34;] = &#34;disabled&#34;
+    ###
+
+    # Exo pas present
+    chapNP = self.SGBD.SelectNotInChaps(self.ExoRegarde)
+    self.cbClasseCNP[&#34;values&#34;] = list(chapNP.keys())
+    if list(chapNP.keys()) == []:
+        self.cbClasseCNP[&#34;state&#34;] = &#34;disabled&#34;
+    else:
+        self.cbClasseCNP[&#34;state&#34;] = &#34;readonly&#34;
+    self.cbClasseCNP.set(&#39;Choisir une classe&#39;)
+
+    self.cbChapCNP.set(&#39;Choisir un chapitre&#39;)
+    self.cbChapCNP[&#34;state&#34;] = &#34;disabled&#34;
+
+    self.cbNivCNP.set(&#39;Choisir un niveau&#39;)
+    self.cbNivCNP[&#34;state&#34;] = &#34;disabled&#34;
+    ###
+
+    self.enonce, self.corrige = self.SGBD.ModifyCommandToShortcut(
+        self.SGBD.giveEnonce(self.ExoRegarde)[0],
+        self.cbAuteur.get(),
+        self.SGBD.giveCorrige(self.ExoRegarde)[0]
+    )
+
+    self.champEnonce.delete(1.0, &#34;end&#34;)
+    self.champEnonce.insert(&#39;end&#39;, self.enonce)
+    self.updatecode(self.champEnonce)
+
+    self.champCorrection.delete(1.0, &#34;end&#34;)
+    self.champCorrection.insert(&#39;end&#39;, self.corrige)
+    self.updatecode(self.champCorrection)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.AfficherExo.AfficherExo.updatecode"><code class="name flex">
+<span>def <span class="ident">updatecode</span></span>(<span>self, champ)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fonction permettant de mettre à jour le code latex et d'appliquer la colloration syntaxique</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>champ</code></strong> :&ensp;<code>le champ de texte dans lequel effectuer la colloration syntaxique</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def updatecode(self, champ):
+    &#34;&#34;&#34;
+    Fonction permettant de mettre à jour le code latex et d&#39;appliquer la colloration syntaxique
+
+    Parameters
+    ----------
+    champ : le champ de texte dans lequel effectuer la colloration syntaxique
+    &#34;&#34;&#34;
+
+    Utils.tagHighlight(champ)
+    Utils.scan(champ)</code></pre>
+</details>
+</dd>
+<dt id="Kholibri.Classes.AfficherExo.AfficherExo.validate"><code class="name flex">
+<span>def <span class="ident">validate</span></span>(<span>self, idExo)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fonction permettant de valider un exercice</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>idExo</code></strong> :&ensp;<code>l'id de l'exercice</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def validate(self, idExo):
+    &#34;&#34;&#34;
+    Fonction permettant de valider un exercice
+
+    Parameters
+    ----------
+    idExo: l&#39;id de l&#39;exercice
+    &#34;&#34;&#34;
+
+    if not idExo:
+        return
+
+    self.validButton[&#34;state&#34;] = &#34;disabled&#34;
+
+    if self.cbAuteur.get() == &#34;Choisir un auteur&#34;:
+        messagebox.showinfo(title=&#34;Classe&#34;, message=&#34;Merci de préciser un auteur.&#34;)
+        return
+
+    self.enonce = self.champEnonce.get(&#34;1.0&#34;, &#34;end-1c&#34;)
+    self.corrige = self.champCorrection.get(&#34;1.0&#34;, &#34;end-1c&#34;)
+
+    self.SGBD.ModifyExo(idExo, self.enonce, self.corrige)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="Kholibri.Classes" href="index.html">Kholibri.Classes</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="Kholibri.Classes.AfficherExo.AfficherExo" href="#Kholibri.Classes.AfficherExo.AfficherExo">AfficherExo</a></code></h4>
+<ul class="">
+<li><code><a title="Kholibri.Classes.AfficherExo.AfficherExo.AjoutExo" href="#Kholibri.Classes.AfficherExo.AfficherExo.AjoutExo">AjoutExo</a></code></li>
+<li><code><a title="Kholibri.Classes.AfficherExo.AfficherExo.ModifNiv" href="#Kholibri.Classes.AfficherExo.AfficherExo.ModifNiv">ModifNiv</a></code></li>
+<li><code><a title="Kholibri.Classes.AfficherExo.AfficherExo.SupprExo" href="#Kholibri.Classes.AfficherExo.AfficherExo.SupprExo">SupprExo</a></code></li>
+<li><code><a title="Kholibri.Classes.AfficherExo.AfficherExo.UpdateChapitreNonPresent" href="#Kholibri.Classes.AfficherExo.AfficherExo.UpdateChapitreNonPresent">UpdateChapitreNonPresent</a></code></li>
+<li><code><a title="Kholibri.Classes.AfficherExo.AfficherExo.UpdateChapitrePresent" href="#Kholibri.Classes.AfficherExo.AfficherExo.UpdateChapitrePresent">UpdateChapitrePresent</a></code></li>
+<li><code><a title="Kholibri.Classes.AfficherExo.AfficherExo.compiler" href="#Kholibri.Classes.AfficherExo.AfficherExo.compiler">compiler</a></code></li>
+<li><code><a title="Kholibri.Classes.AfficherExo.AfficherExo.rechercherExo" href="#Kholibri.Classes.AfficherExo.AfficherExo.rechercherExo">rechercherExo</a></code></li>
+<li><code><a title="Kholibri.Classes.AfficherExo.AfficherExo.updatecode" href="#Kholibri.Classes.AfficherExo.AfficherExo.updatecode">updatecode</a></code></li>
+<li><code><a title="Kholibri.Classes.AfficherExo.AfficherExo.validate" href="#Kholibri.Classes.AfficherExo.AfficherExo.validate">validate</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
