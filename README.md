@@ -1,8 +1,20 @@
-# **Application**
+# **Kholibri**
 
-L'application de génération de sujets est un programme réalisé dans le cadre de projets tutoré afin de permettre à des enseignants de faciliter la création de fiches d'exercices rédigé en LaTeX. Ce programme permet de générer des PDFs en suivant les raccourcis de plusieurs utilisateurs et de choisir les exercices utilisés pour la génération selon leur niveau de difficulté, la classe et le chapitre auxquels ils appartiennent.
+Kholirbi est un programme réalisé dans le cadre de projets tutoré afin de permettre à des enseignants de faciliter la création de fiches d'exercices rédigé en LaTeX. Ce programme permet de générer des PDFs en suivant les raccourcis de plusieurs utilisateurs et de choisir les exercices utilisés pour la génération selon leur niveau de difficulté, la classe et le chapitre auxquels ils appartiennent.
 
 # **Installation**
+
+## Windows
+
+### ~~Installeur~~
+### Installation Manuelle
+Pour installer manuellement Kholibri, il faut que vous installiez [LaTeX](https://www.latex-project.org/) et [Python](https://www.python.org/downloads/).
+<br>
+Vous aurez alors à ajouter le paquet Tkinter à votre installation de Python.
+
+    pip install tkinter
+Vous pourrez ensuite télécharger l'application via le [Github](https://github.com/Jamal7944/Kholibri)
+
 ## Linux
 
 ### **Tkinter**
@@ -36,10 +48,37 @@ Cette application de génération de feuilles d'exercices mathématiques nécess
     edge
     ...
 
-Il est possible d'utilisé l'application sans une telle application mais le programme n'ouvrira aucun fichier PDF par lui-même ( - n'affecte pas la génération).
+Il est possible d'utilisé l'application sans une telle application, mais le programme n'ouvrira aucun fichier PDF par lui-même ( - n'affecte pas la génération).
 
 
-# **Licence**
+# Contribuer
+
+Les pull request sont la bienvenue.
+Cependant, nous vous conseillons plutôt de faire un fork et de modifier le projet de votre côté étant donné qu'il n'est, pour l'instant, pas envisager de reprendre le développement du projet de manière intensive.
+
+
+# **Auteurs**
+<u>team 1</u>
+<br>
+[Jamal](https://github.com/Jamal7944)
+<br>
+[Alex](https://github.com/alexdgz)
+<br>
+[R3FF0X](https://github.com/R3FF0X)
+
+<u>team 2</u>
+<br>
+[Jamal](https://github.com/Jamal7944)
+<br>
+[Lilian](https://github.com/Nexokk)
+<br>
+[Youllou](https://github.com/Youllou)
+
+# **Remerciements**
+
+Nous remercions notre professor encadrant **M. Leray** ainsi que le client du projet, **M. Gobin**
+
+# **License**
 
 ### Français
 
