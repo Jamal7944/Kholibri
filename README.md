@@ -78,6 +78,8 @@ Cependant, nous vous conseillons plutôt de faire un fork et de modifier le proj
 [Lilian](https://github.com/Nexokk)
 <br>
 [Youllou](https://github.com/Youllou)
+<br>
+[Renaud](https://github.com/RenaudBirk)
 
 # **Remerciements**
 
