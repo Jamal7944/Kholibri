@@ -3,7 +3,7 @@
 Kholirbi est un programme réalisé dans le cadre de projets tutoré afin de permettre à des enseignants de faciliter la création de fiches d'exercices rédigé en LaTeX. Ce programme permet de générer des PDFs en suivant les raccourcis de plusieurs utilisateurs et de choisir les exercices utilisés pour la génération selon leur niveau de difficulté, la classe et le chapitre auxquels ils appartiennent.
 
 # **Installation**
-buffer for commit
+
 ## Windows
 
 ### ~~Installeur~~
