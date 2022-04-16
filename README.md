@@ -81,7 +81,7 @@ Cependant, nous vous conseillons plutôt de faire un fork et de modifier le proj
 
 # **Remerciements**
 
-Nous remercions notre professor encadrant **M. Leray** ainsi que le client du projet, **M. Gobin**
+Nous remercions notre professeur encadrant **M. Leray** ainsi que le client du projet, **M. Gobin**
 
 # **License**
 
